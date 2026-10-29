@@ -200,13 +200,13 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
 <script>
 (function(){
   function H(s){var a=0xdeadbeef,b=0x41c6ce57;for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677);}a=Math.imul(a^(a>>>16),2246822507)^Math.imul(b^(b>>>13),3266489909);return (a>>>0).toString(36);}
-  var OK="9ardrw", K="geo-gate-v2", g=document.getElementById("gate");
+  var OK="9ardrw", K="geo-gate-v3", g=document.getElementById("gate");
   function open(){g.style.display="none";document.body.classList.remove("locked");}
   document.body.classList.add("locked");
   try{ if(localStorage.getItem(K)===OK){open();return;} }catch(e){}
   document.getElementById("gform").addEventListener("submit",function(e){
     e.preventDefault();
-    var v=document.getElementById("gcode").value.trim().toUpperCase();
+    var v=document.getElementById("gcode").value.toUpperCase().replace(/[^A-Z0-9]/g,"");
     if(H(v)===OK){ try{localStorage.setItem(K,OK);}catch(x){} open(); }
     else document.getElementById("gerr").textContent="Codi incorrecte.";
   });
