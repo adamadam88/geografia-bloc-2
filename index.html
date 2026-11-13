@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Geografia d'Espanya</title>
+<title>Geografia · Bloc 2</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -191,6 +191,192 @@
   #hsvg .unit.ok .hline { stroke: var(--ok); } #hsvg .unit.bad .hline { stroke: var(--bad); }
   #hsvg .unit.ok path[fill]:not([fill="none"]) { fill: var(--ok); } #hsvg .unit.bad path[fill]:not([fill="none"]) { fill: var(--bad); }
 html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--sans)}
+
+  /* ===== Temari (Bloc 2, temes 1-3) ===== */
+  #sec { align-self: flex-start; }
+  #sec button { padding: 9px 20px; }
+  .st { display: flex; flex-direction: column; gap: 14px; }
+  .st h3 { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.25; text-wrap: balance; }
+  .st h4 { margin: 0; font-size: 15px; font-weight: 700; }
+  .st p { margin: 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .tg { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; color: #fff; white-space: nowrap; }
+  .muted { color: var(--ink2); font-size: 14px; }
+  .big-n { font-family: var(--mono); font-size: 30px; font-weight: 500; line-height: 1; }
+  .stat { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px; background: var(--bg); }
+  .stat .btn { align-self: flex-start; margin-top: 4px; }
+  .mlist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .mlist li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; }
+  .mlist .ic { width: 28px; height: 28px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--accent); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+  .sess { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 12px; align-items: start; padding: 12px 0; border-top: 1px solid var(--line); }
+  .sess:first-of-type { border-top: 0; }
+  .chk { width: 26px; height: 26px; border-radius: 8px; border: 2px solid var(--edge); background: var(--surface); display: grid; place-items: center; padding: 0; font-size: 15px; color: var(--accent-ink); }
+  .chk[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); }
+  .sess.done h4 { text-decoration: line-through; color: var(--ink2); }
+  .links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .lk { border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 5px 10px; font-size: 13px; font-weight: 600; color: var(--accent); }
+  .lk:hover { border-color: var(--accent); }
+
+  /* Explicat */
+  .toc { display: flex; flex-wrap: wrap; gap: 6px; }
+  .toc a { font-size: 13px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 5px 9px; }
+  .toc a.read { border-color: var(--ok); }
+  .toc a.read::before { content: "✓ "; color: var(--ok); font-weight: 700; }
+  .sec-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+  .pp { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 10px; align-items: start; font-size: 15.5px; line-height: 1.6; }
+  .pp .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 8px; }
+  .pp.e .dot { background: #C99A2E; }
+  .pp.i .dot { border: 2px solid #C99A2E; }
+  .pp.d .dot, .pp.a .dot { background: var(--line); }
+  .pp.c, .pp.n, .pp.a { border-radius: 10px; padding: 10px 12px; grid-template-columns: minmax(0, 1fr); font-size: 14.5px; }
+  .pp.c { background: color-mix(in srgb, #E0A21B 15%, var(--surface)); border: 1px solid color-mix(in srgb, #E0A21B 45%, var(--surface)); }
+  .pp.n { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--surface)); }
+  .pp.a { background: var(--bg); border: 1px dashed var(--edge); }
+  .pp.c .dot, .pp.n .dot, .pp.a .dot { display: none; }
+  .recall { border-top: 1px dashed var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .rq { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); padding: 10px 12px; text-align: left; font-size: 14px; width: 100%; }
+  .rq b { display: block; }
+  .rq .ans { display: none; margin-top: 6px; color: var(--ink2); }
+  .rq.open .ans { display: block; }
+  .rq .hint2 { font-size: 12px; color: var(--accent); font-weight: 600; }
+  .rq.open .hint2 { display: none; }
+  .legend-lv { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink2); align-items: center; }
+  .legend-lv span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-lv i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+  /* Esquemes */
+  .tl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; position: relative; padding-top: 26px; }
+  .tl::before { content: ""; position: absolute; left: 4%; right: 4%; top: 11px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #7C5CAD, #3D8BC9, #C2453A, #4FA261); }
+  .tl .nd { position: relative; padding: 0 8px; display: flex; flex-direction: column; gap: 6px; }
+  .tl .nd::before { content: ""; position: absolute; top: -21px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--surface); border: 4px solid var(--c); }
+  .tl .era { font-weight: 700; text-align: center; color: var(--c); }
+  .tl .when { font-family: var(--mono); font-size: 12px; text-align: center; color: var(--ink2); }
+  .tl .box { border: 1px solid var(--line); border-top: 3px solid var(--c); border-radius: 10px; padding: 10px; font-size: 13.5px; background: var(--bg); flex: 1; }
+  @media (max-width: 720px) { .tl { grid-template-columns: minmax(0, 1fr); padding-top: 0; padding-left: 26px; gap: 14px; } .tl::before { left: 9px; right: auto; top: 4px; bottom: 4px; width: 4px; height: auto; background: linear-gradient(180deg, #7C5CAD, #3D8BC9, #C2453A, #4FA261); } .tl .nd::before { top: 2px; left: -24px; margin-left: 0; } .tl .era, .tl .when { text-align: left; } }
+  .clau { display: grid; grid-template-columns: auto 22px minmax(0, 1fr); align-items: center; gap: 0 10px; }
+  .clau > .root { font-weight: 700; font-size: 16px; padding: 10px 12px; border-radius: 10px; background: var(--accent); color: var(--accent-ink); text-align: center; max-width: 140px; }
+  .clau > .br { align-self: stretch; position: relative; }
+  .clau > .br::before { content: ""; position: absolute; inset: 4px 0 4px 8px; border: 3px solid var(--edge); border-right: 0; border-radius: 14px 0 0 14px; }
+  .clau > .br::after { content: ""; position: absolute; left: 0; top: 50%; width: 10px; height: 3px; background: var(--edge); }
+  .clau > .kids { display: flex; flex-direction: column; gap: 8px; }
+  .clau .kid { border: 1px solid var(--line); border-left: 4px solid var(--c, var(--accent)); border-radius: 8px; padding: 8px 10px; background: var(--bg); font-size: 13.5px; }
+  .clau .kid b { font-size: 14px; }
+  .clau.sub > .root { background: var(--bg); color: var(--ink); border: 1px solid var(--line); font-size: 14px; }
+  .clau .kid.nest { padding: 8px; }
+  .rastell { display: flex; flex-direction: column; }
+  .rastell .bar { background: var(--accent); color: var(--accent-ink); font-weight: 700; padding: 10px 14px; border-radius: 10px 10px 0 0; text-align: center; }
+  .rastell .teeth { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .rastell .tooth { border: 1px solid var(--line); border-top: 0; border-radius: 0 0 10px 10px; padding: 12px; background: var(--bg); position: relative; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; }
+  .rastell .tooth::before { content: ""; position: absolute; top: 0; left: 50%; width: 4px; height: 12px; margin-left: -2px; background: var(--accent); }
+  .rastell .tooth h4 { margin-top: 8px; color: var(--c); }
+  .quad { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+  .qc { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--bg); display: flex; flex-direction: column; gap: 8px; border-top: 4px solid var(--c); }
+  .qc .pills { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pill { font-size: 12px; border-radius: 999px; padding: 2px 8px; background: var(--surface); border: 1px solid var(--line); }
+  .grad { position: relative; height: 46px; border-radius: 10px; background: linear-gradient(90deg, #E8C27A, #D9D48A 25%, #8FC48A 50%, #3E9A8C 75%, #2B6EA8); margin: 26px 0 40px; }
+  .grad .mk { position: absolute; top: -22px; transform: translateX(-50%); font-family: var(--mono); font-size: 11px; color: var(--ink2); }
+  .grad .th { position: absolute; top: -6px; bottom: -6px; width: 3px; background: var(--ink); }
+  .grad .th span { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 12px; font-weight: 700; margin-top: 2px; }
+  .grad .rg { position: absolute; height: 14px; border-radius: 7px; background: rgba(255, 255, 255, .85); border: 1.5px solid var(--ink); }
+  .grad .rg span { position: absolute; top: 18px; left: 0; font-size: 11.5px; font-weight: 600; white-space: nowrap; color: var(--ink); }
+  .flor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; align-items: center; }
+  .flor .cor { grid-column: 2; grid-row: 2; aspect-ratio: 1; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; text-align: center; font-weight: 700; padding: 10px; max-width: 150px; justify-self: center; width: 100%; }
+  .flor .pet { border: 1px solid var(--line); border-radius: 40px; padding: 12px 14px; text-align: center; background: var(--bg); font-size: 13px; }
+  .flor .pet b { display: block; font-size: 13.5px; margin-bottom: 2px; color: var(--accent); }
+  @media (max-width: 560px) { .flor { grid-template-columns: repeat(2, minmax(0, 1fr)); } .flor .cor { grid-column: 1 / -1; grid-row: auto; order: -1; max-width: 120px; } .flor .pet { border-radius: 18px; padding: 10px; } }
+  .stack { display: flex; height: 34px; border-radius: 8px; overflow: hidden; font-size: 12px; font-weight: 700; color: #fff; }
+  .stack div { display: flex; align-items: center; justify-content: center; min-width: 0; overflow: hidden; white-space: nowrap; }
+  .escala { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; align-items: end; }
+  .escala .st2 { border-radius: 8px 8px 0 0; color: #fff; padding: 8px; font-size: 12.5px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; }
+  .escala .st2 b { font-size: 14px; }
+  .org { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .org .top2 { background: var(--accent); color: var(--accent-ink); border-radius: 10px; padding: 8px 14px; font-weight: 700; text-align: center; }
+  .org .stem { width: 3px; height: 14px; background: var(--edge); }
+  .org .kids2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; width: 100%; border-top: 3px solid var(--edge); padding-top: 12px; }
+  .org .kids2 > div { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: var(--bg); font-size: 13px; }
+  .org .kids2 > div b { display: block; font-size: 13.5px; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .col { border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+  .col h4 { font-size: 15px; }
+  .col .rgn { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+  .col .rgn b { display: block; font-size: 13.5px; }
+
+  /* Activitats */
+  .acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .act { border: 1px solid var(--line); background: var(--surface); border-radius: 14px; padding: 16px; text-align: left; display: flex; flex-direction: column; gap: 6px; min-height: 120px; }
+  .act:hover { border-color: var(--accent); }
+  .act .ai { font-size: 22px; line-height: 1; }
+  .act b { font-size: 16px; }
+  .act span { font-size: 13.5px; color: var(--ink2); }
+  .back { align-self: flex-start; border: 0; background: transparent; color: var(--accent); font-weight: 600; padding: 4px 0; }
+  .bins { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+  .bin { border: 2px dashed var(--edge); border-radius: 12px; padding: 10px; background: var(--bg); text-align: left; min-height: 96px; display: flex; flex-direction: column; gap: 6px; }
+  .bin .bt { font-weight: 700; font-size: 14px; }
+  .bin .bi { display: flex; flex-wrap: wrap; gap: 4px; }
+  .bin .bi span { font-size: 12px; padding: 2px 7px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+  .bin .bi span.x { border-color: var(--bad); color: var(--bad); }
+  .bin.flash-ok { border-color: var(--ok); border-style: solid; }
+  .bin.flash-bad { border-color: var(--bad); border-style: solid; }
+  .item-now { font-size: 22px; font-weight: 700; padding: 14px 16px; border-radius: 12px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); text-align: center; }
+  .ordl { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; counter-reset: o; }
+  .ordl li { counter-increment: o; border: 1px solid var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); border-radius: 10px; padding: 10px 12px 10px 42px; position: relative; font-size: 14px; }
+  .ordl li::before { content: counter(o); position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; border-radius: 50%; background: var(--ok); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+  .pool { display: flex; flex-direction: column; gap: 6px; }
+  .pool .opt { min-height: 44px; }
+  .opt.shake { animation: shake .35s; border-color: var(--bad); }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .pairs { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 8px; align-items: start; }
+  .pairs .colp { display: flex; flex-direction: column; gap: 8px; }
+  .pairs .opt { font-weight: 500; font-size: 13.5px; }
+  .pairs .opt.term { font-weight: 700; font-size: 14px; }
+  .opt.sel { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+  .opt.gone { opacity: .35; border-color: var(--ok); }
+  .slider { display: grid; grid-template-columns: minmax(0, 1fr) 64px; gap: 4px 10px; align-items: center; font-size: 14px; }
+  .slider label { grid-column: 1 / -1; font-weight: 600; }
+  .slider input { width: 100%; accent-color: var(--accent); }
+  .slider output { font-family: var(--mono); text-align: right; }
+  .fsvg svg, .csvg svg { display: block; width: 100%; height: auto; }
+  .fsvg text, .csvg text { font-family: var(--sans); }
+  .vf { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .vf .opt { text-align: center; font-size: 16px; min-height: 56px; }
+
+  /* Targetes */
+  .flip { perspective: 1200px; cursor: pointer; border: 0; background: transparent; padding: 0; width: 100%; }
+  .flip .inner { position: relative; min-height: 230px; transition: transform .5s; transform-style: preserve-3d; }
+  .flip.on .inner { transform: rotateY(180deg); }
+  .flip .face { position: absolute; inset: 0; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); padding: 22px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 10px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .flip .face.b { transform: rotateY(180deg); background: color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+  .flip .ft { font-size: clamp(20px, 3.6vw, 26px); font-weight: 700; line-height: 1.2; text-wrap: balance; }
+  .flip .fb2 { font-size: 16px; line-height: 1.5; }
+  .flip .lab2 { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink2); font-weight: 600; }
+  .boxes { display: flex; gap: 6px; align-items: flex-end; height: 54px; }
+  .boxes div { flex: 1; background: color-mix(in srgb, var(--accent) 30%, var(--surface)); border-radius: 5px 5px 0 0; position: relative; min-height: 3px; }
+  .boxes div span { position: absolute; bottom: 100%; left: 0; right: 0; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--ink2); }
+  .boxl { display: flex; gap: 6px; font-size: 11px; color: var(--ink2); }
+  .boxl span { flex: 1; text-align: center; }
+
+  /* Glossari */
+  .search { width: 100%; font: inherit; font-size: 15px; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+  .gl-l { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .gl-l > div { padding: 10px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(120px, 13rem) minmax(0, 1fr); gap: 4px 14px; }
+  @media (max-width: 560px) { .gl-l > div { grid-template-columns: minmax(0, 1fr); } }
+  .gl-l dt { font-weight: 700; color: var(--ink); }
+  .foot { font-size: 12.5px; color: var(--ink2); border-top: 1px solid var(--line); padding-top: 12px; }
+  .res-t { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; font-size: 14px; align-items: center; }
+  .res-t .bar { min-width: 80px; }
+  .grad .rg span.r { left: auto; right: 0; }
+  @media (max-width: 600px) {
+    .clau { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    .clau > .br { display: none; }
+    .clau > .root { max-width: none; justify-self: start; }
+    .clau > .kids { padding-left: 12px; border-left: 3px solid var(--edge); }
+    .escala { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .escala .st2 { border-radius: 8px; height: auto !important; min-height: 70px; }
+    .grad .rg span { font-size: 10.5px; }
+  }
 </style>
 
 <style>#gate{position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px}#gate form{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:340px;width:100%;display:flex;flex-direction:column;gap:12px;font-family:var(--sans);color:var(--ink)}#gate h1{margin:0;font-size:22px}#gate p{margin:0;font-size:14px;color:var(--ink2)}#gate input{font:inherit;font-size:18px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);text-transform:uppercase;letter-spacing:.1em}#gate button{font:inherit;font-weight:600;padding:12px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);cursor:pointer}#gate .err{color:var(--bad);min-height:1.2em}body.locked>main{display:none}</style>
@@ -224,6 +410,11 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
       <button type="button" id="m-name" aria-pressed="false">Anomena</button>
     </div>
   </header>
+
+  <nav class="seg" id="sec" aria-label="Secció">
+    <button type="button" data-s="study" aria-pressed="true">Temari</button>
+    <button type="button" data-s="maps" aria-pressed="false">Mapes</button>
+  </nav>
 
   <nav class="seg tabs" id="tabs" aria-label="Apartat">
     <button type="button" data-v="relief" aria-pressed="true">Relleu</button>
@@ -267,6 +458,18 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
       <section class="mapcard"><div id="hmap"></div></section>
       <aside class="panel" id="hpanel" aria-live="polite"></aside>
     </div>
+  </div>
+  <div id="view-study" class="st" hidden>
+    <nav class="seg tabs" id="stabs" aria-label="Apartat del temari">
+      <button type="button" data-t="pla" aria-pressed="true">Pla</button>
+      <button type="button" data-t="exp" aria-pressed="false">Explicat</button>
+      <button type="button" data-t="esq" aria-pressed="false">Esquemes</button>
+      <button type="button" data-t="act" aria-pressed="false">Activitats</button>
+      <button type="button" data-t="cards" aria-pressed="false">Targetes</button>
+      <button type="button" data-t="test" aria-pressed="false">Test</button>
+      <button type="button" data-t="glos" aria-pressed="false">Glossari</button>
+    </nav>
+    <div id="sbody" class="st"></div>
   </div>
 </main>
 
@@ -1513,6 +1716,1113 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
   tabs.forEach(function (b) { b.addEventListener("click", function () { go(b.getAttribute("data-v")); }); });
   window.__go = go;
 })();
+</script>
+<script>
+/* ===== Dades del temari: Bloc 2, temes 1-3 (fins als recursos forestals) ===== */
+var TEMES = [
+ { id: "t1", n: "Tema 1", t: "Relleu, clima i vegetació d'Espanya", c: "#1D5FA8" },
+ { id: "t2", n: "Tema 2", t: "Relleu, clima i vegetació de Catalunya", c: "#B5452F" },
+ { id: "t3", n: "Tema 3", t: "Els recursos naturals", c: "#2E7D4F" }
+];
+
+/* Nivells: e = essencial, i = important, d = detall. Text propi (HTML estàtic). */
+var SECC = [
+ /* ---------------- TEMA 1 ---------------- */
+ { id: "s1", t: "t1", n: "1.1 Situació i trets del relleu", map: "relief", ps: [
+  ["e", "Espanya és a l'extrem <b>sud-occidental d'Europa</b>, entre l'oceà Atlàntic i la mar Mediterrània i a tocar d'Àfrica. El relleu peninsular té tres trets fonamentals: un <b>gran altiplà central</b> (la Meseta) envoltat de serralades, <b>dues grans depressions</b> als extrems (Ebre i Guadalquivir) i una <b>altitud mitjana elevada, d'uns 660 m</b>."],
+  ["i", "Aquesta altitud té conseqüències pràctiques: <b>només l'11% del territori queda per sota dels 200 m</b>. Les serralades que envolten la Meseta dificulten les comunicacions entre l'interior i la costa, l'agricultura es fa més difícil i el clima és més dur, perquè la temperatura baixa a mesura que pugem."],
+  ["i", "La litosfera està dividida en <b>plaques tectòniques</b>. El territori espanyol forma part de la <b>placa Euroasiàtica</b>, al límit amb la <b>placa Africana</b>. En aquesta zona de contacte les plaques es trenquen en d'altres de més petites, com la <b>microplaca Ibèrica</b> i la <b>microplaca d'Alborán</b>. Per això el sud i el sud-est són les zones amb més terratrèmols."],
+  ["d", "Coordenades extremes de la península: al nord, l'Estaca de Bares (43° 47' N); al sud, la Punta de Tarifa (36° 00' N); a l'est, el cap de Creus (3° 19' E); i a l'oest, el cap Touriñán (9° 17' O)."]
+ ], rq: [["Quins són els tres trets fonamentals del relleu peninsular?", "Un gran altiplà central (Meseta) envoltat de serralades, dues grans depressions (Ebre i Guadalquivir) i una altitud mitjana elevada (660 m)."], ["Per què el sud i el sud-est tenen més terratrèmols?", "Perquè són a prop del contacte entre la placa Euroasiàtica i l'Africana (microplaques Ibèrica i d'Alborán)."]] },
+
+ { id: "s2", t: "t1", n: "1.2 Com es va formar el relleu", ps: [
+  ["e", "<b>Era Primària o Paleozoica</b> (acaba fa uns 250 milions d'anys). Existia l'antiquíssim massís Galaic i la resta era aigua (mar de Tetis). L'<b>orogènia herciniana</b> va formar el <b>Massís Hespèric</b>, que ocupa la meitat occidental de la península i és de <b>roques silícies i metamòrfiques</b> (granit, pissarra). És el <b>sòcol</b> de la Meseta."],
+  ["i", "<b>Era Secundària o Mesozoica</b> (acaba fa uns 65 milions d'anys). Va ser una època de calma: l'erosió va desgastar els relleus hercinians i els materials transportats es van dipositar al mar formant <b>roques calcàries</b>."],
+  ["e", "<b>Era Terciària (Cenozoic)</b>: l'<b>orogènia alpina</b>. La pressió de les plaques va <b>plegar els materials tous</b> (els sediments) i <b>trencar els durs</b> (el sòcol hercinià, que és rígid). Així van néixer els <b>Pirineus</b>, les <b>Serralades Bètiques</b> i la part oriental de la <b>Serralada Cantàbrica</b>. A més, el sòcol de la Meseta es va fracturar en blocs: alguns es van aixecar (<b>Sistema Central</b>, <b>Monts de Toledo</b>) i les vores es van plegar (les <b>vores muntanyoses</b> de la Meseta)."],
+  ["i", "<b>Període Quaternari</b> (des de fa uns 1,8 milions d'anys fins avui). Domina l'<b>erosió</b> dels relleus alpins. Els sediments van reomplir la <b>depressió de l'Ebre</b> (entre els Pirineus i el Sistema Ibèric) i la del <b>Guadalquivir</b> (entre Sierra Morena i les Bètiques), i es van formar les <b>planes litorals</b>."],
+  ["n", "<b>Truc per recordar-ho:</b> herciniana = <i>fa</i> el sòcol; Mesozoic = el <i>desgasta</i>; alpina = el <i>trenca</i> i aixeca serralades; Quaternari = <i>omple</i> les depressions."]
+ ], rq: [["Quina orogènia va formar el Massís Hespèric i de quines roques és?", "L'herciniana (Paleozoic). Roques silícies i metamòrfiques."], ["Per què l'orogènia alpina va plegar uns materials i en va trencar d'altres?", "Els materials tous (sediments) es pleguen; els durs i rígids (el sòcol) es fracturen en blocs."]] },
+
+ { id: "s3", t: "t1", n: "1.3 Les unitats de relleu", map: "relief", ps: [
+  ["e", "El relleu d'Espanya s'organitza en cinc grups: <b>la Meseta</b>, <b>les serralades exteriors</b> a la Meseta, <b>les dues grans depressions</b>, <b>els relleus litorals</b> i <b>el relleu insular</b>."],
+  ["e", "<b>La Meseta</b> és la unitat principal (<b>45% de la superfície</b>). Es divideix en la <b>Submeseta Nord</b>, travessada pel Duero, i la <b>Submeseta Sud</b>, formada per dos altiplans (Tajo i Guadiana) separats pels Monts de Toledo."],
+  ["e", "<b>Serralades interiors de la Meseta.</b> El <b>Sistema Central</b> la divideix pràcticament en dues meitats i té serres d'altitud important: Somosierra, Guadarrama, Gredos i Gata. Els <b>Monts de Toledo</b> divideixen la Submeseta Sud i fan de divisòria d'aigües entre el Tajo i el Guadiana; són serres d'alçada modesta, com la de Guadalupe."],
+  ["e", "<b>Vores muntanyoses de la Meseta.</b> El <b>Massís Galaicoleonès</b> (Galícia, oest d'Astúries, Muntanyes de Lleó, serres de la Cabrera i Segundera) és un fragment del relleu més antic, paleozoic i molt erosionat. La <b>Serralada Cantàbrica</b> té una part occidental, el massís Asturià, elevada i trencada, i una part oriental, la Muntanya Cantàbrica, amb cims més baixos. El <b>Sistema Ibèric</b> té un sector nord (Moncayo, Pics d'Urbión), que separa la Meseta de la depressió de l'Ebre, i un sector sud de serres i depressions creuades per rius (Monts Universals, Conca, Albarracín, Javalambre, Gúdar i Maestrat). <b>Sierra Morena</b> és la vora meridional i separa la Meseta de la depressió del Guadalquivir."],
+  ["e", "<b>Serralades exteriors.</b> Els <b>Pirineus</b>, d'uns 440 km, del golf de Biscaia al cap de Creus. Els <b>Prepirineus</b>, amb unes serralades interiors i unes exteriors i la depressió mitjana pirinenca entremig. Les <b>Serralades Litorals Catalanes</b>, dues rengleres paral·leles a la costa separades per una depressió. Les <b>Serralades Bètiques</b>: la <b>Penibètica</b>, amb Sierra Nevada i el <b>Mulhacén (3.481 m)</b>, i la <b>Subbètica</b>, amb les serres de Cazorla, Segura, Sagra i Mágina."],
+  ["c", "<b>Compte:</b> el dossier dona 3.481 m al Mulhacén; altres fonts actuals (i el mapa de l'app) diuen 3.479 m. A l'examen, fes servir la xifra del professor."],
+  ["c", "<b>Compte:</b> a la diapositiva d'Espanya, el Cadí surt com a Prepirineu <i>exterior</i> (amb el Montsec) i Guara i Peña com a interiors; però a la de Catalunya el Cadí surt com a Prepirineu <i>interior</i> (amb el Pedraforca) i els exteriors són el Montsec i el Montroig. La segona és la classificació habitual per a Catalunya. Pregunta-ho al professor si cau a l'examen."],
+  ["e", "<b>Les dues depressions</b> es van formar amb els sediments de l'erosió dels relleus i dels rius. On els materials eren més durs van quedar <b>relleus tabulars</b>, i on eren més tous, <b>valls i terrasses</b>. La <b>depressió de l'Ebre</b> queda encaixada entre els Prepirineus, el Sistema Ibèric i les Serralades Litorals Catalanes. La <b>del Guadalquivir</b> s'estén entre Sierra Morena i les Serralades Bètiques."]
+ ], rq: [["Quines serralades són interiors de la Meseta i quines en són les vores?", "Interiors: Sistema Central i Monts de Toledo. Vores: Massís Galaicoleonès, Cantàbrica, Sistema Ibèric i Sierra Morena."], ["Entre quines unitats hi ha la depressió del Guadalquivir?", "Entre Sierra Morena i les Serralades Bètiques."]] },
+
+ { id: "s4", t: "t1", n: "1.4 Costes i relleu insular", map: "hidro", ps: [
+  ["e", "<b>Costes atlàntiques.</b> La <b>cantàbrica</b> és alta i rectilínia: les muntanyes arriben al mar i formen penya-segats; hi ha poques platges i les ries són curtes i estretes. La <b>gallega</b> va de l'Estaca de Bares i el cap Ortegal fins a Portugal, i el seu tret més característic són les <b>ries</b>. L'<b>atlàntica andalusa</b> (golf de Cadis, de Portugal a Gibraltar) és <b>baixa i sorrenca</b>: els al·luvions dels rius han format planes costaneres on el vent aixeca dunes."],
+  ["e", "<b>Costes mediterrànies.</b> La d'<b>Andalusia i Múrcia</b> (de l'estret de Gibraltar al cap de la Nau) és tallada, amb camps de dunes i albuferes com el <b>Mar Menor</b>. El <b>golf de València</b> (del cap de la Nau al delta de l'Ebre) és una gran plana litoral d'uns 400 km amb platges, aiguamolls, albuferes i tómbols (<b>penyal d'Ifac</b>, Calp). El <b>litoral català</b> no és uniforme: hi alternen deltes, petites planes i costes escarpades."],
+  ["d", "<b>Tómbol:</b> relleu format per una fletxa o cordó litoral que uneix una illa al continent."],
+  ["e", "<b>Arxipèlag balear.</b> Mallorca, Eivissa i Formentera són fragments emergits de la <b>Serralada Subbètica</b>, mentre que <b>Menorca</b> està relacionada amb la <b>Serralada Litoral Catalana</b>. Al nord de Mallorca hi ha la <b>Serra de Tramuntana</b> i a l'altra banda, la Serralada de Llevant. Eivissa i Formentera tenen relleu muntanyós i una gran plana; Menorca és plana."],
+  ["e", "<b>Arxipèlag canari.</b> Són illes <b>volcàniques</b> amb un relleu molt complex: cons, calderes, barrancs, colades de lava i penya-segats. El <b>Teide (3.718 m)</b> és un volcà actiu i el cim més alt d'Espanya. Les illes més properes a Àfrica (<b>grup oriental: Lanzarote i Fuerteventura</b>) són força planes; les del <b>grup occidental</b> (Tenerife, La Palma, La Gomera, El Hierro i Gran Canària) són muntanyoses."],
+  ["d", "Hi ha notícia històrica de gran activitat volcànica a Lanzarote al segle XVIII."]
+ ], rq: [["Quina costa és baixa i sorrenca amb dunes?", "L'atlàntica andalusa (golf de Cadis)."], ["De quina serralada són fragments Mallorca, Eivissa i Formentera? I Menorca?", "De la Subbètica. Menorca, de la Serralada Litoral Catalana."]] },
+
+ { id: "s5", t: "t1", n: "1.5 Els rius d'Espanya", map: "hidro", ps: [
+  ["e", "<b>Vessant cantàbric:</b> rius <b>curts i cabalosos</b>, perquè neixen a la Serralada Cantàbrica, molt a prop del mar, i hi plou molt. Exemples: Bidasoa, Nervión, Nalón, Narcea i Navia."],
+  ["e", "<b>Vessant atlàntic:</b> rius <b>llargs que pateixen estiatge a l'estiu</b>. Són llargs perquè la Meseta s'inclina cap a l'oest i recorren tota la península; a l'estiu baixen poc perquè plou poc. Exemples: Miño, Duero, Tajo, Guadiana, Guadalquivir, Odiel i Tinto."],
+  ["e", "<b>Vessant mediterrani:</b> excepte l'<b>Ebre</b>, són rius de <b>poc cabal i molt irregulars</b>, amb crescudes fortes a la tardor. Exemples: Ebre, Xúquer, Ter, Llobregat, Túria, Millars, Segura, Almanzora i Guadalhorce."],
+  ["i", "<b>Rius insulars.</b> A les <b>Balears</b> no hi ha cap curs d'aigua permanent, per les pluges escasses i perquè el terreny és permeable; només hi ha <b>torrents</b>, i a les desembocadures es formen albuferes o zones pantanoses (albufera d'Alcúdia). A les <b>Canàries</b> tampoc no hi ha xarxa fluvial; hi ha <b>barrancs</b>, talls al terreny fets per l'erosió que baixen de les muntanyes al mar i fan de llit de torrents. Hi ha pocs aqüífers, però s'ha pogut construir un embassament a Gran Canària (Soria)."],
+  ["d", "<b>Estiatge:</b> disminució del cabal d'un riu en una època determinada de l'any. <b>Cabal:</b> quantitat de fluid que travessa una secció del llit per unitat de temps."]
+ ], rq: [["Com són els rius de cada vessant?", "Cantàbric: curts i cabalosos. Atlàntic: llargs amb estiatge d'estiu. Mediterrani: poc cabal i irregulars (excepte l'Ebre)."], ["Quina diferència hi ha entre un riu i un barranc?", "El riu porta aigua tot l'any; el barranc és un tall al terreny que només porta aigua quan plou."]] },
+
+ { id: "s6", t: "t1", n: "1.6 El clima: conceptes i factors", ps: [
+  ["e", "El <b>temps</b> són les condicions de l'atmosfera (temperatura, pressió, vent, núvols, precipitacions) en un lloc i un moment determinats. El <b>clima</b> són les condicions mitjanes d'un lloc, és a dir, la repetició anual dels tipus de temps."],
+  ["e", "<b>La temperatura.</b> Mesura l'energia de les molècules de l'aire, que ve de la radiació solar. Hi influeixen el <b>gradient vertical de temperatura</b> (de mitjana baixa <b>0,65 °C cada 100 m</b> que pugem), el <b>repartiment de terres i mars</b> (els oceans s'escalfen i es refreden més a poc a poc que els continents), els corrents marins, el dia i la nit, els vents i l'orientació (solana i obaga)."],
+  ["e", "<b>La humitat.</b> L'aire conté vapor d'aigua, i com més calent és, més en pot contenir. La <b>humitat absoluta</b> (g/m³) és la quantitat de vapor en un lloc i moment. La <b>relativa</b> (%) és la relació entre el vapor que hi ha i el màxim que hi podria haver; al 100% l'aire està <b>saturat</b> i el vapor es condensa."],
+  ["e", "<b>Les precipitacions.</b> Són la caiguda d'aigua líquida (pluja) o sòlida (neu, calamarsa) quan el vapor es refreda i es condensa. Es mesuren amb el <b>pluviòmetre</b> i les línies que uneixen punts d'igual precipitació són les <b>isohietes</b>. Hi ha tres règims: <b>equatorial</b> (pluges diàries), <b>tropical</b> (estació seca i humida) i <b>temperat</b> (pluges irregulars tot l'any), que és el de la península."],
+  ["i", "<b>La pressió atmosfèrica</b> és el pes de l'aire per unitat de superfície; les línies d'igual pressió són les <b>isobares</b>. Les diferències de pressió les causa la temperatura. <b>Els vents</b> són moviments d'aire a gran escala: els <b>alisis</b> bufen del tròpic cap a l'equador i els <b>monsons</b> donen estius plujosos i hiverns eixuts al sud-est asiàtic."],
+  ["c", "<b>Compte:</b> la diapositiva diu que l'aire calent «dona més estabilitat» i el fred «més inestabilitat». En general és al revés: l'aire calent puja, fa baixes pressions i porta inestabilitat (núvols i pluja); l'aire fred baixa, fa altes pressions (anticicló) i porta estabilitat. Comenta-ho amb el professor."],
+  ["e", "<b>Situació d'Espanya.</b> És a la <b>zona temperada</b>, on arriben masses d'aire <b>tropicals</b> (marítimes, com l'<b>anticicló de les Açores</b>, i càlides i seques del nord d'Àfrica) i <b>polars</b> (continentals siberianes i de l'Àrtic). Les zones amb més influència del mar tenen més pluja i temperatures suaus; les continentals tenen més <b>oscil·lació tèrmica</b>. Estar entre l'Atlàntic, el Mediterrani, Àfrica i Europa és un factor clau del clima."],
+  ["i", "La <b>gota freda</b> és una pertorbació atmosfèrica extratropical no frontal que pot provocar pluges violentes i intenses durant hores o dies, amb llamps i calamarsa. El <b>corrent en jet</b> (<i>jet stream</i>) és un corrent d'aire molt ràpid (60-550 km/h) prop de la tropopausa que envolta la Terra i separa les altes pressions tropicals de les baixes pressions polars."]
+ ], rq: [["Quina diferència hi ha entre temps i clima?", "Temps: condicions en un lloc i moment concrets. Clima: condicions mitjanes, la repetició anual dels tipus de temps."], ["Què vol dir que la humitat relativa és del 100%?", "Que l'aire està saturat: no pot contenir més vapor i es condensa."]] },
+
+ { id: "s7", t: "t1", n: "1.7 Els climes i la vegetació d'Espanya", ps: [
+  ["e", "<b>Clima oceànic o atlàntic</b> (Galícia i cornisa cantàbrica). Influït per les masses d'aire de l'Atlàntic: hiverns suaus, estius moderats, mitjana d'uns <b>14 °C</b>, <b>poca amplitud tèrmica</b>, molta humitat i <b>pluja abundant tot l'any</b>. <b>Vegetació:</b> bosc temperat <b>caducifoli</b>, sobretot <b>rouredes i fagedes</b>, i també castanyers, bedolls, aurons i til·lers. Quan el bosc es degrada apareix la <b>landa</b> (brucs i falgueres). L'acció humana l'ha substituït en molts llocs per <b>pins i eucaliptus</b>, i al fons de les valls hi ha prats humits per al bestiar."],
+  ["c", "<b>Compte:</b> la diapositiva posa «100-2500 mm» de pluja al clima oceànic; segurament vol dir <b>1.000-2.500 mm</b>."],
+  ["e", "<b>Clima mediterrani.</b> Temperat, amb mitjanes de <b>14-18 °C</b>: hiverns suaus (10-12 °C) i estius càlids (22-26 °C). Les pluges són <b>equinoccials</b> (primavera i tardor) i fan <b>400-700 mm</b>, més al nord i a la muntanya. Té variants: típic (Palma), de pluges més abundants (Girona) i sec del sud-est (Almeria). <b>Vegetació:</b> baixa, de fulla petita i <b>perenne</b>: <b>alzina</b>, roure garriguer, pi negre i <b>pi blanc</b>; a Catalunya i el sud d'Andalusia, <b>alzina surera</b>. On l'home ha destruït el bosc hi ha <b>garrigues</b> (garric, estepes, bruc). Al sud-est, àrid, hi ha espart, <b>margalló</b> i farigola. L'home hi ha creat olivars (Guadalquivir), ametllers, figueres, cítrics i palmeres."],
+  ["e", "<b>Clima continental o d'interior</b> (interior de la península). <b>Hiverns molt freds</b> amb boires freqüents, <b>estius molt calorosos i secs</b>, pluges escasses (<b>325-550 mm</b>) i <b>amplitud tèrmica molt elevada</b>, perquè queda lluny del mar. <b>Vegetació:</b> reduïda per la fusta, l'agricultura i el pasturatge; hi ha guarets i matolls esteparis. És <b>xeròfil·la</b> (arrels profundes per resistir la sequera i el fred). L'arbre més freqüent és l'<b>alzina</b>, que forma <b>deveses</b>; a la muntanya hi ha roures i pinars, i als rius, <b>bosc de ribera</b> (oms, salzes i freixes). Si es perd el bosc apareix la <b>màquia</b> (sòls silicis: arboç, bruc, boix) o la <b>garriga</b> (sòls calcaris: garric, llentiscle, ullastre i aromàtiques com romaní, farigola i espígol)."],
+  ["e", "<b>Clima subtropical</b> (Canàries). Influït per l'Atlàntic, per Àfrica i pel <b>corrent fred de les Canàries</b>, que suavitza les temperatures. Pluges escasses (<b>150-300 mm</b>) concentrades a l'hivern; Lanzarote i Fuerteventura tenen trets desèrtics per la proximitat al Sàhara. <b>Vegetació:</b> estepària, amb espècies autòctones com el <b>drago</b> i els boscos de <b>laurisilva</b>. Els alisis carregats d'humitat formen un <b>mar de núvols</b> als vessants de sobrevent que deixa <b>precipitacions horitzontals</b>; per sobre dels núvols l'aire és sec i hi ha <b>inversió tèrmica</b>."],
+  ["e", "<b>Clima de muntanya.</b> Varia segons l'alçada i l'<b>efecte Foehn</b>, i se suma al clima de cada zona. <b>Oceànica</b> (Cantàbrica i Pirineus): molta pluja (1.700 mm al Cantàbric, 1.200 als Pirineus), uns 5 °C i neu fins a 9 mesos. <b>Mediterrània</b> (relleus costaners): 600-800 mm, estius frescos i hiverns suaus. <b>Interior</b> (Sistema Ibèric, Central i Monts de Toledo): hiverns llargs i molt freds, estius curts i frescos, 400-1.000 mm."],
+  ["e", "<b>L'efecte Foehn.</b> Quan una muntanya talla el pas del vent, l'aire ha de pujar. Pel vessant de <b>barlovent</b> es refreda (1 °C cada 100 m mentre és sec), el vapor es condensa i plou; a partir d'aquí es refreda més a poc a poc (0,6 °C cada 100 m). Quan baixa pel vessant de <b>sotavent</b>, ja sense humitat, s'escalfa 1 °C cada 100 m i arriba a baix <b>sec i més calent</b> que quan va començar. Prova-ho al simulador de la pestanya Activitats."]
+ ], rq: [["Quina vegetació és pròpia del clima oceànic? I què apareix quan es degrada?", "Bosc caducifoli (rouredes i fagedes). La landa (brucs i falgueres)."], ["Diferència entre màquia i garriga?", "Màquia: sòls silicis (arboç, bruc, boix). Garriga: sòls calcaris (garric, llentiscle, ullastre)."]] },
+
+ /* ---------------- TEMA 2 ---------------- */
+ { id: "s8", t: "t2", n: "2.1 El relleu de Catalunya", map: "com", ps: [
+  ["e", "De manera simplificada, Catalunya té <b>quatre grans unitats</b>: (1) els <b>Pirineus</b> (Axial i Prepirineu), (2) les <b>Serralades Litorals catalanes</b>, (3) la <b>Depressió Central</b> i (4) la <b>costa amb les planes litorals</b>. Té un relleu trencat i muntanyós i dues grans planes: la de l'<b>Empordà</b>, que desguassa al mar, i la d'<b>Urgell</b>, que desguassa cap a l'Ebre."],
+  ["d", "Segons el dossier, Catalunya ocupa 31.896 km², i només 6.435 km² no passen dels 200 m d'altitud."],
+  ["e", "<b>Els Pirineus.</b> El <b>Pirineu axial</b> s'aixeca per sobre dels 3.000 m; hi ha el cim més alt de Catalunya, la <b>Pica d'Estats (3.143 m)</b>. El <b>Prepirineu</b> té unes serralades <b>interiors</b> (Cadí, Pedraforca, Bassagoda) i unes <b>exteriors</b> (Montsec i Montroig), separades per depressions mitjanes com la <b>Conca de Tremp</b>. La <b>Serralada Transversal</b>, al peu dels Pirineus, uneix el Prepirineu amb les serralades litorals; hi destaca el <b>Puigsacalm</b>."],
+  ["e", "<b>Serralades litorals.</b> La <b>Serralada Prelitoral</b> (interior) va dels Pirineus a l'Ebre i hi destaquen <b>Montserrat</b> i el <b>Montseny</b>. La <b>Serralada Litoral o de Marina</b> és davant la costa (Barcelona, Maresme), amb el <b>Montnegre (759 m)</b>."],
+  ["c", "<b>Compte:</b> el dossier dona 1.747 m al Montseny. El cim més alt del Montseny, el Turó de l'Home, fa uns 1.706 m. Revisa-ho amb el professor."],
+  ["e", "<b>Les depressions.</b> La <b>Depressió Central</b> (part de la de l'Ebre) s'estén entre el Prepirineu i la Serralada Prelitoral, amb unitats com la <b>Plana de Vic</b>, el pla de <b>Manresa</b>, la <b>Conca d'Òdena</b> o la de <b>Barberà</b>, que alternen amb altiplans (<b>la Segarra</b>). La <b>Depressió Prelitoral</b> és entre la Serralada Litoral i la Prelitoral, i la <b>Depressió Litoral</b>, entre la Serralada de Marina i la costa."],
+  ["a", "<b>Per ampliar:</b> les principals planes de la Depressió Prelitoral són el Vallès i el Penedès."],
+  ["e", "<b>Les costes.</b> Hi ha <b>costes altes</b>, on les serralades arriben al mar (<b>Costa Brava</b>), i <b>costes baixes</b>, amb platges llargues de sorra fina (Tarragonès)."]
+ ], rq: [["Quines són les quatre grans unitats de relleu de Catalunya?", "Pirineus (Axial i Prepirineu), Serralades Litorals, Depressió Central i la costa amb les planes litorals."], ["Què uneix la Serralada Transversal?", "El Prepirineu amb les serralades litorals."]] },
+
+ { id: "s9", t: "t2", n: "2.2 Les regions fisiogràfiques", ps: [
+  ["e", "Catalunya es divideix en dues grans zones segons la pluja. La <b>Catalunya seca</b> rep <b>menys de 700 mm</b> l'any, té estius secs i calorosos i hiverns secs i temperats, i una vegetació mediterrània perennifòlia adaptada a la sequera (alzinars). La <b>Catalunya humida</b> rep <b>més de 700 mm</b>, hi ha les principals reserves d'aigua del país i la vegetació és caducifòlia (rouredes, fagedes) i de coníferes (avets i pi negre)."],
+  ["e", "<b>Regions de la Catalunya seca:</b><br>• <b>Tramuntana</b> (Rosselló i Empordà, de les Alberes a les Gavarres): pi blanc i boscos mixtos de pi i alzina surera.<br>• <b>Litoral mediterrani</b> (serralades i depressions litorals, de les Gavarres a la Sénia): més calorós i sec cap al sud; pi blanc i boscos d'alzina i pi. És la <b>regió més poblada</b>.<br>• <b>Altiplà central</b> (Depressió Central entre la Prelitoral i el Prepirineu): més oscil·lació tèrmica i menys pluja que al litoral; pinedes de pi blanc i matollars; pobles a la vora dels rius.<br>• <b>Prepirineu</b>: hivern fred i estiu calorós; pi blanc, roures i alzines, i als vessants humits roure, faig i pi negre; pobles a les valls.<br>• <b>Continental</b> (terres més interiors i planes, fetes de sediments dels rius): clima extremat i pluja escassa (<b>300-450 mm</b>); vegetació <b>estepària</b> adaptada a sòls salins; pobles a les vores dels rius i a les terrasses fluvials."],
+  ["e", "<b>Regions de la Catalunya humida:</b><br>• <b>Regió oriental</b> (Serralada Transversal, entre el Pirineu i la Serralada Litoral): és la «<b>dorsal pluviomètrica de Catalunya</b>» (800-1.800 mm), sense cap mes sec. Rouredes, castanyedes, fagedes i alzinars; poblament força dispers.<br>• <b>Alt Pirineu</b> (muntanyes de més de 2.000 m): paisatge alpí i subalpí, clima fred i humit (1.000-2.000 mm). Caducifolis (rouredes, fagedes) amb perennifolis (pi negre, avetoses) i prats. És la <b>regió menys poblada</b>."],
+  ["i", "<b>El matollar</b> és la vegetació arbustiva que surt on s'ha perdut el bosc, en condicions seques. N'hi ha dos tipus: la <b>màquia</b> (oliveres silvestres, garric, llentiscle, estepa, bruc i ginesta) i la <b>garriga</b> (garric, marfull, farigola, romaní i espígol)."],
+  ["d", "<b>Terrassa fluvial:</b> esglaó pla al costat d'un riu, fet de sediments que el riu va deixar quan baixava més alt. <b>Vegetació estepària:</b> herbes i matolls baixos adaptats a la sequera i als sòls pobres o salins."]
+ ], rq: [["Quin és el límit de pluja entre la Catalunya seca i la humida?", "700 mm l'any."], ["Quina regió és la dorsal pluviomètrica i quina és la menys poblada?", "La regió oriental (Serralada Transversal). L'Alt Pirineu."]] },
+
+ { id: "s10", t: "t2", n: "2.3 La xarxa hidrogràfica i Köppen", map: "hidro", ps: [
+  ["e", "Els rius catalans s'agrupen en <b>quatre vessants</b>:<br>1. <b>Xarxa Pirineu-Ebre</b>: neixen al Pirineu axial i desemboquen a l'Ebre. Són molt cabalosos a la <b>primavera pel desgel</b>. El <b>Segre</b> i els seus afluents: Valira, Noguera Pallaresa, Noguera Ribagorçana, Cinca, Set, Corb, Boix, Aravó i Llobregós.<br>2. <b>Xarxa Pirineu-Mediterrani</b>: neixen als Pirineus o Prepirineus i van al Mediterrani; cabalosos però amb estiatge. Muga, Fluvià, <b>Ter</b> (amb el Freser i l'Onyar), <b>Llobregat</b> (amb el Cardener i l'Anoia) i Foix.<br>3. <b>Xarxa Mediterrània</b>: neixen a les serralades Prelitoral i Litoral. Tordera, Besòs, Gaià, Francolí, Sénia i Riudecanyes.<br>4. <b>Xarxa Atlàntica</b>: neix a la Vall d'Aran i va a l'Atlàntic: la <b>Garona</b>."],
+  ["i", "<b>La classificació de Köppen</b> combina les mitjanes de temperatura i de precipitació i l'estacionalitat de la pluja. Té <b>5 grups</b> (majúscules): <b>A</b> tropical, <b>B</b> sec (àrid i semiàrid), <b>C</b> temperat, <b>D</b> continental i <b>E</b> polar. Les minúscules indiquen el patró de la pluja i altres trets (per exemple, <i>s</i> = estiu sec, <i>w</i> = hivern sec, <i>f</i> = sense estació seca)."],
+  ["a", "<b>Per ampliar:</b> a Espanya predominen el <b>Csa</b> (mediterrani d'estiu calorós) i el <b>Csb</b> (d'estiu temperat), el <b>Cfb</b> (oceànic) al nord, i el <b>BSk/BSh</b> (semiàrid) al sud-est i a la vall de l'Ebre."]
+ ], rq: [["Per què els rius de la xarxa Pirineu-Ebre són cabalosos a la primavera?", "Perquè porten l'aigua del desgel."], ["Quin riu català va a l'Atlàntic?", "La Garona, que neix a la Vall d'Aran."]] },
+
+ /* ---------------- TEMA 3 ---------------- */
+ { id: "s11", t: "t3", n: "3.1 Què és un recurs i com es classifica", ps: [
+  ["e", "Un <b>recurs natural</b> és un bé de la natura que pot tenir algun interès per a l'ésser humà. Es pot classificar de moltes maneres: segons el <b>temps de regeneració</b> (renovables i no renovables), segons si són <b>energètics o no</b>, segons l'<b>impacte</b> (nets o bruts), segons l'<b>aprofitament</b> (primaris o finals) i segons el <b>temps que fa que l'home els utilitza</b> (convencionals o alternatius)."],
+  ["e", "Els <b>renovables</b> es regeneren de manera natural a un ritme <b>igual o superior</b> al ritme en què els explotem, a través de cicles naturals: el vent (eòlica), el sol (solar) o l'aigua (hidràulica). Els <b>no renovables</b> s'exhaureixen amb l'ús perquè es regeneren més a poc a poc del que els consumim: carbó, petroli, gas natural, urani, bauxita, mercuri, zinc, coure, potassa, fosfats, diamants, sofre..."],
+  ["e", "<b>No energètics:</b> <b>abiòtics</b> (l'aigua i l'aire net), <b>edafològics</b> (els sòls), <b>biològics</b> (agraris, pesquers, ramaders) i <b>paisatgístics</b>. <b>Energètics:</b> combustibles fòssils (carbó, gas natural, petroli), minerals radioactius, i les energies hidràulica, mareomotriu, geotèrmica, solar i eòlica."],
+  ["i", "Segons l'aprofitament, l'<b>energia primària</b> és la que es fa servir tal com és a la natura, sense conversió (per exemple, la solar), i l'<b>energia final</b> és la que arriba a l'usuari (per exemple, l'electricitat de casa). Els <b>combustibles fòssils</b> s'han originat per la fossilització de matèria orgànica."]
+ ], rq: [["Per què el carbó és no renovable i el vent sí?", "El carbó es regenera molt més a poc a poc del que el consumim; el vent es renova contínuament per cicles naturals."], ["Què és un recurs edafològic?", "El sòl."]] },
+
+ { id: "s12", t: "t3", n: "3.2 Els recursos miners", ps: [
+  ["e", "Els recursos miners es classifiquen en: <b>minerals metàl·lics</b> (ferro, pirita, plom, zinc, coure, mercuri, tungstè, estany), que s'utilitzen en la metal·lúrgia, la química i la indústria; <b>minerals no metàl·lics</b> (sals potàssiques, sal comuna, argiles, quars, feldspat, magnesita, fluor, fosfats); <b>roques industrials</b> (calcàries, pissarres, granit, marbre, guix); i <b>minerals energètics</b> (carbó i urani)."],
+  ["e", "<b>Catalunya</b> és força pobra en recursos miners. El principal no energètic és la <b>sal potàssica del Bages</b>. Dels energètics, hi ha <b>carbó als Pirineus</b> (Berguedà, Alta Ribagorça, Pallars Jussà) i una mica de <b>petroli a Tarragona</b>, amb una producció molt baixa."],
+  ["e", "<b>Espanya</b> té recursos variats, però només destaca en <b>roques i minerals industrials</b>. Metàl·lics: ferro, coure, plom i cassiterita (estany). Energètics: carbó (Astúries, Cantàbrica, Lleó i Terol), petroli de Tarragona i gas natural (Osca i plataformes de Biscaia i Cadis). Roques i minerals industrials: <b>pissarra, marbre i granit</b> (Espanya és dels primers exportadors del món), celestina, potassa, fluorita, guix, feldspat i <b>sepiolita, de la qual té el 70% de les reserves mundials</b>."],
+  ["d", "<b>Sepiolita:</b> silicat hidratat de magnesi (morter i ciment). <b>Celestina:</b> sulfat d'estronci (focs d'artifici, refinatge del sucre de remolatxa)."]
+ ], rq: [["Quin és el principal recurs miner no energètic de Catalunya?", "La sal potàssica del Bages."], ["De quin mineral té Espanya el 70% de les reserves mundials?", "De la sepiolita."]] },
+
+ { id: "s13", t: "t3", n: "3.3 Els recursos hídrics", map: "hidro", ps: [
+  ["e", "L'aigua és un recurs imprescindible. Les <b>reserves hídriques</b> són la quantitat d'aigua dolça aprofitable. La quantitat d'aigua del planeta és <b>constant</b>; el que canvia és el seu estat segons el <b>cicle hidrològic</b>. Hi ha <b>aigües oceàniques</b> (98%) i <b>aigües continentals</b>, superficials i subterrànies (només el 2%)."],
+  ["e", "<b>Usos de l'aigua:</b> <b>75% agricultura</b>, 12% habitatges, 10% indústria i 3% serveis. <b>Tècniques per tractar-la:</b> la <b>potabilització</b> (fer-la apta per beure), la <b>dessalinització</b> (treure-li la sal; la primera planta va ser a Lanzarote i la més important de Catalunya és la del Prat de Llobregat) i la <b>depuració</b> (netejar l'aigua residual per reutilitzar-la en agricultura, neteja o reg)."],
+  ["e", "<b>Els rius.</b> La <b>conca</b> és el territori regat per un riu principal i els seus afluents. És <b>exorreica</b> si desguassa en un oceà o mar obert i <b>endorreica</b> si desguassa en un mar interior, llac o llacuna. Segons d'on ve l'aigua, el <b>règim fluvial</b> pot ser: <b>nival</b> (alta muntanya; màxim a l'estiu pel desgel i mínim a l'hivern: Segre, Guadix, Dílar), <b>nivopluvial</b> (neu i pluja: Ter, Gállego, Nalón), <b>pluvionival</b> (sobretot pluja i una mica de desgel: Henares, Alagón, Tormes, Pisuerga) i <b>pluvial</b> (només pluja, mínim a l'estiu; el de la majoria: Francolí, Segura, Besòs)."],
+  ["i", "Les <b>crescudes</b> són els moments de màxim cabal, que poden fer desbordar el riu. Els <b>arrossegaments</b> són els materials erosionats per la pluja que van a parar al riu."],
+  ["e", "<b>Altres masses d'aigua.</b> <b>Llacs i llacunes</b>: aigua dolça en depressions del terreny formades per falles, volcans o l'acció de l'aigua (llac de Sanabria, llacunes de Ruidera). <b>Albuferes</b>: badies marines (salades) tancades per una barra de sorra (albufera d'Alcúdia). <b>Delta</b>: terra de forma triangular feta pels al·luvions d'un riu a la desembocadura (delta de l'Ebre). <b>Aiguamolls</b>: terrenys inundats (aiguamolls de l'Empordà)."],
+  ["e", "<b>Embassaments i aqüífers.</b> Un <b>embassament</b> és aigua emmagatzemada artificialment amb una presa. N'hi ha <b>més de 1.000</b> a Espanya i serveixen per produir electricitat, regar, proveir d'aigua i, sobretot, <b>regular cabals</b>. Alguns d'importants: <b>Alcántara</b> (Tajo), <b>La Serena</b> (Guadiana), <b>El Tranco</b> (Guadalquivir), <b>Tous</b> (Xúquer); a Catalunya, <b>Mequinensa</b> (Ebre) i <b>Sau</b> (Ter). Els <b>aqüífers</b> són bosses d'aigua a l'interior de les roques; n'hi ha <b>més de 350</b> i els més explotats són els del Xúquer i el Guadiana."],
+  ["e", "<b>La gestió a Espanya.</b> L'Estat va dividir el territori en <b>14 demarcacions hidrogràfiques</b>: zones terrestres i marítimes amb una o més conques veïnes i les seves aigües subterrànies i costaneres (Galícia-Costa, Miño-Limia, Cantàbric, Conques internes del País Basc, Duero, Tajo, Guadiana, Guadalquivir, Conques atlàntiques d'Andalusia, Conques mediterrànies d'Andalusia, Segura, Xúquer, Ebre i Conques internes de Catalunya)."],
+  ["e", "<b>Els transvasaments.</b> Per compensar la distribució desigual de l'aigua s'han fet transvasaments; ciutats com Barcelona, Madrid, València o Múrcia en depenen. Però alteren aqüífers, cabals, fauna i flora, i per això són <b>molt controvertits</b>, com el del <b>Pla Hidrològic Nacional de 2005</b> (transvasament de l'Ebre) o el pla de 2016, que preveia més de 465.000 ha noves de regadiu."],
+  ["e", "<b>La gestió a Catalunya.</b> Hi ha dues vessants. La <b>occidental</b> o <b>conques intercomunitàries</b> (Ebre, Garona i Xúquer), un <b>49%</b> del territori, es gestiona amb la <b>Confederació Hidrogràfica de l'Ebre</b> i la del Xúquer. La <b>oriental</b> o <b>conques internes</b> (Nord: Muga, Fluvià, Ter, Daró, Tordera; Centre: Besòs, Llobregat, Foix; Sud: Francolí, Gaià; i les rieres del Baix Ebre i el Montsià) és competència exclusiva de la Generalitat (<b>Llei 6/1999</b>) i la gestiona l'<b>Agència Catalana de l'Aigua (ACA)</b>."],
+  ["i", "A banda de canals com el d'<b>Urgell</b>, hi ha preses i embassaments a cada xarxa: Pirineu-Ebre (Riba-roja, Flix, Mequinensa, Oliana, Rialb, Talarn/Sant Antoni, Camarasa, Escales, Canelles...), Pirineu-Mediterrani (<b>la Baells</b>, Sant Ponç i la Llosa del Cavall al Llobregat; el Foix; Boadella, <b>Sau i Susqueda</b> al Ter), Mediterrània (Santa Fe a la Tordera, Vallforners al Besòs, el Catllar al Gaià, Riudecanyes) i Atlàntica (llacs de la Vall d'Aran, com la Restanca)."]
+ ], rq: [["Quins són els quatre règims fluvials, de més a menys influència de la neu?", "Nival, nivopluvial, pluvionival i pluvial."], ["Qui gestiona les conques internes de Catalunya i per quina llei?", "L'Agència Catalana de l'Aigua (ACA), per la Llei 6/1999."]] },
+
+ { id: "s14", t: "t3", n: "3.4 Els recursos forestals", ps: [
+  ["e", "Els boscos han estat importants per obtenir <b>fusta</b> per a la construcció, la indústria naval, els mobles i les eines agrícoles, i <b>llenya</b> com a font d'energia. A més, són la llar de la <b>biodiversitat</b> i <b>fixen el CO₂</b> de l'atmosfera: a Espanya, els 18,6 milions d'hectàrees de bosc fixen el <b>20% de les emissions de CO₂</b>."],
+  ["e", "<b>La legislació espanyola</b> ha canviat de mirada amb el temps:<br>• <b>1916, Llei de Parcs Nacionals</b>: els parcs només tenen un valor <b>estètic, paisatgístic i de lleure</b>.<br>• <b>1957, Llei de Montes</b>: posa l'accent en l'<b>aprofitament econòmic</b>.<br>• <b>1989, Llei de Conservació dels Espais Naturals i de la Flora i la Fauna Silvestres</b>: defineix els espais protegits i el seu ús.<br>• <b>2007, Llei del Patrimoni Natural i de la Biodiversitat</b>: la vigent."],
+  ["e", "<b>Figures de protecció de la llei de 2007:</b><br>• <b>Parcs</b>: es limita l'aprofitament i l'entrada de visitants. <b>Nacionals</b>, de valor científic, paisatgístic i educatiu, preservats de qualsevol intervenció (Picos de Europa, Ordesa i Mont Perdut, <b>Aigüestortes i Estany de Sant Maurici</b>). <b>Naturals</b>, amb un ús controlat dels recursos (<b>Delta de l'Ebre</b>, Cap de Creus, Montserrat, Montseny).<br>• <b>Àrees marines protegides</b>: defensen els ecosistemes marins.<br>• <b>Reserves naturals</b>: protegeixen ecosistemes (Delta del Llobregat, <b>Illes Medes</b>).<br>• <b>Monuments naturals</b>: espais singulars, rars o bells.<br>• <b>Paisatges protegits</b>: es protegeix el valor estètic o cultural."],
+  ["c", "<b>Compte:</b> la diapositiva diu que la llei de 2007 té «quatre figures», però en llista cinc (parcs, àrees marines, reserves, monuments i paisatges). Aprèn-te les cinc."],
+  ["e", "<b>Legislació catalana</b>, que s'hi afegeix: el <b>PEIN</b> (Pla d'Espais d'Interès Natural), creat el <b>1985</b> per fer una xarxa d'espais protegits a tot el territori, amb <b>144 espais</b>; i els <b>PNIN</b> (Paratges Naturals d'Interès Nacional), com parcs nacionals però més petits i <b>només a Catalunya</b> (Pedraforca, Poblet)."],
+  ["d", "Exemples de les imatges del dossier: Parc Natural de Montserrat, Parc Nacional d'Aigüestortes, Paratge Natural del Pedraforca i Reserva Natural dels Aiguamolls de l'Empordà."]
+ ], rq: [["Quina és la llei vigent i quines figures té?", "Llei del Patrimoni Natural i de la Biodiversitat (2007): parcs (nacionals i naturals), àrees marines protegides, reserves naturals, monuments naturals i paisatges protegits."], ["Què és un PNIN?", "Un Paratge Natural d'Interès Nacional: com un parc nacional però més petit, només a Catalunya (Pedraforca, Poblet)."]] }
+];
+
+/* ===== Climogrames: valors normals aproximats (AEMET, 1981-2010). Font externa. ===== */
+var CLIMS = [
+ { id: "stg", city: "Santiago de Compostela", k: "oce", T: [8.1,8.9,10.6,11.5,13.6,16.6,18.6,19.0,17.4,14.1,10.9,8.8], P: [235,188,140,145,135,66,42,52,105,230,235,265] },
+ { id: "pam", city: "Pamplona", k: "oce", sub: "oceànic de transició", T: [4.9,6.2,8.9,10.6,14.3,18.1,21.0,21.2,18.3,14.0,8.8,5.8], P: [66,51,58,70,63,47,35,41,40,63,79,74] },
+ { id: "pal", city: "Palma", k: "med", T: [9.9,10.3,12.0,14.2,17.9,22.0,25.0,25.5,22.6,18.9,14.3,11.2], P: [44,37,34,40,31,12,6,21,52,64,58,52] },
+ { id: "gir", city: "Girona", k: "med", sub: "mediterrani de pluges abundants", T: [7.0,8.1,10.4,12.3,16.0,20.2,23.2,23.0,19.7,15.6,10.7,7.9], P: [63,48,48,66,73,46,25,61,82,95,66,65] },
+ { id: "alm", city: "Almeria", k: "med", sub: "mediterrani sec del sud-est", T: [12.4,13.0,14.6,16.2,18.9,22.6,25.6,26.2,24.0,20.4,16.4,13.6], P: [25,23,17,19,11,4,1,4,14,26,28,28] },
+ { id: "mad", city: "Madrid", k: "con", T: [6.3,7.9,11.2,12.9,16.7,22.2,25.6,25.1,20.9,15.1,9.9,6.9], P: [33,35,25,45,51,20,12,10,27,57,58,52] },
+ { id: "vll", city: "Valladolid", k: "con", T: [4.1,5.6,8.7,10.4,14.0,18.8,21.8,21.6,18.1,12.8,7.7,4.8], P: [41,30,24,44,51,30,15,17,31,56,51,57] },
+ { id: "zgz", city: "Saragossa", k: "con", sub: "interior de la depressió de l'Ebre", T: [6.6,8.4,11.8,14.1,18.3,22.6,25.4,25.2,21.2,16.2,10.6,7.2], P: [21,21,19,39,44,31,18,17,30,30,30,23] },
+ { id: "sor", city: "Soria", k: "mun", sub: "muntanya interior", T: [2.9,4.1,6.8,8.5,12.3,16.8,20.0,19.8,16.4,11.6,6.4,3.8], P: [45,38,33,59,67,48,27,29,36,58,55,58] },
+ { id: "nav", city: "Port de Navacerrada", k: "mun", sub: "muntanya (Sistema Central)", T: [0.0,0.5,2.3,3.6,7.6,12.8,16.8,16.6,12.6,7.6,3.1,0.9], P: [150,130,110,130,120,65,25,30,75,160,175,190] },
+ { id: "tfe", city: "Santa Cruz de Tenerife", k: "sub", T: [18.2,18.2,19.0,19.6,20.9,22.7,24.8,25.5,24.6,23.2,21.3,19.2], P: [32,35,38,12,3,1,0,2,6,18,35,45] }
+];
+var CK = { oce: "Oceànic", med: "Mediterrani", con: "Continental (interior)", mun: "De muntanya", sub: "Subtropical (Canàries)" };
+var CKWHY = {
+ oce: "Pluja abundant tot l'any (cap mes sec) i poca amplitud tèrmica: influència de l'Atlàntic.",
+ med: "Estiu sec i calorós, hivern suau, pluges equinoccials (primavera i tardor).",
+ con: "Amplitud tèrmica molt gran (hiverns freds, estius calorosos) i pluja escassa.",
+ mun: "Temperatures baixes tot l'any (hiverns molt freds) i més pluja que al pla del voltant.",
+ sub: "Temperatures càlides i molt regulars tot l'any i pluja escassa concentrada a l'hivern."
+};
+
+/* ===== Activitats de classificar ===== */
+var CLASS = [
+ { id: "c1", t: "t3", n: "Renovable o no renovable?", bins: ["Renovable", "No renovable"], items: [["Energia solar",0],["Energia eòlica",0],["Energia hidràulica",0],["Geotèrmica",0],["Mareomotriu",0],["Biomassa",0],["Blat de moro",0],["Petroli",1],["Carbó",1],["Gas natural",1],["Urani",1],["Bauxita",1],["Coure",1],["Diamants",1],["Fosfats",1]] },
+ { id: "c2", t: "t3", n: "Tipus de recurs miner", bins: ["Metàl·lic", "No metàl·lic", "Roca industrial", "Energètic"], items: [["Ferro",0],["Coure",0],["Plom",0],["Zinc",0],["Mercuri",0],["Estany",0],["Pirita",0],["Sals potàssiques",1],["Sal comuna",1],["Quars",1],["Feldspat",1],["Fluor",1],["Calcària",2],["Pissarra",2],["Granit",2],["Marbre",2],["Guix",2],["Carbó",3],["Urani",3]] },
+ { id: "c3", t: "t1", n: "A quin vessant va cada riu?", bins: ["Cantàbric", "Atlàntic", "Mediterrani"], items: [["Bidasoa",0],["Nervión",0],["Nalón",0],["Narcea",0],["Navia",0],["Miño",1],["Duero",1],["Tajo",1],["Guadiana",1],["Guadalquivir",1],["Odiel",1],["Tinto",1],["Ebre",2],["Xúquer",2],["Túria",2],["Segura",2],["Millars",2],["Ter",2],["Llobregat",2]] },
+ { id: "c4", t: "t1", n: "Quin clima té aquesta vegetació?", bins: ["Oceànic", "Mediterrani", "Interior", "Subtropical"], items: [["Fageda",0],["Roureda",0],["Castanyer i bedoll",0],["Landa (brucs i falgueres)",0],["Prats humits",0],["Alzina surera",1],["Pi blanc",1],["Margalló",1],["Garriga de garric",1],["Olivars i cítrics",1],["Devesa d'alzines",2],["Matolls esteparis",2],["Bosc de ribera (oms, salzes)",2],["Drago",3],["Laurisilva",3]] },
+ { id: "c5", t: "t1", n: "Origen del relleu", bins: ["Paleozoic (herciniana)", "Terciari (alpina)", "Quaternari (sediments)"], items: [["Massís Galaicoleonès",0],["Massís Hespèric",0],["Sòcol de la Meseta",0],["Pirineus",1],["Serralades Bètiques",1],["Cantàbrica oriental",1],["Sistema Central (aixecat)",1],["Vores muntanyoses",1],["Depressió de l'Ebre (reompliment)",2],["Depressió del Guadalquivir",2],["Planes litorals",2]] },
+ { id: "c6", t: "t2", n: "Catalunya seca o humida?", bins: ["Seca (< 700 mm)", "Humida (> 700 mm)"], items: [["Tramuntana (Empordà)",0],["Litoral mediterrani",0],["Altiplà central",0],["Prepirineu",0],["Continental (Ponent)",0],["Regió oriental (Transversal)",1],["Alt Pirineu",1]] },
+ { id: "c7", t: "t2", n: "Xarxes hidrogràfiques de Catalunya", bins: ["Pirineu-Ebre", "Pirineu-Mediterrani", "Mediterrània", "Atlàntica"], items: [["Segre",0],["Noguera Pallaresa",0],["Noguera Ribagorçana",0],["Valira",0],["Muga",1],["Fluvià",1],["Ter",1],["Llobregat",1],["Tordera",2],["Besòs",2],["Gaià",2],["Francolí",2],["Sénia",2],["Garona",3]] },
+ { id: "c8", t: "t3", n: "Règim fluvial", bins: ["Nival", "Nivopluvial", "Pluvionival", "Pluvial"], items: [["Segre",0],["Dílar",0],["Ter",1],["Gállego",1],["Nalón",1],["Henares",2],["Tormes",2],["Pisuerga",2],["Alagón",2],["Francolí",3],["Segura",3],["Besòs",3]] },
+ { id: "c9", t: "t3", n: "Figura de protecció", bins: ["Parc nacional", "Parc natural", "Reserva natural", "PNIN (Catalunya)"], items: [["Aigüestortes i Estany de Sant Maurici",0],["Ordesa i Mont Perdut",0],["Picos de Europa",0],["Delta de l'Ebre",1],["Cap de Creus",1],["Montserrat",1],["Montseny",1],["Illes Medes",2],["Delta del Llobregat",2],["Aiguamolls de l'Empordà",2],["Pedraforca",3],["Poblet",3]] },
+ { id: "c10", t: "t3", n: "Embassament: de quin riu?", bins: ["Ter", "Llobregat", "Ebre", "Tajo / Guadiana / Xúquer"], items: [["Sau",0],["Susqueda",0],["La Baells",1],["La Llosa del Cavall",1],["Sant Ponç",1],["Mequinensa",2],["Riba-roja",2],["Flix",2],["Alcántara (Tajo)",3],["La Serena (Guadiana)",3],["Tous (Xúquer)",3]] }
+];
+
+/* ===== Activitats d'ordenar ===== */
+var ORD = [
+ { id: "o1", t: "t1", n: "Ordena la formació del relleu (del més antic al més recent)", items: ["Orogènia herciniana: es forma el Massís Hespèric", "Mesozoic: l'erosió aplana el relleu i es formen calcàries", "Orogènia alpina: Pirineus, Bètiques i vores de la Meseta", "Quaternari: s'omplen les depressions i es fan les planes litorals"] },
+ { id: "o2", t: "t1", n: "Ordena l'efecte Foehn", items: ["El vent topa amb la muntanya i l'aire ha de pujar", "L'aire es refreda en pujar pel vessant de barlovent", "El vapor es condensa: núvols i pluja a barlovent", "L'aire, ja sec, baixa pel vessant de sotavent", "S'escalfa en baixar i arriba sec i més calent"] },
+ { id: "o3", t: "t3", n: "Ordena les lleis de protecció (de la més antiga a la vigent)", items: ["1916 · Llei de Parcs Nacionals (estètica i lleure)", "1957 · Llei de Montes (aprofitament econòmic)", "1989 · Llei de Conservació dels Espais Naturals", "2007 · Llei del Patrimoni Natural i de la Biodiversitat"] },
+ { id: "o4", t: "t2", n: "Ordena el relleu de Catalunya de nord a sud (cap al mar)", items: ["Pirineu axial", "Prepirineu", "Depressió Central", "Serralada Prelitoral", "Depressió Prelitoral", "Serralada Litoral o de Marina", "Costa"] },
+ { id: "o5", t: "t3", n: "Ordena els règims fluvials (de més a menys neu)", items: ["Nival", "Nivopluvial", "Pluvionival", "Pluvial"] },
+ { id: "o6", t: "t1", n: "Ordena les costes mediterrànies de sud a nord", items: ["Andalusia i Múrcia (Gibraltar - cap de la Nau)", "Golf de València (cap de la Nau - delta de l'Ebre)", "Litoral català"] },
+ { id: "o7", t: "t3", n: "Ordena els usos de l'aigua (de més a menys)", items: ["Agricultura (75%)", "Habitatges (12%)", "Indústria (10%)", "Serveis (3%)"] }
+];
+
+/* ===== Vertader o fals (llampec) ===== */
+var VF = [
+ ["t1","La Meseta ocupa el 45% de la superfície d'Espanya.",1,""],
+ ["t1","El Sistema Central separa les conques del Tajo i el Guadiana.",0,"Això ho fan els Monts de Toledo. El Sistema Central separa el Duero i el Tajo."],
+ ["t1","El Massís Galaicoleonès és el relleu més antic de la península.",1,""],
+ ["t1","Els Pirineus es van formar durant l'orogènia herciniana.",0,"Es van formar a l'orogènia alpina (Terciari)."],
+ ["t1","El Teide és el cim més alt d'Espanya.",1,"3.718 m. El Mulhacén és el més alt de la península."],
+ ["t1","Menorca és un fragment de la Serralada Subbètica.",0,"Menorca està relacionada amb la Serralada Litoral Catalana; Mallorca, Eivissa i Formentera, amb la Subbètica."],
+ ["t1","Els rius del vessant cantàbric són curts i cabalosos.",1,""],
+ ["t1","Els rius del vessant mediterrani són tots molt cabalosos.",0,"Excepte l'Ebre, tenen poc cabal i són irregulars."],
+ ["t1","A les Balears hi ha rius permanents.",0,"Només hi ha torrents, per les poques pluges i la permeabilitat del terreny."],
+ ["t1","La temperatura baixa uns 0,65 °C cada 100 m que pugem.",1,"És el gradient vertical de temperatura."],
+ ["t1","Les isobares uneixen punts d'igual precipitació.",0,"Les isobares uneixen punts d'igual pressió; les isohietes, d'igual precipitació."],
+ ["t1","La península té un règim pluviomètric temperat.",1,""],
+ ["t1","El clima continental té poca amplitud tèrmica.",0,"La té molt elevada: hiverns molt freds i estius molt calorosos."],
+ ["t1","Al clima mediterrani les pluges són equinoccials.",1,"Es concentren a la primavera i la tardor."],
+ ["t1","La landa apareix quan es degrada el bosc atlàntic.",1,""],
+ ["t1","La màquia creix sobre sòls calcaris.",0,"La màquia, sobre sòls silicis; la garriga, sobre calcaris."],
+ ["t1","El drago i la laurisilva són vegetació de Canàries.",1,""],
+ ["t1","Amb l'efecte Foehn, l'aire arriba a sotavent humit i fred.",0,"Hi arriba sec i més calent."],
+ ["t2","La Pica d'Estats és el cim més alt de Catalunya.",1,"3.143 m."],
+ ["t2","La plana de l'Empordà desguassa cap a l'Ebre.",0,"L'Empordà desguassa al mar; la d'Urgell, cap a l'Ebre."],
+ ["t2","La Catalunya humida rep més de 700 mm de pluja l'any.",1,""],
+ ["t2","L'Alt Pirineu és la regió més poblada de Catalunya.",0,"És la menys poblada; la més poblada és el litoral mediterrani."],
+ ["t2","La Garona va a l'oceà Atlàntic.",1,"Neix a la Vall d'Aran."],
+ ["t2","Montserrat forma part de la Serralada Litoral o de Marina.",0,"És de la Serralada Prelitoral."],
+ ["t2","El Segre pertany a la xarxa Pirineu-Ebre.",1,""],
+ ["t3","El vent és un recurs renovable.",1,""],
+ ["t3","L'urani és un recurs renovable.",0,"És no renovable."],
+ ["t3","Els sòls són un recurs edafològic.",1,""],
+ ["t3","L'aigua oceànica és el 98% de l'aigua de la Terra.",1,""],
+ ["t3","L'ús principal de l'aigua és el domèstic.",0,"És l'agricultura (75%)."],
+ ["t3","Una conca endorreica desguassa en un mar obert.",0,"Desguassa en mars interiors, llacs o llacunes. Si va a mar obert, és exorreica."],
+ ["t3","La majoria dels nostres rius tenen règim pluvial.",1,""],
+ ["t3","Espanya té més de 1.000 embassaments.",1,""],
+ ["t3","Les conques internes de Catalunya les gestiona la Confederació Hidrogràfica de l'Ebre.",0,"Les gestiona l'ACA; la CHE gestiona la conca de l'Ebre (intercomunitària)."],
+ ["t3","La Llei de Montes (1957) prioritzava l'aprofitament econòmic.",1,""],
+ ["t3","El Delta de l'Ebre és un parc nacional.",0,"És un parc natural."],
+ ["t3","Els PNIN només existeixen a Catalunya.",1,"Pedraforca, Poblet..."],
+ ["t3","El PEIN es va crear el 1985.",1,"Amb 144 espais."],
+ ["t3","Catalunya és molt rica en recursos miners.",0,"És força pobra; destaca la sal potàssica del Bages."]
+];
+
+/* ===== Glossari (també serveix de targetes) ===== */
+var GLOS = [
+ ["t1","Altiplà","Terreny pla i elevat, com la Meseta."],
+ ["t1","Serralada","Conjunt de muntanyes enllaçades entre si."],
+ ["t1","Vall","Terreny baix entre muntanyes per on sol passar un riu."],
+ ["t1","Depressió","Zona més baixa que el territori que l'envolta, sovint plena de sediments (Ebre, Guadalquivir)."],
+ ["t1","Sòcol","Plataforma de roques antigues i dures, aplanada per l'erosió (el sòcol paleozoic de la Meseta)."],
+ ["t1","Paleozoic","Era primària, la més antiga de les estudiades (fins fa uns 250 milions d'anys). Hi té lloc l'orogènia herciniana."],
+ ["t1","Estrat","Cadascuna de les capes de roca sedimentària disposades unes sobre les altres."],
+ ["t1","Orogènesi (orogènia)","Conjunt de processos que formen les serralades per plegament o fractura de l'escorça."],
+ ["t1","Golf","Gran entrada del mar a la costa (golf de Cadis, golf de València)."],
+ ["t1","Cap","Part de terra que s'endinsa al mar (cap de Creus, cap de la Nau)."],
+ ["t1","Ria","Vall fluvial envaïda pel mar, típica de la costa gallega."],
+ ["t1","Tómbol","Fletxa o cordó litoral que uneix una illa al continent (penyal d'Ifac)."],
+ ["t1","Albufera","Badia marina d'aigua salada tancada per una barra de sorra (Alcúdia, València)."],
+ ["t1","Aiguamoll","Terreny inundat d'aigua (aiguamolls de l'Empordà)."],
+ ["t1","Barranc","Tall al terreny fet per l'erosió que només porta aigua quan plou (Canàries)."],
+ ["t1","Cabal","Quantitat d'aigua que passa per una secció del riu per unitat de temps."],
+ ["t1","Estiatge","Disminució del cabal d'un riu en una època de l'any (a l'estiu)."],
+ ["t1","Temps","Condicions de l'atmosfera en un lloc i un moment determinats."],
+ ["t1","Clima","Condicions atmosfèriques mitjanes d'un lloc: la repetició anual dels tipus de temps."],
+ ["t1","Gradient vertical de temperatura","Descens de la temperatura amb l'altura: uns 0,65 °C cada 100 m."],
+ ["t1","Humitat absoluta","Quantitat de vapor d'aigua en un lloc i moment, en g/m³."],
+ ["t1","Humitat relativa","Percentatge de vapor que té l'aire respecte del màxim que podria tenir. Al 100% està saturat."],
+ ["t1","Isohieta","Línia que uneix punts d'igual precipitació."],
+ ["t1","Isobara","Línia que uneix punts d'igual pressió atmosfèrica."],
+ ["t1","Isoterma","Línia que uneix punts d'igual temperatura. ISO = 'igual' en grec."],
+ ["t1","Oscil·lació tèrmica","Diferència entre la temperatura del mes més càlid i la del més fred. També s'anomena amplitud tèrmica."],
+ ["t1","Inversió tèrmica","Situació en què la temperatura augmenta amb l'altura en lloc de baixar (per sobre del mar de núvols a Canàries)."],
+ ["t1","Anticicló","Zona d'altes pressions que porta temps estable (anticicló de les Açores)."],
+ ["t1","Gota freda","Pertorbació extratropical no frontal que provoca pluges violentes, llamps i calamarsa."],
+ ["t1","Corrent en jet","Corrent d'aire molt ràpid (60-550 km/h) prop de la tropopausa que separa altes pressions tropicals i baixes polars."],
+ ["t1","Alisis","Vents que bufen dels tròpics cap a l'equador."],
+ ["t1","Efecte Foehn","L'aire puja per una muntanya, deixa la pluja a barlovent i baixa per sotavent sec i més calent."],
+ ["t1","Barlovent","Vessant d'una muntanya per on puja l'aire i on plou."],
+ ["t1","Sotavent","Vessant per on baixa l'aire, sec i calent."],
+ ["t1","Bosc caducifoli","Bosc d'arbres que perden la fulla a l'hivern (rouredes, fagedes)."],
+ ["t1","Vegetació perennifòlia","Plantes que mantenen la fulla tot l'any (alzina, pi)."],
+ ["t1","Vegetació xeròfil·la","Plantes adaptades a la sequera, amb arrels profundes."],
+ ["t1","Landa","Vegetació arbustiva de brucs i falgueres que surt quan es degrada el bosc atlàntic."],
+ ["t1","Devesa","Bosc aclarit d'alzines (o alzines sureres) amb pastures, típic de l'interior."],
+ ["t1","Màquia","Matollar sobre sòls silicis: arboç, bruc, boix, ginesta."],
+ ["t1","Garriga","Matollar sobre sòls calcaris: garric, llentiscle, ullastre, plantes aromàtiques."],
+ ["t1","Laurisilva","Bosc humit de fulla perenne, tipus llorer, propi de Canàries."],
+ ["t2","Regió fisiogràfica","Zona amb un relleu, un clima i una vegetació semblants."],
+ ["t2","Dorsal pluviomètrica","Nom de la regió oriental (Serralada Transversal), la més plujosa de Catalunya (800-1.800 mm)."],
+ ["t2","Vegetació estepària","Herbes i matolls baixos adaptats a la sequera i als sòls pobres o salins."],
+ ["t2","Terrassa fluvial","Esglaó pla al costat d'un riu, fet amb els sediments que hi va deixar."],
+ ["t2","Matollar","Vegetació arbustiva que surt on s'ha perdut el bosc (màquia i garriga)."],
+ ["t2","Classificació de Köppen","Classificació dels climes per temperatura, pluja i estacionalitat: grups A, B, C, D i E."],
+ ["t3","Recurs natural","Bé de la natura que pot tenir interès per a l'ésser humà."],
+ ["t3","Recurs renovable","El que es regenera a un ritme igual o superior al que l'explotem (sol, vent, aigua)."],
+ ["t3","Recurs no renovable","El que s'exhaureix perquè es regenera més a poc a poc del que el consumim (petroli, carbó)."],
+ ["t3","Recurs abiòtic","Recurs no viu: l'aigua i l'aire net."],
+ ["t3","Recurs edafològic","El sòl."],
+ ["t3","Combustible fòssil","Combustible originat per la fossilització de matèria orgànica: carbó, petroli, gas natural."],
+ ["t3","Energia primària","La que es fa servir tal com és a la natura, sense conversió (solar)."],
+ ["t3","Sepiolita","Silicat hidratat de magnesi (morter i ciment). Espanya en té el 70% de les reserves."],
+ ["t3","Celestina","Sulfat d'estronci, per a focs d'artifici i refinar sucre."],
+ ["t3","Reserves hídriques","Quantitat d'aigua dolça aprofitable."],
+ ["t3","Potabilització","Tractar l'aigua perquè es pugui beure."],
+ ["t3","Dessalinització","Treure la sal de l'aigua del mar (Lanzarote, el Prat)."],
+ ["t3","Depuració","Netejar l'aigua residual per reutilitzar-la."],
+ ["t3","Conca hidrogràfica","Territori regat per un riu principal i els seus afluents."],
+ ["t3","Conca exorreica","La que desguassa en un oceà o un mar obert."],
+ ["t3","Conca endorreica","La que desguassa en un mar interior, un llac o una llacuna."],
+ ["t3","Règim fluvial","Variació del cabal d'un riu al llarg de l'any segons d'on ve l'aigua (neu, pluja)."],
+ ["t3","Crescuda","Moment de màxim cabal d'un riu, que pot fer-lo desbordar."],
+ ["t3","Arrossegaments","Materials erosionats per la pluja que van a parar al riu."],
+ ["t3","Delta","Terra triangular que fan els al·luvions d'un riu a la desembocadura (Ebre)."],
+ ["t3","Embassament","Aigua emmagatzemada artificialment amb una presa."],
+ ["t3","Aqüífer","Bossa d'aigua a l'interior de les roques."],
+ ["t3","Demarcació hidrogràfica","Zona terrestre i marítima amb una o més conques veïnes i les seves aigües. A Espanya n'hi ha 14."],
+ ["t3","Transvasament","Portar aigua d'una conca a una altra per compensar la desigualtat."],
+ ["t3","ACA","Agència Catalana de l'Aigua: gestiona les conques internes (Llei 6/1999)."],
+ ["t3","CHE","Confederació Hidrogràfica de l'Ebre: gestiona la conca de l'Ebre."],
+ ["t3","Parc nacional","Espai de valor científic, paisatgístic i educatiu preservat de qualsevol intervenció."],
+ ["t3","Parc natural","Espai de valor natural amb un ús controlat dels recursos."],
+ ["t3","Reserva natural","Espai destinat a protegir ecosistemes (Illes Medes)."],
+ ["t3","Monument natural","Espai que destaca per la singularitat, la raresa o la bellesa."],
+ ["t3","Paisatge protegit","Espai on es protegeix el valor estètic o cultural."],
+ ["t3","PEIN","Pla d'Espais d'Interès Natural (Catalunya, 1985): 144 espais."],
+ ["t3","PNIN","Paratge Natural d'Interès Nacional: com un parc nacional però més petit; només a Catalunya."]
+];
+
+/* ===== Targetes extra (fets clau, a part del glossari) ===== */
+var FACTS = [
+ ["t1","Altitud mitjana de la península","660 m. Només l'11% del territori és per sota dels 200 m."],
+ ["t1","Les 5 unitats de relleu d'Espanya","Meseta, serralades exteriors, dues depressions, relleus litorals i relleu insular."],
+ ["t1","Serres del Sistema Central","Somosierra, Guadarrama, Gredos i Gata."],
+ ["t1","Vores muntanyoses de la Meseta","Massís Galaicoleonès, Serralada Cantàbrica, Sistema Ibèric i Sierra Morena."],
+ ["t1","Serres de la Subbètica","Cazorla, Segura, Sagra i Mágina."],
+ ["t1","Cim de la Penibètica","Mulhacén (Sierra Nevada), 3.481 m segons el dossier."],
+ ["t1","Grups de Canàries","Oriental, pla (Lanzarote, Fuerteventura); occidental, muntanyós (Tenerife, La Palma, La Gomera, El Hierro, Gran Canària)."],
+ ["t1","Clima oceànic: dades","Mitjana ~14 °C, poca amplitud, pluja abundant tot l'any. Galícia i cornisa cantàbrica."],
+ ["t1","Clima mediterrani: dades","14-18 °C; hiverns 10-12 °C, estius 22-26 °C; 400-700 mm equinoccials."],
+ ["t1","Clima continental: dades","Hiverns molt freds, estius calorosos i secs, 325-550 mm, amplitud molt alta."],
+ ["t1","Clima subtropical: dades","Corrent fred de Canàries; 150-300 mm a l'hivern; mar de núvols."],
+ ["t1","Tres règims pluviomètrics","Equatorial (pluges diàries), tropical (estació seca i humida) i temperat (el nostre)."],
+ ["t1","Masses d'aire que afecten Espanya","Tropicals: anticicló de les Açores i aire càlid i sec d'Àfrica. Polars: continental siberiana i àrtica."],
+ ["t2","Prepirineu català","Interiors: Cadí, Pedraforca, Bassagoda. Exteriors: Montsec, Montroig. Entremig: Conca de Tremp."],
+ ["t2","Regions de la Catalunya seca","Tramuntana, litoral mediterrani, altiplà central, Prepirineu i continental."],
+ ["t2","Regions de la Catalunya humida","Regió oriental (dorsal pluviomètrica) i Alt Pirineu."],
+ ["t2","Afluents del Segre","Valira, Noguera Pallaresa, Noguera Ribagorçana, Cinca, Set, Corb..."],
+ ["t3","5 maneres de classificar els recursos","Regeneració (renovables/no), energètics o no, impacte (nets/bruts), aprofitament (primaris/finals), temps d'ús (convencionals/alternatius)."],
+ ["t3","Recursos miners de Catalunya","Sal potàssica (Bages), carbó (Berguedà, Alta Ribagorça, Pallars Jussà) i petroli (Tarragona)."],
+ ["t3","Usos de l'aigua","75% agricultura, 12% habitatges, 10% indústria, 3% serveis."],
+ ["t3","Embassaments importants d'Espanya","Alcántara (Tajo), La Serena (Guadiana), El Tranco (Guadalquivir), Tous (Xúquer)."],
+ ["t3","Vessants de gestió de l'aigua a Catalunya","Occidental (intercomunitàries: Ebre, Garona, Xúquer; 49%) i oriental (conques internes, ACA)."],
+ ["t3","Boscos i CO₂ a Espanya","18,6 milions d'ha de bosc fixen el 20% de les emissions de CO₂."],
+ ["t3","Parcs nacionals del dossier","Picos de Europa, Ordesa i Mont Perdut, Aigüestortes i Estany de Sant Maurici."]
+];
+
+/* ===== Preguntes de la llibreta (activitats del dossier) amb resposta breu ===== */
+var LLIB = [
+ ["t1","Defineix: altiplà, depressió, sòcol, orogènesi i albufera.","Altiplà: terreny pla i elevat. Depressió: zona més baixa que l'entorn. Sòcol: plataforma de roques antigues aplanada. Orogènesi: formació de serralades. Albufera: badia salada tancada per una barra de sorra."],
+ ["t1","Quines orogènies han modificat el relleu peninsular i quines serralades en van sorgir?","Herciniana (Paleozoic): Massís Hespèric i Galaicoleonès. Alpina (Terciari): Pirineus, Bètiques, Cantàbrica oriental, vores de la Meseta i aixecament del Sistema Central i els Monts de Toledo."],
+ ["t1","Què vol dir que els rius pateixen estiatge? I que un riu és cabalós?","Estiatge: a l'estiu baixen amb molt poca aigua. Cabalós: porta molta aigua."],
+ ["t1","Quina diferència hi ha entre un aqüífer i un embassament?","L'aqüífer és aigua natural dins les roques; l'embassament és aigua retinguda artificialment per una presa."],
+ ["t1","La temperatura és un factor clau del clima: de quines maneres la modifica?","Varia amb l'altitud (gradient), la distància al mar, els corrents marins, l'orientació (solana/obaga), el dia i la nit i els vents."],
+ ["t1","Quants règims pluviomètrics hi ha? A quin pertany la península?","Tres: equatorial, tropical i temperat. La península, al temperat."],
+ ["t1","Què és l'oscil·lació tèrmica? Quin altre nom rep?","La diferència entre la temperatura del mes més càlid i la del més fred. També es diu amplitud tèrmica."],
+ ["t1","Quines masses d'aire en superfície afecten el clima d'Espanya i d'on vénen?","Tropicals marítimes (anticicló de les Açores), tropicals continentals (nord d'Àfrica), polars continentals (Sibèria) i àrtiques."],
+ ["t1","Quina relació hi ha entre el clima i la vegetació?","La vegetació s'adapta a la temperatura i la pluja: on plou molt hi ha bosc caducifoli; on hi ha sequera estival, vegetació perennifòlia i de fulla petita; on és àrid, matolls i estepa."],
+ ["t1","Explica l'efecte Foehn: per què l'aire que surt a 25 °C arriba a 27 °C a l'altre vessant?","Puja sec fins a 1.000 m (-10 °C → 15 °C), condensa i puja humit fins al cim de 1.500 m (-3 °C → 12 °C). Baixa sec 1.500 m (+15 °C) → 27 °C. Ha perdut la humitat i arriba més calent."],
+ ["t2","Quines grans regions fisiogràfiques hi ha a Catalunya?","Catalunya seca (Tramuntana, litoral, altiplà central, Prepirineu, continental) i Catalunya humida (regió oriental i Alt Pirineu)."],
+ ["t2","Què és el matollar? En quines condicions es troba? Quins tipus hi ha?","Vegetació arbustiva on s'ha perdut el bosc, en climes secs. Tipus: màquia i garriga."],
+ ["t2","Què és la vegetació estepària? I una terrassa fluvial?","Estepària: herbes i matolls baixos adaptats a la sequera i a sòls salins. Terrassa fluvial: esglaó pla de sediments al costat d'un riu."],
+ ["t3","Classifica: petroli cru, estany, blat de moro, carbó, energia eòlica, ferro i urani.","Petroli: energètic, no renovable, primari, brut, convencional. Estany i ferro: minerals metàl·lics, no renovables. Blat de moro: biològic, renovable. Carbó: energètic, no renovable, brut. Eòlica: energètica, renovable, neta, alternativa. Urani: energètic, no renovable."],
+ ["t3","Relaciona amb el tipus de roca: granit, pissarra, sal gemma, carbó i marbre.","Granit: roca ígnia. Pissarra: metamòrfica. Sal gemma: sedimentària (evaporita). Carbó: sedimentària orgànica. Marbre: metamòrfica."],
+ ["t3","Quin percentatge de l'aigua és potable?","Molt poc: només el 2% és aigua continental, i la major part és gel; l'aigua de fàcil accés és menys de l'1%."],
+ ["t3","Defineix: conca, embassament, albufera, delta i aiguamoll.","Conca: territori regat per un riu i els afluents. Embassament: aigua retinguda per una presa. Albufera: badia salada tancada per sorra. Delta: terra triangular d'al·luvions a la desembocadura. Aiguamoll: terreny inundat."],
+ ["t3","Quins tipus de règims fluvials hi ha?","Nival, nivopluvial, pluvionival i pluvial."],
+ ["t3","Cita un parell d'embassaments espanyols.","Alcántara (Tajo) i La Serena (Guadiana)."],
+ ["t3","Què fa l'Estat per gestionar els recursos hídrics? I Catalunya?","L'Estat: 14 demarcacions hidrogràfiques i transvasaments. Catalunya: conques internes gestionades per l'ACA i intercomunitàries compartides amb la CHE i la del Xúquer."],
+ ["t3","Cita 4 embassaments de 4 comarques catalanes diferents.","Sau (Osona), Susqueda (la Selva), la Baells (Berguedà), Riba-roja (Ribera d'Ebre). (Comarques: dada afegida.)"],
+ ["t3","Explica el cicle de fixació d'O₂ i CO₂ en les plantes.","Amb la fotosíntesi, les plantes absorbeixen CO₂ i alliberen O₂; en respirar fan el contrari, però en fixen molt més del que n'emeten."],
+ ["t3","Com s'anomena la llei que defineix ara la conservació dels espais naturals i com els divideix?","Llei del Patrimoni Natural i de la Biodiversitat (2007): parcs, àrees marines protegides, reserves naturals, monuments naturals i paisatges protegits."],
+ ["t3","Quines altres regulacions afegeix Catalunya?","El PEIN (1985, 144 espais) i els PNIN (Pedraforca, Poblet)."]
+];
+
+/* ===== Banc de preguntes: [tema, secció, pregunta, [correcta, errònia, errònia, errònia], explicació] ===== */
+var QS = [
+ ["t1","s1","Quina és l'altitud mitjana de la península segons el dossier?",["Uns 660 m","Uns 220 m","Uns 1.100 m","Uns 400 m"],"És una de les més altes d'Europa per la Meseta i les serralades que l'envolten."],
+ ["t1","s1","Quin percentatge del territori queda per sota dels 200 m?",["L'11%","El 45%","El 30%","El 60%"],"Per això les comunicacions i l'agricultura són més difícils."],
+ ["t1","s1","A quina placa tectònica pertany el territori espanyol?",["Euroasiàtica, al límit amb l'Africana","Africana","Nord-americana","Aràbiga"],"Al contacte hi ha les microplaques Ibèrica i d'Alborán."],
+ ["t1","s1","Quines microplaques hi ha a la zona de contacte entre plaques?",["Ibèrica i d'Alborán","Balear i Canària","Cantàbrica i Bètica","Adriàtica i Egea"],""],
+ ["t1","s2","Quina orogènia va formar el Massís Hespèric?",["L'herciniana","L'alpina","La caledoniana","La quaternària"],"Va passar al Paleozoic i va crear el sòcol de la meitat occidental."],
+ ["t1","s2","De quin tipus de roques és el Massís Hespèric?",["Silícies i metamòrfiques","Calcàries","Volcàniques","Argiles i margues"],"Granits i pissarres."],
+ ["t1","s2","Què va passar durant el Mesozoic?",["L'erosió va aplanar els relleus hercinians i es van formar calcàries","Es van aixecar els Pirineus","Es van omplir les depressions de l'Ebre i el Guadalquivir","Va néixer el massís Galaic"],""],
+ ["t1","s2","Durant quin període es va produir l'orogènia alpina?",["Terciari (Cenozoic)","Paleozoic","Mesozoic","Quaternari"],""],
+ ["t1","s2","En l'orogènia alpina, què va passar amb els materials durs del sòcol?",["Es van trencar en blocs","Es van plegar","Es van fondre","Es van erosionar del tot"],"Els tous es pleguen; els durs i rígids es fracturen."],
+ ["t1","s2","Quines serralades es van formar a l'orogènia alpina?",["Pirineus, Bètiques i Cantàbrica oriental","Massís Galaicoleonès i Massís Hespèric","Només els Monts de Toledo","Cap: totes són hercinianes"],""],
+ ["t1","s2","Quan es van formar la depressió de l'Ebre i les planes litorals?",["Al Quaternari, per l'erosió dels relleus alpins","Al Paleozoic","Al Mesozoic","A l'orogènia herciniana"],""],
+ ["t1","s3","Quina unitat ocupa el 45% de la superfície d'Espanya?",["La Meseta","La depressió de l'Ebre","Les Serralades Bètiques","Els Pirineus"],""],
+ ["t1","s3","Quin riu travessa la Submeseta Nord?",["El Duero","El Tajo","El Guadiana","L'Ebre"],""],
+ ["t1","s3","Quina serralada divideix la Meseta en dues submesetes?",["El Sistema Central","Els Monts de Toledo","El Sistema Ibèric","Sierra Morena"],""],
+ ["t1","s3","Quina és la divisòria d'aigües entre el Tajo i el Guadiana?",["Els Monts de Toledo","El Sistema Central","Sierra Morena","El Sistema Ibèric"],""],
+ ["t1","s3","Quines serres formen el Sistema Central?",["Somosierra, Guadarrama, Gredos i Gata","Cazorla, Segura, Sagra i Mágina","Moncayo i Urbión","Cadí i Montsec"],""],
+ ["t1","s3","Quin és el relleu més antic de la península?",["El Massís Galaicoleonès","Els Pirineus","Les Serralades Bètiques","El Sistema Ibèric"],"És paleozoic i està molt erosionat."],
+ ["t1","s3","Què separa Sierra Morena?",["La Meseta de la depressió del Guadalquivir","La Meseta de la depressió de l'Ebre","Les dues submesetes","Les Bètiques del Mediterrani"],""],
+ ["t1","s3","Quines serres pertanyen al sector nord del Sistema Ibèric?",["Moncayo i Pics d'Urbión","Gúdar i Maestrat","Gredos i Gata","Cazorla i Segura"],""],
+ ["t1","s3","Quin és el cim més alt de la península (dossier)?",["Mulhacén, 3.481 m","Aneto, 3.404 m","Teide, 3.718 m","Pica d'Estats, 3.143 m"],"El Teide és més alt, però és a Canàries, no a la península."],
+ ["t1","s3","Quines serres formen la Subbètica?",["Cazorla, Segura, Sagra i Mágina","Sierra Nevada","Somosierra i Guadarrama","Guara i Peña"],""],
+ ["t1","s3","Quina llargada tenen els Pirineus?",["Uns 440 km","Uns 140 km","Uns 900 km","Uns 1.200 km"],"Del golf de Biscaia al cap de Creus."],
+ ["t1","s3","Entre quines unitats queda encaixada la depressió de l'Ebre?",["Prepirineus, Sistema Ibèric i Serralades Litorals Catalanes","Sierra Morena i Bètiques","Sistema Central i Monts de Toledo","Cantàbrica i Massís Galaicoleonès"],""],
+ ["t1","s3","Com es van formar les dues grans depressions?",["Amb sediments de l'erosió dels relleus i dels rius","Per volcans","Per plegament de calcàries","Per l'enfonsament del mar de Tetis"],"On els materials eren durs, relleus tabulars; on eren tous, valls i terrasses."],
+ ["t1","s3","Quina d'aquestes NO és una vora muntanyosa de la Meseta?",["Els Pirineus","La Serralada Cantàbrica","El Sistema Ibèric","Sierra Morena"],"Els Pirineus són una serralada exterior a la Meseta."],
+ ["t1","s4","Quin és el tret més característic de la costa gallega?",["Les ries","Els deltes","Les albuferes","Les dunes"],""],
+ ["t1","s4","Com és la costa cantàbrica?",["Alta i rectilínia, amb penya-segats","Baixa i sorrenca","Plena de deltes","Amb grans albuferes"],""],
+ ["t1","s4","Quina costa és baixa i sorrenca, amb dunes?",["L'atlàntica andalusa (golf de Cadis)","La cantàbrica","La gallega","La Costa Brava"],""],
+ ["t1","s4","Què és un tómbol?",["Un cordó litoral que uneix una illa al continent","Una badia tancada per sorra","Una vall envaïda pel mar","Un con volcànic"],""],
+ ["t1","s4","Quin d'aquests és un exemple de tómbol?",["El penyal d'Ifac (Calp)","El Mar Menor","El delta de l'Ebre","El cap de Creus"],""],
+ ["t1","s4","Quina gran plana litoral fa uns 400 km?",["La del golf de València","La del golf de Cadis","La de l'Empordà","La cantàbrica"],"Del cap de la Nau al delta de l'Ebre."],
+ ["t1","s4","Menorca està relacionada amb...",["La Serralada Litoral Catalana","La Subbètica","Els Pirineus","El Sistema Ibèric"],""],
+ ["t1","s4","Mallorca, Eivissa i Formentera són fragments de...",["La Serralada Subbètica","La Serralada Litoral Catalana","El Sistema Central","El Massís Hespèric"],""],
+ ["t1","s4","Quines illes canàries són força planes?",["Lanzarote i Fuerteventura","Tenerife i La Palma","La Gomera i El Hierro","Gran Canària i Tenerife"],"Són el grup oriental, el més proper a Àfrica."],
+ ["t1","s4","Quin és el cim més alt d'Espanya?",["El Teide, 3.718 m","El Mulhacén","L'Aneto","El Veleta"],"És un volcà actiu, a Tenerife."],
+ ["t1","s5","Com són els rius del vessant cantàbric?",["Curts i cabalosos","Llargs amb estiatge","De poc cabal i irregulars","Sense aigua permanent"],"Neixen molt a prop del mar en muntanyes molt plujoses."],
+ ["t1","s5","Com són els rius del vessant atlàntic?",["Llargs i amb estiatge a l'estiu","Curts i cabalosos","Torrents sense aigua","Molt regulars tot l'any"],""],
+ ["t1","s5","Quin riu mediterrani és l'excepció pel seu gran cabal?",["L'Ebre","El Túria","El Segura","El Llobregat"],""],
+ ["t1","s5","Què és l'estiatge?",["La disminució del cabal en una època de l'any","El màxim cabal d'un riu","La quantitat d'aigua per unitat de temps","Els materials que arrossega el riu"],""],
+ ["t1","s5","Per què no hi ha rius permanents a les Balears?",["Per les pluges escasses i el terreny permeable","Perquè fa massa fred","Perquè les illes són volcàniques","Perquè tota l'aigua va a embassaments"],""],
+ ["t1","s5","Quin d'aquests rius NO és del vessant cantàbric?",["Guadiana","Bidasoa","Nalón","Navia"],"El Guadiana és atlàntic."],
+ ["t1","s5","Què és un barranc a les Canàries?",["Un tall al terreny que fa de llit de torrents","Un riu permanent","Un llac volcànic","Un aqüífer"],""],
+ ["t1","s6","Quina diferència hi ha entre temps i clima?",["El temps és un moment concret; el clima, la mitjana de molts anys","Són sinònims","El clima canvia cada dia","El temps només mesura la pluja"],""],
+ ["t1","s6","Quant baixa de mitjana la temperatura cada 100 m d'ascens?",["Uns 0,65 °C","Uns 6,5 °C","Uns 2 °C","No baixa, puja"],"És el gradient vertical de temperatura."],
+ ["t1","s6","Què passa quan la humitat relativa és del 100%?",["L'aire està saturat i el vapor es condensa","L'aire està completament sec","Plou sempre neu","La pressió és zero"],""],
+ ["t1","s6","Què uneixen les isohietes?",["Punts d'igual precipitació","Punts d'igual pressió","Punts d'igual temperatura","Punts d'igual altitud"],""],
+ ["t1","s6","Què uneixen les isobares?",["Punts d'igual pressió","Punts d'igual precipitació","Punts d'igual temperatura","Punts d'igual humitat"],""],
+ ["t1","s6","A quin règim pluviomètric pertany la península?",["Temperat","Equatorial","Tropical","Monsònic"],""],
+ ["t1","s6","Com s'escalfen els oceans respecte dels continents?",["S'escalfen i es refreden més a poc a poc","S'escalfen molt més de pressa","Igual","No s'escalfen mai"],"Per això a la costa el clima és més suau."],
+ ["t1","s6","Quin tipus de massa d'aire és l'anticicló de les Açores?",["Tropical marítima","Polar continental","Àrtica","Tropical continental"],""],
+ ["t1","s6","Què és la gota freda?",["Una pertorbació no frontal que provoca pluges violentes","Un vent sec i calent","El corrent en jet","Una onada de fred siberià"],""],
+ ["t1","s6","On és el corrent en jet?",["A prop de la tropopausa","Al fons de l'oceà","A ran de terra","A l'estratosfera alta"],"Bufa entre 60 i 550 km/h."],
+ ["t1","s7","On es dona el clima oceànic?",["Galícia i cornisa cantàbrica","Interior de la Meseta","Sud-est peninsular","Canàries"],""],
+ ["t1","s7","Quina vegetació és pròpia del clima oceànic?",["Bosc caducifoli: rouredes i fagedes","Alzinars i pinars","Deveses","Laurisilva"],""],
+ ["t1","s7","Què és la landa?",["Vegetació de brucs i falgueres pel bosc atlàntic degradat","Un bosc de ribera","Un prat alpí","Un tipus de garriga"],""],
+ ["t1","s7","Com són les pluges del clima mediterrani?",["Equinoccials, 400-700 mm","Abundants tot l'any","Concentrades a l'estiu","Inferiors a 100 mm"],""],
+ ["t1","s7","Quin arbre és el més típic del clima mediterrani?",["L'alzina","El faig","L'avet","El drago"],""],
+ ["t1","s7","Quina vegetació hi ha al sud-est àrid?",["Espart, margalló i farigola","Fagedes","Prats humits","Laurisilva"],""],
+ ["t1","s7","Com és el clima continental o d'interior?",["Hiverns molt freds, estius calorosos i molta amplitud","Suau tot l'any","Plujós tot l'any","Calent tot l'any"],""],
+ ["t1","s7","Què vol dir que la vegetació és xeròfil·la?",["Que té arrels profundes per resistir la sequera","Que perd la fulla a l'hivern","Que viu a l'aigua","Que creix a l'alta muntanya"],""],
+ ["t1","s7","Què és una devesa?",["Un bosc aclarit d'alzines amb pastures","Un matollar de brucs","Un bosc de ribera","Un camp de cereals"],""],
+ ["t1","s7","Quina diferència hi ha entre màquia i garriga?",["Màquia en sòls silicis; garriga en sòls calcaris","Màquia en sòls calcaris; garriga en silicis","Són el mateix","La màquia és un bosc caducifoli"],""],
+ ["t1","s7","A quin clima pertanyen el drago i la laurisilva?",["Subtropical (Canàries)","Oceànic","Continental","De muntanya"],""],
+ ["t1","s7","Què és el mar de núvols de Canàries?",["La condensació dels alisis humits als vessants de sobrevent","Una tempesta tropical","El vapor dels volcans","La boira de l'interior"],"Deixa precipitacions horitzontals."],
+ ["t1","s7","Com arriba l'aire a sotavent amb l'efecte Foehn?",["Sec i més calent","Humit i fred","Igual que va sortir","Carregat de pluja"],""],
+ ["t1","s7","Com s'anomena el vessant on puja l'aire i plou?",["Barlovent","Sotavent","Solana","Obaga"],""],
+ ["t1","s7","Aire a 25 °C, condensa a 1.000 m i el cim és a 1.500 m. A quina temperatura arriba a baix a l'altre costat?",["27 °C","25 °C","22 °C","32 °C"],"Puja: 25 − 10 = 15 °C; de 1.000 a 1.500 m: 15 − 3 = 12 °C; baixa 1.500 m: 12 + 15 = 27 °C."],
+ ["t1","s7","Quin clima de muntanya té neu fins a 9 mesos?",["El de muntanya oceànica (Cantàbrica i Pirineus)","El de muntanya mediterrània","El subtropical","El continental de la Meseta"],""],
+ ["t1","s7","Quin clima té pluges de 150-300 mm concentrades a l'hivern?",["El subtropical canari","L'oceànic","El de muntanya oceànica","El mediterrani de Girona"],""],
+ ["t2","s8","Quin és el cim més alt de Catalunya?",["La Pica d'Estats, 3.143 m","L'Aneto","El Puigmal","El Turó de l'Home"],""],
+ ["t2","s8","Quina plana catalana desguassa al mar?",["L'Empordà","L'Urgell","La Segarra","La Plana de Vic"],"L'Urgell desguassa cap a l'Ebre."],
+ ["t2","s8","Quines són les serralades exteriors del Prepirineu català?",["Montsec i Montroig","Cadí i Pedraforca","Montserrat i Montseny","Montnegre i Collserola"],""],
+ ["t2","s8","Quina depressió separa el Prepirineu interior de l'exterior?",["La Conca de Tremp","La Plana de Vic","La Conca d'Òdena","El Vallès"],""],
+ ["t2","s8","Què uneix la Serralada Transversal?",["El Prepirineu amb les serralades litorals","El Pirineu amb l'Ebre","Les dues depressions litorals","L'Empordà amb el Rosselló"],"Hi destaca el Puigsacalm."],
+ ["t2","s8","A quina serralada pertanyen Montserrat i el Montseny?",["Prelitoral","Litoral o de Marina","Transversal","Prepirineu"],""],
+ ["t2","s8","A quina serralada pertany el Montnegre?",["Litoral o de Marina","Prelitoral","Transversal","Prepirineu exterior"],""],
+ ["t2","s8","On són la Plana de Vic i la Conca d'Òdena?",["A la Depressió Central","A la Depressió Prelitoral","A la Depressió Litoral","Al Pirineu axial"],""],
+ ["t2","s8","Quin exemple de costa alta dona el dossier?",["La Costa Brava","El Tarragonès","El delta de l'Ebre","El Maresme"],""],
+ ["t2","s9","Quina pluja rep la Catalunya seca?",["Menys de 700 mm","Més de 1.000 mm","Menys de 100 mm","Entre 1.000 i 2.000 mm"],""],
+ ["t2","s9","Quina regió s'anomena dorsal pluviomètrica?",["La regió oriental (Serralada Transversal)","L'Alt Pirineu","El litoral mediterrani","La regió continental"],""],
+ ["t2","s9","Quina és la regió més poblada de Catalunya?",["El litoral mediterrani","L'Alt Pirineu","La regió continental","El Prepirineu"],""],
+ ["t2","s9","Quina és la regió menys poblada?",["L'Alt Pirineu","El litoral mediterrani","L'altiplà central","La Tramuntana"],""],
+ ["t2","s9","Quina vegetació té la regió continental (Ponent)?",["Estepària, adaptada a sòls salins","Fagedes i avetoses","Laurisilva","Rouredes i castanyedes"],""],
+ ["t2","s9","Quina d'aquestes regions NO és de la Catalunya seca?",["L'Alt Pirineu","La Tramuntana","L'altiplà central","El Prepirineu"],""],
+ ["t2","s9","Quins matollars hi ha a Catalunya?",["Màquia i garriga","Landa i prat","Devesa i estepa","Laurisilva i fageda"],""],
+ ["t2","s10","A quina xarxa pertany el Segre?",["Pirineu-Ebre","Pirineu-Mediterrani","Mediterrània","Atlàntica"],""],
+ ["t2","s10","Per què els rius de la xarxa Pirineu-Ebre baixen plens a la primavera?",["Pel desgel","Per les pluges d'estiu","Pels embassaments","Per la gota freda"],""],
+ ["t2","s10","Quin riu català va a l'Atlàntic?",["La Garona","El Segre","El Ter","La Noguera Pallaresa"],""],
+ ["t2","s10","A quina xarxa pertanyen el Ter i el Llobregat?",["Pirineu-Mediterrani","Pirineu-Ebre","Mediterrània","Atlàntica"],""],
+ ["t2","s10","On neixen els rius de la xarxa Mediterrània (Tordera, Besòs, Francolí)?",["A les serralades Prelitoral i Litoral","Al Pirineu axial","A la Vall d'Aran","Al Sistema Ibèric"],""],
+ ["t2","s10","Quants grups principals té la classificació de Köppen?",["5 (A, B, C, D, E)","3","4","7"],""],
+ ["t2","s10","Què vol dir la lletra C a Köppen?",["Clima temperat","Clima continental","Clima polar","Clima sec"],""],
+ ["t3","s11","Què és un recurs natural?",["Un bé de la natura que pot tenir interès per a l'ésser humà","Qualsevol producte industrial","Només l'energia","Un espai protegit"],""],
+ ["t3","s11","Quan diem que un recurs és renovable?",["Quan es regenera a un ritme igual o superior al que l'explotem","Quan no s'acaba mai, l'usem com l'usem","Quan és barat","Quan no contamina gens"],""],
+ ["t3","s11","Quin d'aquests recursos NO és renovable?",["El gas natural","El vent","El sol","L'aigua dels rius"],""],
+ ["t3","s11","Què són els recursos edafològics?",["Els sòls","L'aigua i l'aire","Els peixos","Els paisatges"],""],
+ ["t3","s11","Quins recursos són abiòtics?",["L'aigua i l'aire net","Els boscos","Els ramats","Els sòls"],""],
+ ["t3","s11","Què és l'energia primària?",["La que es fa servir sense conversió (solar)","La que arriba a l'usuari","La que contamina menys","La que es va descobrir primer"],""],
+ ["t3","s11","Com s'originen els combustibles fòssils?",["Per la fossilització de matèria orgànica","Per l'activitat volcànica","Per la fusió de l'urani","Per l'evaporació del mar"],""],
+ ["t3","s12","Quin d'aquests és un mineral metàl·lic?",["El coure","El guix","El quars","El granit"],""],
+ ["t3","s12","Quin d'aquests és una roca industrial?",["El marbre","El zinc","L'urani","El fluor"],""],
+ ["t3","s12","Quins són els minerals energètics?",["Carbó i urani","Ferro i coure","Granit i marbre","Sal i potassa"],""],
+ ["t3","s12","Quin és el principal recurs miner no energètic de Catalunya?",["La sal potàssica del Bages","El ferro del Priorat","El carbó del Berguedà","El marbre de l'Empordà"],"El carbó és energètic."],
+ ["t3","s12","On hi ha carbó a Catalunya?",["Berguedà, Alta Ribagorça i Pallars Jussà","Bages i Anoia","Maresme i Vallès","Tarragonès"],""],
+ ["t3","s12","De quin mineral té Espanya el 70% de les reserves mundials?",["Sepiolita","Celestina","Coure","Urani"],""],
+ ["t3","s12","Per a què s'utilitza la celestina?",["Focs d'artifici i refinar sucre","Fer ciment","Fabricar cables","Combustible nuclear"],""],
+ ["t3","s12","En què destaca sobretot Espanya en mineria?",["En roques i minerals industrials (pissarra, marbre, granit)","En petroli","En urani","En or"],""],
+ ["t3","s13","Quin percentatge de l'aigua de la Terra és oceànica?",["El 98%","El 50%","El 75%","El 2%"],""],
+ ["t3","s13","Quin és l'ús principal de l'aigua?",["L'agricultura (75%)","Els habitatges (12%)","La indústria (10%)","Els serveis (3%)"],""],
+ ["t3","s13","On es va fer la primera dessalinitzadora?",["A Lanzarote","Al Prat de Llobregat","A Almeria","A Barcelona"],"La més important de Catalunya és la del Prat."],
+ ["t3","s13","Què és la depuració de l'aigua?",["Netejar l'aigua residual per reutilitzar-la","Treure'n la sal","Fer-la potable per beure","Emmagatzemar-la en preses"],""],
+ ["t3","s13","Què és una conca endorreica?",["La que desguassa en un mar interior, llac o llacuna","La que desguassa al mar obert","La que no té afluents","La que té un embassament"],""],
+ ["t3","s13","Com és el règim nival?",["Màxim cabal a l'estiu pel desgel i mínim a l'hivern","Màxim a l'hivern","Només depèn de la pluja","Cabal constant"],""],
+ ["t3","s13","Quin règim fluvial tenen la majoria dels nostres rius?",["Pluvial","Nival","Nivopluvial","Pluvionival"],""],
+ ["t3","s13","Què és una albufera?",["Una badia marina salada tancada per una barra de sorra","Un llac d'aigua dolça d'origen volcànic","La desembocadura d'un riu","Un terreny inundat d'aigua dolça"],""],
+ ["t3","s13","Quants embassaments hi ha a Espanya?",["Més de 1.000","Uns 100","Més de 10.000","14"],""],
+ ["t3","s13","Per a què serveixen sobretot els embassaments?",["Per regular els cabals","Per pescar","Per a la navegació","Per dessalar"],"També per produir electricitat, regar i proveir d'aigua."],
+ ["t3","s13","De quin riu és l'embassament d'Alcántara?",["Tajo","Guadiana","Guadalquivir","Xúquer"],""],
+ ["t3","s13","Què és un aqüífer?",["Una bossa d'aigua a l'interior de les roques","Un embassament","Un canal de reg","Un tipus de delta"],""],
+ ["t3","s13","En quantes demarcacions hidrogràfiques es divideix Espanya?",["14","10","17","50"],""],
+ ["t3","s13","Quin pla preveia el transvasament de l'Ebre?",["El Pla Hidrològic Nacional (2005)","La Llei de Montes","El PEIN","La Llei 6/1999"],""],
+ ["t3","s13","Qui gestiona les conques internes de Catalunya?",["L'Agència Catalana de l'Aigua (ACA)","La Confederació Hidrogràfica de l'Ebre","L'Estat directament","Cada ajuntament"],"Per la Llei 6/1999."],
+ ["t3","s13","Quines són les conques intercomunitàries de Catalunya?",["Ebre, Garona i Xúquer","Ter, Llobregat i Besòs","Muga i Fluvià","Francolí i Gaià"],"Ocupen un 49% del territori."],
+ ["t3","s13","A quin riu són els embassaments de Sau i Susqueda?",["Ter","Llobregat","Segre","Ebre"],""],
+ ["t3","s13","A quin riu és l'embassament de la Baells?",["Llobregat","Ter","Noguera Pallaresa","Besòs"],""],
+ ["t3","s14","Quin percentatge de les emissions de CO₂ fixen els boscos espanyols?",["El 20%","El 2%","El 50%","El 90%"],""],
+ ["t3","s14","Com veia els parcs la llei de 1916?",["Amb caràcter estètic, paisatgístic i de lleure","Amb caràcter econòmic","Com a reserves científiques","No parlava de parcs"],""],
+ ["t3","s14","Què prioritzava la Llei de Montes de 1957?",["L'aprofitament econòmic","La protecció total","El turisme","La caça"],""],
+ ["t3","s14","Quina és la llei vigent de protecció d'espais?",["Llei del Patrimoni Natural i de la Biodiversitat (2007)","Llei de Parcs Nacionals (1916)","Llei de Montes (1957)","Llei 6/1999"],""],
+ ["t3","s14","Quin és el parc nacional de Catalunya?",["Aigüestortes i Estany de Sant Maurici","Montseny","Delta de l'Ebre","Cap de Creus"],""],
+ ["t3","s14","Quina figura de protecció té el Delta de l'Ebre?",["Parc natural","Parc nacional","Reserva natural","PNIN"],"És l'exemple de pregunta tipus test del dossier."],
+ ["t3","s14","Quina figura de protecció tenen les Illes Medes?",["Reserva natural","Parc nacional","Paisatge protegit","PNIN"],""],
+ ["t3","s14","Què és un PNIN?",["Un paratge natural d'interès nacional, només a Catalunya","Un parc nacional espanyol","Un pla d'aigües","Una reserva marina"],"Exemples: Pedraforca i Poblet."],
+ ["t3","s14","Quan es va crear el PEIN i quants espais té?",["1985, 144 espais","2007, 14 espais","1916, 4 espais","1999, 350 espais"],""],
+ ["t3","s14","Quina d'aquestes NO és una figura de la llei estatal de 2007?",["PNIN","Parc natural","Monument natural","Paisatge protegit"],"El PNIN és una figura catalana."],
+ ["t3","s14","Quins espais destaquen per la singularitat, la raresa o la bellesa?",["Els monuments naturals","Els parcs naturals","Les reserves naturals","Les àrees marines"],""]
+];
+
+/* ===== App del temari ===== */
+(function () {
+  "use strict";
+  var LS = "geo-b2-temari-v1";
+  var S = {};
+  try { S = JSON.parse(localStorage.getItem(LS)) || {}; } catch (e) { S = {}; }
+  ["done", "box", "miss", "res", "read"].forEach(function (k) { if (!S[k] || typeof S[k] !== "object") S[k] = {}; });
+  S.lvl = S.lvl || "all"; S.sec = S.sec || "study"; S.tab = S.tab || "pla"; S.ft = S.ft || "all";
+  function save() { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} }
+
+  function $(id) { return document.getElementById(id); }
+  function h(tag, a, kids) {
+    var e = document.createElement(tag); a = a || {};
+    for (var k in a) {
+      if (!a.hasOwnProperty(k) || a[k] == null) continue;
+      if (k === "text") e.textContent = a[k];
+      else if (k === "html") e.innerHTML = a[k];
+      else if (k === "onclick") e.addEventListener("click", a[k]);
+      else if (k === "oninput") e.addEventListener("input", a[k]);
+      else e.setAttribute(k, a[k]);
+    }
+    (kids || []).forEach(function (c) { if (c != null && c !== false) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return e;
+  }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function hash(s) { var x = 5381; for (var i = 0; i < s.length; i++) x = ((x << 5) + x + s.charCodeAt(i)) >>> 0; return x.toString(36); }
+  var TB = {}; TEMES.forEach(function (t) { TB[t.id] = t; });
+  var SB = {}; SECC.forEach(function (s) { SB[s.id] = s; });
+  function tag(t) { var x = TB[t]; return h("span", { "class": "tg", style: "background:" + x.c, text: x.n }); }
+  function btn(txt, fn, ghost) { return h("button", { type: "button", "class": "btn" + (ghost ? " ghost" : ""), text: txt, onclick: fn }); }
+  function seg(opts, cur, fn) {
+    var g = h("div", { "class": "seg", role: "group" });
+    opts.forEach(function (o) { g.appendChild(h("button", { type: "button", "aria-pressed": o[0] === cur ? "true" : "false", text: o[1], onclick: function () { fn(o[0]); } })); });
+    return g;
+  }
+  function temaSeg(cur, fn) { return seg([["all", "Tots"]].concat(TEMES.map(function (t) { return [t.id, t.n]; })), cur, fn); }
+  function today() { var d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); }
+
+  var body, view;
+  /* ---------- Navegació Temari / Mapes ---------- */
+  function setSec(s) {
+    S.sec = s; save();
+    document.querySelectorAll("#sec button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-s") === s ? "true" : "false"); });
+    var st = s === "study";
+    $("view-study").hidden = !st; $("tabs").hidden = st;
+    if (st) {
+      ["view-relief", "relief-modes", "view-terr", "view-hidro"].forEach(function (i) { $(i).hidden = true; });
+      $("h1").textContent = "Geografia · Bloc 2"; $("subt").textContent = "Temes 1-3: relleu, clima, vegetació i recursos naturals";
+      tab(S.tab);
+    } else {
+      var cur = document.querySelector("#tabs button[aria-pressed='true']");
+      window.__go(cur ? cur.getAttribute("data-v") : "relief");
+    }
+    window.scrollTo(0, 0);
+  }
+  function goMap(v) { setSec("maps"); window.__go(v); }
+  function tab(t, arg) {
+    S.tab = t; save();
+    document.querySelectorAll("#stabs button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-t") === t ? "true" : "false"); });
+    body.textContent = "";
+    R[t](arg);
+  }
+
+  var R = {};
+  /* ---------- PLA ---------- */
+  var SESS = [
+    ["Relleu d'Espanya", "Apartats 1.1, 1.2 i 1.3. Després localitza les unitats al mapa sense noms.", [["Llegir 1.1-1.3", "x", "s1"], ["Mapa del relleu", "m", "relief"], ["Ordena la formació", "a", "ord:o1"], ["Origen del relleu", "a", "cls:c5"]]],
+    ["Costes, illes i rius", "Apartats 1.4 i 1.5. Practica els rius per vessants al mapa.", [["Llegir 1.4-1.5", "x", "s4"], ["Mapa de costes i rius", "m", "hidro"], ["Classifica els rius", "a", "cls:c3"]]],
+    ["El clima: conceptes", "Apartat 1.6. Fes les targetes del Tema 1 fins que les sàpigues.", [["Llegir 1.6", "x", "s6"], ["Targetes del Tema 1", "c", "t1"]]],
+    ["Climes i vegetació", "Apartat 1.7. Aprèn a llegir climogrames i l'efecte Foehn.", [["Llegir 1.7", "x", "s7"], ["Climogrames", "a", "clim"], ["Simulador Foehn", "a", "foehn"], ["Vegetació i clima", "a", "cls:c4"]]],
+    ["Catalunya", "Tema 2 sencer: relleu, regions fisiogràfiques i rius.", [["Llegir el Tema 2", "x", "s8"], ["Seca o humida", "a", "cls:c6"], ["Xarxes catalanes", "a", "cls:c7"], ["Relleu de nord a sud", "a", "ord:o4"], ["Mapa de comarques", "m", "com"]]],
+    ["Recursos i mineria", "Apartats 3.1 i 3.2.", [["Llegir 3.1-3.2", "x", "s11"], ["Renovable o no", "a", "cls:c1"], ["Tipus de miners", "a", "cls:c2"]]],
+    ["Recursos hídrics i forestals", "Apartats 3.3 i 3.4.", [["Llegir 3.3-3.4", "x", "s13"], ["Règims fluvials", "a", "cls:c8"], ["Figures de protecció", "a", "cls:c9"], ["Lleis en ordre", "a", "ord:o3"]]],
+    ["Repàs barrejat", "Barreja els tres temes: el test de tot, les targetes pendents i el llampec.", [["Test de 40", "t", "40"], ["Targetes d'avui", "c", "due"], ["Llampec V/F", "a", "vf"]]]
+  ];
+  function doLink(kind, arg) {
+    if (kind === "x") { S.ft = SB[arg].t; tab("exp", arg); }
+    else if (kind === "m") goMap(arg);
+    else if (kind === "a") tab("act", arg);
+    else if (kind === "c") tab("cards", arg);
+    else if (kind === "t") tab("test", arg);
+  }
+  R.pla = function () {
+    var due = dueCards().length, miss = Object.keys(S.miss).length, read = SECC.filter(function (s) { return S.read[s.id]; }).length;
+    var c1 = h("section", { "class": "card" }, [
+      h("h3", { text: "Avui toca" }),
+      h("div", { "class": "grid3" }, [
+        h("div", { "class": "stat" }, [h("span", { "class": "big-n", text: String(due) }), h("span", { "class": "muted", text: "targetes per repassar avui" }), btn("Repassar", function () { tab("cards", "due"); })]),
+        h("div", { "class": "stat" }, [h("span", { "class": "big-n", text: String(miss) }), h("span", { "class": "muted", text: "preguntes del test fallades" }), miss ? btn("Repetir fallades", function () { tab("test", "miss"); }) : h("span", { "class": "muted", text: "Encara cap." })]),
+        h("div", { "class": "stat" }, [h("span", { "class": "big-n", text: read + "/" + SECC.length }), h("span", { "class": "muted", text: "apartats marcats com a llegits" }), btn("Explicat", function () { tab("exp"); })])
+      ])
+    ]);
+    var res = h("div", { "class": "res-t" });
+    TEMES.forEach(function (t) {
+      var r = S.res[t.id], pc = r && r[1] ? Math.round(100 * r[0] / r[1]) : null;
+      res.appendChild(h("div", {}, [tag(t.id), " ", t.t]));
+      res.appendChild(h("div", { "class": "prog", style: "min-width:150px" }, [h("div", { "class": "bar" }, [h("i", { style: "width:" + (pc || 0) + "%" })]), h("span", { text: pc == null ? "—" : pc + "%" })]));
+    });
+    var c2 = h("section", { "class": "card" }, [h("h3", { text: "Com vas per temes (últim test)" }), res]);
+    var c3 = h("section", { "class": "card" }, [h("h3", { text: "Com estudiar amb aquesta app" }),
+      h("ul", { "class": "mlist" }, [
+        ["1", "<b>Primer entén, després recorda.</b> Llegeix un apartat a Explicat i, sense mirar, respon el «Recorda sense mirar» del final. Recordar costa més que rellegir, i per això funciona millor."],
+        ["2", "<b>Espaia el repàs.</b> Les targetes funcionen per caixes: les que saps tornen d'aquí a uns dies, les que falles tornen avui. Fes-ne una mica cada dia en lloc de tot el dia abans."],
+        ["3", "<b>Barreja temes.</b> Quan ja els hagis vist, fes el test amb «Tots» els temes: obliga a distingir conceptes que es confonen."],
+        ["4", "<b>Paraula + imatge.</b> Fes servir els esquemes, els climogrames i els mapes mentre estudies el text: recordes millor si ho tens de dues maneres."]
+      ].map(function (x) { return h("li", {}, [h("span", { "class": "ic", text: x[0] }), h("span", { html: x[1] })]); }))
+    ]);
+    var c4 = h("section", { "class": "card" }, [h("h3", { text: "Pla d'estudi en 8 sessions" }), h("p", { "class": "muted", text: "Marca cada sessió quan l'acabis. Deixa un dia entre sessió i sessió si pots, i comença cada dia amb les targetes pendents." })]);
+    SESS.forEach(function (s, i) {
+      var id = "ses" + i, on = !!S.done[id];
+      var ck = h("button", { type: "button", "class": "chk", "aria-pressed": on ? "true" : "false", "aria-label": "Sessió feta", text: on ? "✓" : "", onclick: function () { if (S.done[id]) delete S.done[id]; else S.done[id] = 1; save(); tab("pla"); } });
+      var links = h("div", { "class": "links" }, s[2].map(function (l) { return h("button", { type: "button", "class": "lk", text: l[0], onclick: function () { doLink(l[1], l[2]); } }); }));
+      c4.appendChild(h("div", { "class": "sess" + (on ? " done" : "") }, [ck, h("div", {}, [h("h4", { text: (i + 1) + ". " + s[0] }), h("p", { "class": "muted", text: s[1] }), links])]));
+    });
+    body.appendChild(c1); body.appendChild(c4); body.appendChild(c2); body.appendChild(c3); body.appendChild(foot());
+  };
+  function foot() {
+    return h("p", { "class": "foot", html: "<b>Fonts:</b> dossier del professor «Bloc 2: Medi ambient i paisatges», temes 1 (Relleu, clima i vegetació a Espanya), 2 (Relleu, clima i vegetació a Catalunya) i 3 (Els recursos naturals, fins als recursos forestals). <b>Completat amb fonts externes:</b> les dades mensuals dels climogrames (valors normals aproximats de l'AEMET), els tipus de Köppen d'Espanya, les comarques dels embassaments, l'alçada del Montseny i les notes «Compte». Tot el que és afegit porta l'etiqueta «Per ampliar» o «Compte»." });
+  }
+
+  /* ---------- EXPLICAT ---------- */
+  var LVL = { ess: { e: 1, c: 1 }, imp: { e: 1, i: 1, c: 1, n: 1 }, all: { e: 1, i: 1, d: 1, c: 1, n: 1, a: 1 } };
+  R.exp = function (jump) {
+    var top = h("section", { "class": "card" }, [
+      h("div", { "class": "row" }, [temaSeg(S.ft, function (v) { S.ft = v; save(); tab("exp"); }), seg([["ess", "Essencial"], ["imp", "+ Important"], ["all", "Tot"]], S.lvl, function (v) { S.lvl = v; save(); tab("exp"); })]),
+      h("div", { "class": "legend-lv" }, [h("span", {}, [h("i", { style: "background:#C99A2E" }), "Essencial"]), h("span", {}, [h("i", { style: "border:2px solid #C99A2E" }), "Important"]), h("span", {}, [h("i", { style: "background:var(--line)" }), "Detall"]), h("span", { text: "Fes una primera passada amb «Essencial» i una segona amb «Tot»." })])
+    ]);
+    var toc = h("nav", { "class": "toc", "aria-label": "Apartats" });
+    top.appendChild(toc);
+    body.appendChild(top);
+    var lv = LVL[S.lvl];
+    SECC.filter(function (s) { return S.ft === "all" || s.t === S.ft; }).forEach(function (s) {
+      toc.appendChild(h("a", { href: "#" + s.id, "class": S.read[s.id] ? "read" : null, text: s.n, onclick: function (ev) { ev.preventDefault(); var t = $(s.id); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); } }));
+      var c = h("section", { "class": "card", id: s.id, style: "scroll-margin-top:12px" });
+      var rb = h("button", { type: "button", "class": "chip", "aria-pressed": S.read[s.id] ? "true" : "false" }, [h("span", { "class": "tick", text: S.read[s.id] ? "✓" : "" }), "Llegit"]);
+      rb.addEventListener("click", function () { if (S.read[s.id]) delete S.read[s.id]; else S.read[s.id] = 1; save(); var on = !!S.read[s.id]; rb.setAttribute("aria-pressed", on ? "true" : "false"); rb.firstChild.textContent = on ? "✓" : ""; });
+      var hdr = h("div", { "class": "sec-h" }, [h("div", { "class": "row" }, [tag(s.t), h("h3", { text: s.n })]), h("div", { "class": "row" }, [s.map ? h("button", { type: "button", "class": "chip", text: "Veure al mapa", onclick: function () { goMap(s.map); } }) : null, rb])]);
+      c.appendChild(hdr);
+      s.ps.forEach(function (p) { if (lv[p[0]]) c.appendChild(h("div", { "class": "pp " + p[0] }, [h("span", { "class": "dot" }), h("div", { html: p[1] })])); });
+      if (s.rq) {
+        var rc = h("div", { "class": "recall" }, [h("h4", { text: "Recorda sense mirar" })]);
+        s.rq.forEach(function (q) { var b = h("button", { type: "button", "class": "rq" }, [h("b", { text: q[0] }), h("span", { "class": "hint2", text: "Pensa la resposta i toca per comprovar-la" }), h("span", { "class": "ans", text: q[1] })]); b.addEventListener("click", function () { b.classList.toggle("open"); }); rc.appendChild(b); });
+        c.appendChild(rc);
+      }
+      body.appendChild(c);
+    });
+    body.appendChild(foot());
+    if (jump && $(jump)) setTimeout(function () { $(jump).scrollIntoView({ block: "start" }); }, 30);
+  };
+
+  /* ---------- CLIMOGRAMA (SVG) ---------- */
+  var MES = ["G", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
+  function climoStats(c) {
+    var tm = c.T.reduce(function (a, b) { return a + b; }, 0) / 12, pt = c.P.reduce(function (a, b) { return a + b; }, 0);
+    var mx = Math.max.apply(null, c.T), mn = Math.min.apply(null, c.T), dry = 0;
+    c.P.forEach(function (p, i) { if (p < 2 * c.T[i]) dry++; });
+    return { tm: tm, pt: pt, amp: mx - mn, dry: dry };
+  }
+  function climoSVG(c, small) {
+    var W = small ? 240 : 360, H = small ? 150 : 236, L = small ? 26 : 36, Rm = small ? 26 : 36, T = small ? 10 : 22, B = small ? 18 : 24;
+    var maxP = Math.max(100, Math.ceil(Math.max.apply(null, c.P) / 20) * 20);
+    var iw = W - L - Rm, ih = H - T - B, bw = iw / 12;
+    function y(v) { return T + ih - ih * v / maxP; }
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Climograma">';
+    for (var g = 0; g <= maxP; g += (maxP > 160 ? 40 : 20)) {
+      s += '<line x1="' + L + '" x2="' + (W - Rm) + '" y1="' + y(g).toFixed(1) + '" y2="' + y(g).toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>';
+      s += '<text x="' + (W - Rm + 4) + '" y="' + (y(g) + 4).toFixed(1) + '" font-size="' + (small ? 9 : 10.5) + '" fill="#2B6EA8">' + g + '</text>';
+      if (g / 2 <= 50) s += '<text x="' + (L - 4) + '" y="' + (y(g) + 4).toFixed(1) + '" font-size="' + (small ? 9 : 10.5) + '" fill="#C2453A" text-anchor="end">' + (g / 2) + '</text>';
+    }
+    c.P.forEach(function (p, i) { s += '<rect x="' + (L + i * bw + bw * .15).toFixed(1) + '" y="' + y(p).toFixed(1) + '" width="' + (bw * .7).toFixed(1) + '" height="' + (T + ih - y(p)).toFixed(1) + '" fill="#3D8BC9" opacity=".85" rx="1.5"/>'; });
+    var d = c.T.map(function (t, i) { return (i ? "L" : "M") + (L + i * bw + bw / 2).toFixed(1) + "," + y(Math.max(0, t) * 2).toFixed(1); }).join("");
+    s += '<path d="' + d + '" fill="none" stroke="#C2453A" stroke-width="' + (small ? 2 : 2.6) + '" stroke-linejoin="round"/>';
+    c.T.forEach(function (t, i) { s += '<circle cx="' + (L + i * bw + bw / 2).toFixed(1) + '" cy="' + y(Math.max(0, t) * 2).toFixed(1) + '" r="' + (small ? 1.8 : 2.6) + '" fill="#C2453A"/>'; });
+    MES.forEach(function (m, i) { s += '<text x="' + (L + i * bw + bw / 2).toFixed(1) + '" y="' + (H - 5) + '" font-size="' + (small ? 9 : 11) + '" text-anchor="middle" fill="var(--ink2)">' + m + '</text>'; });
+    if (!small) { s += '<text x="4" y="10" font-size="10" fill="#C2453A">°C</text><text x="' + (W - 4) + '" y="10" font-size="10" fill="#2B6EA8" text-anchor="end">mm</text>'; }
+    return s + '</svg>';
+  }
+
+  /* ---------- ESQUEMES ---------- */
+  R.esq = function () {
+    function card(title, sub, kids, t) { return h("section", { "class": "card" }, [h("div", { "class": "row" }, [tag(t), h("h3", { text: title })]), sub ? h("p", { "class": "muted", text: sub }) : null].concat(kids)); }
+    /* 1. Línia del temps */
+    var tl = h("div", { "class": "tl" }, [
+      ["Paleozoic", "fins fa ~250 Ma", "#7C5CAD", "<b>Orogènia herciniana.</b> Es forma el Massís Hespèric (meitat oest), de granit i pissarra: el <b>sòcol</b>. Ja hi era el massís Galaic."],
+      ["Mesozoic", "fins fa ~65 Ma", "#3D8BC9", "<b>Calma i erosió.</b> El relleu hercinià s'aplana. Al mar es dipositen sediments: <b>roques calcàries</b>."],
+      ["Terciari", "orogènia alpina", "#C2453A", "<b>Plega els tous i trenca els durs.</b> Pirineus, Bètiques, Cantàbrica oriental, vores de la Meseta. S'aixequen el Sistema Central i els Monts de Toledo."],
+      ["Quaternari", "des de fa ~1,8 Ma", "#4FA261", "<b>Erosió.</b> Els sediments omplen les depressions de l'Ebre i el Guadalquivir i fan les planes litorals."]
+    ].map(function (x) { return h("div", { "class": "nd", style: "--c:" + x[2] }, [h("div", { "class": "era", text: x[0] }), h("div", { "class": "when", text: x[1] }), h("div", { "class": "box", html: x[3] })]); }));
+    body.appendChild(card("Com es va formar el relleu", "Línia del temps: llegeix-la d'esquerra a dreta.", [tl], "t1"));
+    /* 2. Clau unitats */
+    function kid(t, d, c) { return h("div", { "class": "kid", style: c ? "--c:" + c : null, html: "<b>" + t + "</b>" + (d ? "<br>" + d : "") }); }
+    var meseta = h("div", { "class": "clau sub" }, [h("div", { "class": "root", text: "Meseta (45%)" }), h("div", { "class": "br" }), h("div", { "class": "kids" }, [kid("Submesetes", "Nord (Duero) · Sud (Tajo i Guadiana)", "#D9B34E"), kid("Serralades interiors", "Sistema Central · Monts de Toledo", "#D2512F"), kid("Vores muntanyoses", "Galaicoleonès · Cantàbrica · Ibèric · Sierra Morena", "#1F8A78")])]);
+    var clau = h("div", { "class": "clau" }, [h("div", { "class": "root", text: "Relleu d'Espanya" }), h("div", { "class": "br" }), h("div", { "class": "kids" }, [
+      h("div", { "class": "kid nest", style: "--c:#D9B34E" }, [meseta]),
+      kid("Serralades exteriors", "Pirineus i Prepirineus · Serralades Litorals Catalanes · Serralades Bètiques (Penibètica i Subbètica)", "#3A5CAA"),
+      kid("Dues depressions", "Ebre · Guadalquivir", "#4FA261"),
+      kid("Relleus litorals", "Costes atlàntiques (cantàbrica, gallega, andalusa) · mediterrànies (Andalusia-Múrcia, golf de València, Catalunya)", "#3D8BC9"),
+      kid("Relleu insular", "Balears (Subbètica + Litoral Catalana) · Canàries (volcàniques, Teide 3.718 m)", "#A0425F")
+    ])]);
+    body.appendChild(card("Les unitats de relleu", "Clau: de la idea general als detalls.", [clau, h("div", { "class": "row" }, [h("button", { type: "button", "class": "lk", text: "Practica-ho al mapa →", onclick: function () { goMap("relief"); } })])], "t1"));
+    /* 3. Rastell rius */
+    var ras = h("div", { "class": "rastell" }, [h("div", { "class": "bar", text: "Rius d'Espanya per vessants" }), h("div", { "class": "teeth" }, [
+      ["Cantàbric", "#1F8A78", "Curts i cabalosos", "Neixen a prop del mar, en muntanyes plujoses.", "Bidasoa · Nervión · Nalón · Narcea · Navia"],
+      ["Atlàntic", "#1D5FA8", "Llargs, amb estiatge d'estiu", "La Meseta s'inclina cap a l'oest.", "Miño · Duero · Tajo · Guadiana · Guadalquivir · Odiel · Tinto"],
+      ["Mediterrani", "#C2453A", "Poc cabal i irregulars", "Excepte l'Ebre, el més cabalós.", "Ebre · Xúquer · Túria · Segura · Ter · Llobregat · Millars"],
+      ["Illes", "#7C5CAD", "Sense rius permanents", "Balears: torrents. Canàries: barrancs.", "Albufera d'Alcúdia · embassament de Soria (Gran Canària)"]
+    ].map(function (x) { return h("div", { "class": "tooth", style: "--c:" + x[1] }, [h("h4", { text: x[0] }), h("b", { text: x[2] }), h("span", { "class": "muted", text: x[3] }), h("span", { style: "font-size:12.5px", text: x[4] })]); }))]);
+    body.appendChild(card("Els rius", "Rastell: un tret per a cada vessant.", [ras], "t1"));
+    /* 4. Quadrant climes */
+    var qd = h("div", { "class": "quad" });
+    [["oce", "stg", "#1F8A78", "~14 °C · poca amplitud · pluja tot l'any", ["Rouredes", "Fagedes", "Castanyers", "Landa", "Prats"]],
+     ["med", "pal", "#C99A2E", "14-18 °C · 400-700 mm equinoccials · estiu sec", ["Alzina", "Pi blanc", "Alzina surera", "Garriga", "Margalló (SE)"]],
+     ["con", "mad", "#C2453A", "Hiverns molt freds · 325-550 mm · amplitud molt alta", ["Deveses d'alzines", "Matolls esteparis", "Bosc de ribera", "Màquia / garriga"]],
+     ["mun", "nav", "#3A5CAA", "Fred · més pluja · efecte Foehn", ["Oceànica: neu 9 mesos", "Mediterrània: 600-800 mm", "Interior: hiverns llargs"]],
+     ["sub", "tfe", "#7C5CAD", "Càlid i regular · 150-300 mm a l'hivern", ["Drago", "Laurisilva", "Estepària", "Mar de núvols"]]
+    ].forEach(function (x) {
+      var c = CLIMS.filter(function (k) { return k.id === x[1]; })[0];
+      qd.appendChild(h("div", { "class": "qc", style: "--c:" + x[2] }, [h("h4", { text: CK[x[0]] }), h("span", { "class": "muted", style: "font-size:12.5px", text: "Exemple: " + c.city }), h("div", { "class": "csvg", html: climoSVG(c, true) }), h("b", { style: "font-size:13px", text: x[3] }), h("div", { "class": "pills" }, x[4].map(function (p) { return h("span", { "class": "pill", text: p }); }))]));
+    });
+    body.appendChild(card("Climes i vegetació d'Espanya", "Quadrant: cada clima amb el seu climograma (barres = pluja, línia = temperatura) i la vegetació. Dades dels climogrames: valors normals aproximats (AEMET), font externa.", [qd, h("div", { "class": "row" }, [h("button", { type: "button", "class": "lk", text: "Joc de climogrames →", onclick: function () { tab("act", "clim"); } })])], "t1"));
+    /* 5. Catalunya: barra de gradació */
+    function pos(mm) { return (Math.min(2000, Math.max(200, mm)) - 200) / 1800 * 100; }
+    var grad = h("div", { "class": "grad" });
+    [500, 1000, 1500].forEach(function (m) { grad.appendChild(h("span", { "class": "mk", style: "left:" + pos(m) + "%", text: m + " mm" })); });
+    grad.appendChild(h("div", { "class": "th", style: "left:" + pos(700) + "%" }, [h("span", { text: "700 mm" })]));
+    var tracks = h("div", { style: "display:flex;flex-direction:column;gap:8px" });
+    [["Continental (Ponent)", 300, 450, "#C99A2E"], ["Regió oriental", 800, 1800, "#3E9A8C"], ["Alt Pirineu", 1000, 2000, "#2B6EA8"]].forEach(function (r) {
+      tracks.appendChild(h("div", {}, [h("div", { style: "font-size:12.5px;font-weight:600", text: r[0] + " · " + r[1] + "-" + r[2] + " mm" }), h("div", { style: "position:relative;height:10px;border-radius:5px;background:var(--line)" }, [h("div", { style: "position:absolute;top:0;bottom:0;border-radius:5px;background:" + r[3] + ";left:" + pos(r[1]) + "%;width:" + (pos(r[2]) - pos(r[1])) + "%" }), h("div", { style: "position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);left:" + pos(700) + "%" })])]));
+    });
+    function rg(t, d) { return h("div", { "class": "rgn", html: "<b>" + t + "</b>" + d }); }
+    var two = h("div", { "class": "two" }, [
+      h("div", { "class": "col", style: "background:color-mix(in srgb,#E8C27A 22%,var(--surface))" }, [h("h4", { text: "Catalunya seca (< 700 mm) · perennifòlia" }), rg("Tramuntana", "Rosselló i Empordà. Pi blanc, alzina surera."), rg("Litoral mediterrani", "Gavarres - Sénia. Pi blanc i alzina. La més poblada."), rg("Altiplà central", "Més oscil·lació. Pinedes de pi blanc i matollars."), rg("Prepirineu", "Hivern fred. Pi blanc, roures, alzines; faig i pi negre als vessants humits."), rg("Continental", "300-450 mm, extremat. Vegetació estepària, sòls salins.")]),
+      h("div", { "class": "col", style: "background:color-mix(in srgb,#2B6EA8 14%,var(--surface))" }, [h("h4", { text: "Catalunya humida (> 700 mm) · caducifòlia" }), rg("Regió oriental", "Serralada Transversal: la «dorsal pluviomètrica» (800-1.800 mm). Rouredes, castanyedes, fagedes. Poblament dispers."), rg("Alt Pirineu", "Més de 2.000 m, 1.000-2.000 mm. Alpí i subalpí: fagedes, pi negre, avetoses, prats. La menys poblada.")])
+    ]);
+    body.appendChild(card("Regions fisiogràfiques de Catalunya", "Barra de gradació de la pluja: a l'esquerra del 700 la Catalunya seca, a la dreta la humida.", [grad, tracks, two], "t2"));
+    /* 6. Flor dels recursos */
+    var petals = [["Regeneració", "Renovables / No renovables"], ["Energia", "Energètics / No energètics"], ["Impacte", "Nets / Bruts"], ["Aprofitament", "Primaris / Finals"], ["Temps d'ús", "Convencionals / Alternatius"], ["No energètics", "Abiòtics · edafològics · biològics · paisatgístics"], ["Miners", "Metàl·lics · no metàl·lics · roques industrials · energètics"], ["Catalunya", "Sal potàssica (Bages) · carbó (Pirineus) · petroli (Tarragona)"]];
+    var flor = h("div", { "class": "flor" });
+    var slots = [0, 1, 2, 3, null, 4, 5, 6, 7];
+    slots.forEach(function (sx) { if (sx === null) flor.appendChild(h("div", { "class": "cor", text: "Recursos naturals" })); else flor.appendChild(h("div", { "class": "pet", html: "<b>" + petals[sx][0] + "</b>" + petals[sx][1] })); });
+    body.appendChild(card("Com es classifiquen els recursos", "Flor: al centre el concepte, als pètals els criteris.", [flor], "t3"));
+    /* 7. Aigua */
+    var st1 = h("div", { "class": "stack" }, [h("div", { style: "flex:98;background:#2B6EA8", text: "Oceànica 98%" }), h("div", { style: "flex:2;background:#8FC48A;min-width:44px", text: "2%" })]);
+    var st2 = h("div", { "class": "stack" }, [h("div", { style: "flex:75;background:#4FA261", text: "Agricultura 75%" }), h("div", { style: "flex:12;background:#C99A2E;min-width:40px", text: "Cases 12%" }), h("div", { style: "flex:10;background:#C2453A;min-width:36px", text: "Ind. 10%" }), h("div", { style: "flex:3;background:#7C5CAD;min-width:26px", text: "3%" })]);
+    var esc = h("div", { "class": "escala" }, [["Nival", "Desgel: màxim a l'estiu", "Segre, Dílar", 100, "#6F98D8"], ["Nivopluvial", "Neu + pluja", "Ter, Gállego, Nalón", 78, "#4F86C6"], ["Pluvionival", "Pluja + una mica de neu", "Henares, Tormes, Pisuerga", 58, "#3E9A8C"], ["Pluvial", "Pluja: mínim a l'estiu", "Francolí, Segura, Besòs", 40, "#4FA261"]].map(function (x) { return h("div", { "class": "st2", style: "background:" + x[4] + ";height:" + (x[3] + 30) + "px" }, [h("b", { text: x[0] }), h("span", { text: x[1] }), h("span", { style: "opacity:.85", text: x[2] })]); }));
+    var org = h("div", { "class": "org" }, [h("div", { "class": "top2", text: "Gestió de l'aigua" }), h("div", { "class": "stem" }), h("div", { "class": "kids2" }, [
+      h("div", { html: "<b>Espanya</b>14 demarcacions hidrogràfiques · transvasaments (PHN 2005, polèmic)" }),
+      h("div", { html: "<b>Catalunya occidental</b>Conques intercomunitàries: Ebre, Garona, Xúquer (49%) · CHE" }),
+      h("div", { html: "<b>Catalunya oriental</b>Conques internes (Nord, Centre, Sud) · ACA · Llei 6/1999" })
+    ])]);
+    body.appendChild(card("Els recursos hídrics", "Barres de proporció, escala de règims i mini-organigrama de la gestió.", [h("h4", { text: "On és l'aigua" }), st1, h("h4", { text: "En què la fem servir" }), st2, h("h4", { text: "Règims fluvials: de més a menys neu" }), esc, h("h4", { text: "Qui la gestiona" }), org], "t3"));
+    /* 8. Protecció */
+    var tl2 = h("div", { "class": "tl" }, [["1916", "Parcs Nacionals", "#7C5CAD", "Valor <b>estètic</b>, paisatgístic i de lleure."], ["1957", "Llei de Montes", "#C99A2E", "<b>Aprofitament econòmic</b> del bosc."], ["1989", "Conservació d'Espais", "#3D8BC9", "Defineix els <b>espais protegits</b> i el seu ús."], ["2007", "Patrimoni Natural", "#4FA261", "<b>La vigent.</b> Parcs, àrees marines, reserves, monuments i paisatges."]].map(function (x) { return h("div", { "class": "nd", style: "--c:" + x[2] }, [h("div", { "class": "era", text: x[0] }), h("div", { "class": "when", text: x[1] }), h("div", { "class": "box", html: x[3] })]); }));
+    var org2 = h("div", { "class": "org" }, [h("div", { "class": "top2", text: "Llei de 2007 + Catalunya" }), h("div", { "class": "stem" }), h("div", { "class": "kids2" }, [
+      h("div", { html: "<b>Parc nacional</b>Aigüestortes, Ordesa, Picos de Europa" }), h("div", { html: "<b>Parc natural</b>Delta de l'Ebre, Cap de Creus, Montserrat, Montseny" }), h("div", { html: "<b>Reserva natural</b>Illes Medes, Delta del Llobregat" }), h("div", { html: "<b>Monument natural</b>Singular, rar o bell" }), h("div", { html: "<b>Paisatge protegit</b>Valor estètic o cultural" }), h("div", { html: "<b>Àrea marina protegida</b>Ecosistemes marins" }), h("div", { style: "border-color:#B5452F", html: "<b>PEIN (Cat., 1985)</b>144 espais" }), h("div", { style: "border-color:#B5452F", html: "<b>PNIN (només Cat.)</b>Pedraforca, Poblet" })
+    ])]);
+    body.appendChild(card("Els recursos forestals i la protecció", "Línia del temps de les lleis i organigrama de les figures.", [h("p", { html: "Els boscos donen fusta i llenya, guarden la biodiversitat i <b>fixen el 20% de les emissions de CO₂</b> d'Espanya." }), tl2, org2], "t3"));
+    body.appendChild(foot());
+  };
+
+  /* ---------- ACTIVITATS ---------- */
+  var ACTS = [
+    ["clim", "📊", "Climogrames", "Mira el climograma i endevina el clima."],
+    ["foehn", "⛰️", "Simulador de l'efecte Foehn", "Mou l'altura i mira com canvia la temperatura."],
+    ["cls", "🗂️", "Classifica", CLASS.length + " jocs: rius, recursos, vegetació, espais..."],
+    ["ord", "🔢", "Ordena", ORD.length + " seqüències: eres, Foehn, lleis, relleu..."],
+    ["pairs", "🔗", "Parelles", "Uneix cada concepte amb la seva definició."],
+    ["vf", "⚡", "Llampec: vertader o fals", "15 afirmacions ràpides."],
+    ["llib", "📓", "Preguntes de la llibreta", "Les activitats del dossier amb resposta breu."]
+  ];
+  R.act = function (arg) {
+    if (arg) {
+      var p = String(arg).split(":");
+      body.appendChild(h("button", { type: "button", "class": "back", text: "← Totes les activitats", onclick: function () { tab("act"); } }));
+      var holder = h("div", { "class": "st" }); body.appendChild(holder);
+      A[p[0]](holder, p[1]);
+      return;
+    }
+    body.appendChild(h("div", { "class": "acts" }, ACTS.map(function (a) { return h("button", { type: "button", "class": "act", onclick: function () { tab("act", a[0]); } }, [h("span", { "class": "ai", text: a[1] }), h("b", { text: a[2] }), h("span", { text: a[3] })]); })));
+  };
+  var A = {};
+  /* Climogrames */
+  A.clim = function (box) {
+    var deck = shuffle(CLIMS), i = 0, ok = 0, n = 0;
+    function show() {
+      box.textContent = "";
+      if (i >= deck.length) { deck = shuffle(CLIMS); i = 0; }
+      var c = deck[i], st = climoStats(c);
+      var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [tag("t1"), h("h3", { text: "De quin clima és aquest climograma?" })]), h("p", { "class": "muted", text: "Encerts: " + ok + " de " + n + ". Barres blaves = pluja (mm), línia vermella = temperatura (°C). On la línia passa per sobre de les barres, el mes és sec." }), h("div", { "class": "csvg", style: "max-width:560px", html: climoSVG(c, false) })]);
+      var opts = h("div", { "class": "opts" });
+      Object.keys(CK).forEach(function (k) {
+        opts.appendChild(h("button", { type: "button", "class": "opt", text: CK[k], onclick: function () {
+          n++; var good = k === c.k; if (good) ok++;
+          opts.querySelectorAll("button").forEach(function (b) { b.disabled = true; if (b.textContent === CK[c.k]) b.classList.add("ok"); });
+          if (!good) this.classList.add("bad");
+          card.appendChild(h("div", { "class": "fb " + (good ? "ok" : "bad") }, [h("b", { text: (good ? "Molt bé! " : "No. ") + c.city + ": " + (c.sub || CK[c.k].toLowerCase()) }), h("span", { text: CKWHY[c.k] })]));
+          card.appendChild(h("dl", {}, [h("dt", { text: "T mitjana" }), h("dd", { "class": "num", text: st.tm.toFixed(1) + " °C" }), h("dt", { text: "Amplitud" }), h("dd", { "class": "num", text: st.amp.toFixed(1) + " °C" }), h("dt", { text: "Pluja anual" }), h("dd", { "class": "num", text: Math.round(st.pt) + " mm" }), h("dt", { text: "Mesos secs" }), h("dd", { "class": "num", text: st.dry + " (P < 2T)" })]));
+          card.appendChild(h("div", { "class": "btns" }, [btn("Següent", function () { i++; show(); })]));
+        } }));
+      });
+      card.appendChild(opts);
+      box.appendChild(card);
+      box.appendChild(h("p", { "class": "note", text: "Pista: mira primer l'amplitud (molta = interior), després l'estiu (sec = mediterrani) i la pluja total (molta = oceànic o muntanya). Dades aproximades d'AEMET (font externa)." }));
+    }
+    show();
+  };
+  /* Foehn */
+  A.foehn = function (box) {
+    var v = { t: 25, c: 1000, s: 1500 };
+    var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [tag("t1"), h("h3", { text: "Simulador de l'efecte Foehn" })]), h("p", { "class": "muted", text: "Regles del dossier: l'aire sec es refreda 1 °C cada 100 m; un cop condensa (aire humit), 0,6 °C cada 100 m. En baixar, ja sec, s'escalfa 1 °C cada 100 m." })]);
+    var pic = h("div", { "class": "fsvg" }), out = h("div", { "class": "fb" });
+    function sl(lab, key, min, max, step, unit) {
+      var o = h("output", { text: v[key] + unit });
+      var inp = h("input", { type: "range", min: min, max: max, step: step, value: v[key], "aria-label": lab, oninput: function () { v[key] = +this.value; o.textContent = v[key] + unit; draw(); } });
+      return h("div", { "class": "slider" }, [h("label", { text: lab }), inp, o]);
+    }
+    var ctr = h("div", { "class": "grid3" }, [sl("Temperatura a baix (barlovent)", "t", 5, 35, 1, " °C"), sl("Altura on condensa (núvols)", "c", 200, 3000, 100, " m"), sl("Altura del cim", "s", 500, 3500, 100, " m")]);
+    function draw() {
+      var cond = Math.min(v.c, v.s), tc = v.t - cond / 100, ts = tc - (v.s - cond) / 100 * 0.6, tf = ts + v.s / 100;
+      var W = 640, H = 300, base = 260, peakX = 320, sc = 200 / 3500, py = base - v.s * sc, cy = base - cond * sc;
+      var lx = 70 + (peakX - 70) * (cond / v.s);
+      var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Esquema de l\'efecte Foehn">';
+      s += '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="var(--sea)" opacity=".35" rx="10"/>';
+      s += '<path d="M70,' + base + ' L' + peakX + ',' + py.toFixed(1) + ' L570,' + base + ' Z" fill="#9BB58A" stroke="#5E7A50" stroke-width="2"/>';
+      if (v.c <= v.s) {
+        s += '<line x1="40" x2="' + peakX + '" y1="' + cy.toFixed(1) + '" y2="' + cy.toFixed(1) + '" stroke="#2B6EA8" stroke-dasharray="5 4" stroke-width="1.5"/>';
+        s += '<text x="44" y="' + (cy - 6).toFixed(1) + '" font-size="12" fill="#2B6EA8">condensa a ' + cond + ' m</text>';
+        for (var k = 0; k < 3; k++) { var cx = lx + 4 + k * 30; s += '<ellipse cx="' + cx.toFixed(1) + '" cy="' + (cy - 14).toFixed(1) + '" rx="26" ry="12" fill="#fff" stroke="#9AA9B4"/>'; for (var r = 0; r < 3; r++) s += '<line x1="' + (cx - 10 + r * 10).toFixed(1) + '" x2="' + (cx - 14 + r * 10).toFixed(1) + '" y1="' + (cy).toFixed(1) + '" y2="' + (cy + 14).toFixed(1) + '" stroke="#3D8BC9" stroke-width="2"/>'; }
+      }
+      s += '<path d="M40,' + (base - 8) + ' Q' + (peakX - 80) + ',' + (py - 30).toFixed(1) + ' ' + peakX + ',' + (py - 18).toFixed(1) + ' Q' + (peakX + 90) + ',' + (py - 20).toFixed(1) + ' 600,' + (base - 8) + '" fill="none" stroke="#C2453A" stroke-width="2.5" marker-end="url(#ar)"/>';
+      s += '<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#C2453A"/></marker></defs>';
+      function lab(x, y, t, sub, anc) { return '<text x="' + x + '" y="' + y + '" font-size="15" font-weight="700" fill="var(--ink)" text-anchor="' + (anc || "middle") + '">' + t + '</text><text x="' + x + '" y="' + (y + 15) + '" font-size="11.5" fill="var(--ink2)" text-anchor="' + (anc || "middle") + '">' + sub + '</text>'; }
+      s += lab(70, base + 22, v.t.toFixed(1) + " °C", "barlovent, 0 m");
+      if (v.c <= v.s) s += lab(lx - 46, cy + 30, tc.toFixed(1) + " °C", cond + " m", "end");
+      s += lab(peakX, py - 40, ts.toFixed(1) + " °C", "cim, " + v.s + " m");
+      s += lab(570, base + 22, tf.toFixed(1) + " °C", "sotavent, 0 m");
+      s += '</svg>';
+      pic.innerHTML = s;
+      var gain = tf - v.t;
+      out.className = "fb ok";
+      out.innerHTML = v.c > v.s
+        ? "<b>No arriba a condensar</b>L'aire puja i baixa sec: perd i guanya el mateix (1 °C cada 100 m) i arriba a " + tf.toFixed(1) + " °C, igual que va sortir. Sense núvols no hi ha efecte Foehn."
+        : "<b>Arriba a sotavent a " + tf.toFixed(1) + " °C (" + (gain >= 0 ? "+" : "") + gain.toFixed(1) + " °C)</b>Puja sec fins a " + cond + " m: " + v.t + " − " + (cond / 100) + " = " + tc.toFixed(1) + " °C. Puja humit fins al cim: −" + ((v.s - cond) / 100 * 0.6).toFixed(1) + " → " + ts.toFixed(1) + " °C. Baixa sec " + v.s + " m: +" + (v.s / 100) + " → <b style='display:inline'>" + tf.toFixed(1) + " °C</b>. Ha deixat la humitat a barlovent i arriba sec i més calent.";
+    }
+    card.appendChild(ctr); card.appendChild(pic); card.appendChild(out);
+    card.appendChild(h("div", { "class": "btns" }, [btn("Exercici del dossier (25 °C → 27 °C)", function () { v = { t: 25, c: 1000, s: 1500 }; box.textContent = ""; A.foehn(box); }, true)]));
+    box.appendChild(card); draw();
+  };
+  /* Classifica */
+  A.cls = function (box, id) {
+    if (!id) {
+      var c = h("section", { "class": "card" }, [h("h3", { text: "Classifica: tria un joc" })]);
+      c.appendChild(h("div", { "class": "acts" }, CLASS.map(function (k) { return h("button", { type: "button", "class": "act", style: "min-height:90px", onclick: function () { tab("act", "cls:" + k.id); } }, [tag(k.t), h("b", { text: k.n }), h("span", { text: k.items.length + " elements · " + k.bins.length + " caixes" })]); })));
+      box.appendChild(c); return;
+    }
+    var set = CLASS.filter(function (k) { return k.id === id; })[0], q = shuffle(set.items), i = 0, err = [], put = set.bins.map(function () { return []; });
+    function show() {
+      box.textContent = "";
+      var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [tag(set.t), h("h3", { text: set.n })])]);
+      if (i >= q.length) {
+        card.appendChild(h("div", { "class": "score", text: (q.length - err.length) + "/" + q.length }));
+        card.appendChild(h("p", { "class": "muted", text: err.length ? "Repassa aquests:" : "Perfecte, cap error!" }));
+        if (err.length) card.appendChild(h("ul", { "class": "miss" }, err.map(function (e) { return h("li", { text: e[0] + " → " + set.bins[e[1]] }); })));
+        card.appendChild(h("div", { "class": "btns" }, [btn("Tornar-hi", function () { tab("act", "cls:" + id); }), btn("Un altre joc", function () { tab("act", "cls"); }, true)]));
+        box.appendChild(card); return;
+      }
+      var it = q[i];
+      card.appendChild(h("div", { "class": "prog" }, [h("span", { text: (i + 1) + "/" + q.length }), h("div", { "class": "bar" }, [h("i", { style: "width:" + (100 * i / q.length) + "%" })])]));
+      card.appendChild(h("p", { "class": "ask", text: "On va?" }));
+      card.appendChild(h("div", { "class": "item-now", text: it[0] }));
+      var bins = h("div", { "class": "bins" });
+      set.bins.forEach(function (b, bi) {
+        var el = h("button", { type: "button", "class": "bin" }, [h("span", { "class": "bt", text: b }), h("span", { "class": "bi" }, put[bi].map(function (x) { return h("span", { "class": x[1] ? "x" : null, text: x[0] }); }))]);
+        el.addEventListener("click", function () {
+          if (el.disabled) return;
+          bins.querySelectorAll("button").forEach(function (x) { x.disabled = true; });
+          var good = bi === it[1];
+          if (!good) err.push(it);
+          put[it[1]].push([it[0], !good]);
+          el.classList.add(good ? "flash-ok" : "flash-bad");
+          if (!good) bins.children[it[1]].classList.add("flash-ok");
+          setTimeout(function () { i++; show(); }, good ? 450 : 1300);
+        });
+        bins.appendChild(el);
+      });
+      card.appendChild(bins);
+      box.appendChild(card);
+    }
+    show();
+  };
+  /* Ordena */
+  A.ord = function (box, id) {
+    if (!id) {
+      var c = h("section", { "class": "card" }, [h("h3", { text: "Ordena: tria una seqüència" })]);
+      c.appendChild(h("div", { "class": "acts" }, ORD.map(function (k) { return h("button", { type: "button", "class": "act", style: "min-height:90px", onclick: function () { tab("act", "ord:" + k.id); } }, [tag(k.t), h("b", { text: k.n }), h("span", { text: k.items.length + " passos" })]); })));
+      box.appendChild(c); return;
+    }
+    var set = ORD.filter(function (k) { return k.id === id; })[0], pool = shuffle(set.items.map(function (t, i) { return i; })), next = 0, errs = 0;
+    while (pool.length > 1 && pool.every(function (v, i) { return v === i; })) pool = shuffle(pool);
+    var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [tag(set.t), h("h3", { text: set.n })]), h("p", { "class": "muted", text: "Toca els elements en l'ordre correcte." })]);
+    var done = h("ol", { "class": "ordl" }), pl = h("div", { "class": "pool" }), msg = h("div");
+    pool.forEach(function (ix) {
+      var b = h("button", { type: "button", "class": "opt", text: set.items[ix] });
+      b.addEventListener("click", function () {
+        if (ix === next) { done.appendChild(h("li", { text: set.items[ix] })); b.remove(); next++; if (next === set.items.length) finish(); }
+        else { errs++; b.classList.remove("shake"); void b.offsetWidth; b.classList.add("shake"); }
+      });
+      pl.appendChild(b);
+    });
+    function finish() { msg.appendChild(h("div", { "class": "fb " + (errs ? "bad" : "ok") }, [h("b", { text: errs ? "Fet, amb " + errs + " error" + (errs > 1 ? "s" : "") + "." : "Perfecte, a la primera!" }), h("span", { text: "Llegeix-ho de dalt a baix en veu alta per fixar-ho." })])); msg.appendChild(h("div", { "class": "btns", style: "margin-top:8px" }, [btn("Tornar-hi", function () { tab("act", "ord:" + id); }), btn("Una altra", function () { tab("act", "ord"); }, true)])); }
+    card.appendChild(done); card.appendChild(pl); card.appendChild(msg);
+    box.appendChild(card);
+  };
+  /* Parelles */
+  A.pairs = function (box, ft) {
+    ft = ft || "all";
+    var src = GLOS.filter(function (g) { return ft === "all" || g[0] === ft; });
+    var set = shuffle(src).slice(0, 6), L = shuffle(set), Rr = shuffle(set), sel = null, left = set.length, errs = 0;
+    var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [h("h3", { text: "Parelles: concepte i definició" })]), temaSeg(ft, function (v) { box.textContent = ""; A.pairs(box, v); }), h("p", { "class": "muted", text: "Toca un concepte i després la seva definició." })]);
+    var cl = h("div", { "class": "colp" }), cr = h("div", { "class": "colp" }), msg = h("div");
+    L.forEach(function (g) { var b = h("button", { type: "button", "class": "opt term", text: g[1] }); b.addEventListener("click", function () { if (b.disabled) return; cl.querySelectorAll(".sel").forEach(function (x) { x.classList.remove("sel"); }); sel = { g: g, b: b }; b.classList.add("sel"); }); cl.appendChild(b); });
+    Rr.forEach(function (g) {
+      var b = h("button", { type: "button", "class": "opt", text: g[2] });
+      b.addEventListener("click", function () {
+        if (b.disabled || !sel) return;
+        if (sel.g === g) { sel.b.classList.remove("sel"); sel.b.classList.add("gone"); b.classList.add("gone"); sel.b.disabled = b.disabled = true; sel = null; left--; if (!left) msg.appendChild(h("div", { "class": "fb ok" }, [h("b", { text: "Totes fetes" + (errs ? " (" + errs + " errors)" : ", sense errors!") }), btn("Noves parelles", function () { box.textContent = ""; A.pairs(box, ft); })])); }
+        else { errs++; b.classList.remove("shake"); void b.offsetWidth; b.classList.add("shake"); }
+      });
+      cr.appendChild(b);
+    });
+    card.appendChild(h("div", { "class": "pairs" }, [cl, cr])); card.appendChild(msg);
+    box.appendChild(card);
+  };
+  /* Llampec V/F */
+  A.vf = function (box, ft) {
+    ft = ft || "all";
+    var q = shuffle(VF.filter(function (v) { return ft === "all" || v[0] === ft; })).slice(0, 15), i = 0, ok = 0, streak = 0, best = 0;
+    function show() {
+      box.textContent = "";
+      var card = h("section", { "class": "card" }, [h("div", { "class": "row" }, [h("h3", { text: "Llampec: vertader o fals" })]), temaSeg(ft, function (v) { A.vf(box, v); })]);
+      if (i >= q.length) {
+        card.appendChild(h("div", { "class": "score", text: ok + "/" + q.length })); card.appendChild(h("p", { "class": "muted", text: "Millor ratxa: " + best + " seguides." }));
+        card.appendChild(h("div", { "class": "btns" }, [btn("Una altra ronda", function () { A.vf(box, ft); })])); box.appendChild(card); return;
+      }
+      var it = q[i];
+      card.appendChild(h("div", { "class": "prog" }, [h("span", { text: (i + 1) + "/" + q.length }), h("div", { "class": "bar" }, [h("i", { style: "width:" + (100 * i / q.length) + "%" })]), h("span", { text: "Ratxa " + streak })]));
+      card.appendChild(h("div", { "class": "row" }, [tag(it[0])]));
+      card.appendChild(h("p", { "class": "target", style: "font-size:21px", text: it[1] }));
+      var g = h("div", { "class": "vf" });
+      [["Vertader", 1], ["Fals", 0]].forEach(function (o) {
+        g.appendChild(h("button", { type: "button", "class": "opt", text: o[0], onclick: function () {
+          var good = o[1] === it[2]; if (good) { ok++; streak++; best = Math.max(best, streak); } else streak = 0;
+          g.querySelectorAll("button").forEach(function (b) { b.disabled = true; }); this.classList.add(good ? "ok" : "bad");
+          if (good && !it[3]) { setTimeout(function () { i++; show(); }, 500); return; }
+          card.appendChild(h("div", { "class": "fb " + (good ? "ok" : "bad") }, [h("b", { text: (good ? "Correcte. " : "No: és ") + (good ? "" : (it[2] ? "vertader." : "fals.")) }), h("span", { text: it[3] })]));
+          card.appendChild(h("div", { "class": "btns" }, [btn("Següent", function () { i++; show(); })]));
+        } }));
+      });
+      card.appendChild(g); box.appendChild(card);
+    }
+    show();
+  };
+  /* Llibreta */
+  A.llib = function (box) {
+    var card = h("section", { "class": "card" }, [h("h3", { text: "Preguntes de la llibreta" }), h("p", { "class": "muted", text: "Són les activitats del dossier. Intenta respondre-les tu primer (en veu alta o a la llibreta) i després compara. Les respostes són curtes, per copiar." })]);
+    TEMES.forEach(function (t) {
+      var l = LLIB.filter(function (x) { return x[0] === t.id; }); if (!l.length) return;
+      card.appendChild(h("div", { "class": "row", style: "margin-top:6px" }, [tag(t.id), h("h4", { text: t.t })]));
+      l.forEach(function (q) { var b = h("button", { type: "button", "class": "rq" }, [h("b", { text: q[1] }), h("span", { "class": "hint2", text: "Toca per veure la resposta" }), h("span", { "class": "ans", text: q[2] })]); b.addEventListener("click", function () { b.classList.toggle("open"); }); card.appendChild(b); });
+    });
+    box.appendChild(card);
+  };
+
+  /* ---------- TARGETES (caixes de Leitner) ---------- */
+  var DAYS = [0, 1, 2, 4, 8, 16];
+  var CARDS = GLOS.map(function (g) { return { id: "g" + hash(g[1]), t: g[0], f: g[1], b: g[2] }; }).concat(FACTS.map(function (g) { return { id: "f" + hash(g[1]), t: g[0], f: g[1], b: g[2] }; }));
+  function cs(c) { return S.box[c.id] || { b: 0, d: 0 }; }
+  function dueCards() { var td = today(); return CARDS.filter(function (c) { var x = cs(c); return x.b === 0 || x.d <= td; }); }
+  R.cards = function (mode) {
+    mode = mode || S.cmode || "due"; if (TB[mode]) { S.cft = mode; mode = "all"; }
+    S.cmode = mode; save();
+    var ft = S.cft || "all", rev = !!S.crev;
+    var pool = (mode === "due" ? dueCards() : mode === "bad" ? CARDS.filter(function (c) { return cs(c).b === 1; }) : CARDS).filter(function (c) { return ft === "all" || c.t === ft; });
+    var q = shuffle(pool); if (mode === "due") q = q.slice(0, 25);
+    var i = 0, know = 0;
+    var top = h("section", { "class": "card" }, [h("div", { "class": "row" }, [seg([["due", "Avui toca"], ["all", "Totes"], ["bad", "Les que fallo"]], mode, function (v) { tab("cards", v); }), temaSeg(ft, function (v) { S.cft = v; save(); tab("cards", mode); }), h("button", { type: "button", "class": "chip", "aria-pressed": rev ? "true" : "false", onclick: function () { S.crev = !rev; save(); tab("cards", mode); } }, [h("span", { "class": "tick", text: rev ? "✓" : "" }), "Al revés (definició → concepte)"])])]);
+    var cnt = [0, 0, 0, 0, 0, 0]; CARDS.forEach(function (c) { cnt[cs(c).b]++; });
+    var mx = Math.max.apply(null, cnt) || 1;
+    top.appendChild(h("div", { "class": "boxes", "aria-hidden": "true" }, cnt.map(function (n) { return h("div", { style: "height:" + Math.max(3, 50 * n / mx) + "px" }, [h("span", { text: String(n) })]); })));
+    top.appendChild(h("div", { "class": "boxl" }, ["Noves", "Caixa 1", "Caixa 2", "Caixa 3", "Caixa 4", "Caixa 5"].map(function (t) { return h("span", { text: t }); })));
+    top.appendChild(h("p", { "class": "note", text: "Si l'encertes, la targeta puja de caixa i torna més tard (1, 2, 4, 8 o 16 dies). Si la falles, torna a la caixa 1 i surt avui mateix." }));
+    body.appendChild(top);
+    var zone = h("div", { "class": "st" }); body.appendChild(zone);
+    function show() {
+      zone.textContent = "";
+      if (!q.length) { zone.appendChild(h("section", { "class": "card" }, [h("h3", { text: mode === "due" ? "Avui ja ho tens tot repassat" : "No hi ha targetes aquí" }), h("p", { "class": "muted", text: mode === "due" ? "Torna demà, o repassa-les totes si vols més pràctica." : "Prova un altre filtre." }), btn("Veure-les totes", function () { tab("cards", "all"); })])); return; }
+      if (i >= q.length) { zone.appendChild(h("section", { "class": "card" }, [h("div", { "class": "score", text: know + "/" + q.length }), h("p", { "class": "muted", text: "Sessió acabada." }), h("div", { "class": "btns" }, [btn("Una altra ronda", function () { tab("cards", mode); }), btn("Al Pla", function () { tab("pla"); }, true)])])); return; }
+      var c = q[i], fr = rev ? c.b : c.f, bk = rev ? c.f : c.b;
+      var fl = h("button", { type: "button", "class": "flip", "aria-label": "Gira la targeta" }, [h("div", { "class": "inner" }, [
+        h("div", { "class": "face" }, [tag(c.t), h("span", { "class": "lab2", text: rev ? "Quin concepte és?" : "Què és / què saps?" }), h("span", { "class": rev ? "fb2" : "ft", text: fr }), h("span", { "class": "muted", text: "Toca per girar" })]),
+        h("div", { "class": "face b" }, [h("span", { "class": "lab2", text: "Resposta" }), h("span", { "class": rev ? "ft" : "fb2", text: bk })])
+      ])]);
+      var acts = h("div", { "class": "btns", style: "visibility:hidden" }, [
+        btn("No ho sabia", function () { S.box[c.id] = { b: 1, d: today() }; save(); q.push(c); i++; show(); }, true),
+        btn("Ho sabia", function () { var nb = Math.min(5, (cs(c).b || 0) + 1); S.box[c.id] = { b: nb, d: today() + DAYS[nb] }; save(); know++; i++; show(); })
+      ]);
+      fl.addEventListener("click", function () { fl.classList.toggle("on"); acts.style.visibility = "visible"; });
+      zone.appendChild(h("div", { "class": "prog" }, [h("span", { text: (i + 1) + "/" + q.length }), h("div", { "class": "bar" }, [h("i", { style: "width:" + (100 * i / q.length) + "%" })])]));
+      zone.appendChild(fl); zone.appendChild(acts);
+    }
+    show();
+  };
+
+  /* ---------- TEST ---------- */
+  var QQ = QS.map(function (x) { return { id: "q" + hash(x[2]), t: x[0], s: x[1], q: x[2], o: x[3], e: x[4] }; });
+  R.test = function (arg) {
+    var cfg = S.tcfg || { ft: "all", n: 20 };
+    if (arg === "miss") return run(QQ.filter(function (x) { return S.miss[x.id]; }), true);
+    if (arg && /^\d+$/.test(arg)) return run(shuffle(QQ).slice(0, +arg));
+    var c = h("section", { "class": "card" }, [h("h3", { text: "Test tipus examen" }), h("p", { "class": "muted", text: QQ.length + " preguntes d'opció múltiple. Les opcions es barregen cada vegada i després de cada resposta tens l'explicació." })]);
+    c.appendChild(h("p", { "class": "ask", text: "Temes" })); c.appendChild(temaSeg(cfg.ft, function (v) { cfg.ft = v; S.tcfg = cfg; save(); tab("test"); }));
+    c.appendChild(h("p", { "class": "ask", text: "Nombre de preguntes" })); c.appendChild(seg([[10, "10"], [20, "20"], [40, "40"], [999, "Totes"]], cfg.n, function (v) { cfg.n = v; S.tcfg = cfg; save(); tab("test"); }));
+    var nm = QQ.filter(function (x) { return S.miss[x.id]; }).length;
+    c.appendChild(h("div", { "class": "btns" }, [btn("Començar", function () { run(shuffle(QQ.filter(function (x) { return cfg.ft === "all" || x.t === cfg.ft; })).slice(0, cfg.n)); }), nm ? btn("Només les fallades (" + nm + ")", function () { tab("test", "miss"); }, true) : null]));
+    body.appendChild(c);
+  };
+  function run(list, missMode) {
+    body.textContent = "";
+    list = shuffle(list);
+    if (!list.length) { body.appendChild(h("section", { "class": "card" }, [h("h3", { text: "No hi ha preguntes fallades" }), btn("Fer un test", function () { tab("test"); })])); return; }
+    var i = 0, res = [];
+    var zone = h("div", { "class": "st" }); body.appendChild(zone);
+    function show() {
+      zone.textContent = "";
+      if (i >= list.length) return end();
+      var x = list[i], card = h("section", { "class": "card" });
+      card.appendChild(h("div", { "class": "prog" }, [h("span", { text: (i + 1) + "/" + list.length }), h("div", { "class": "bar" }, [h("i", { style: "width:" + (100 * i / list.length) + "%" })]), h("span", { text: res.filter(function (r) { return r[1]; }).length + " ✓" })]));
+      card.appendChild(h("div", { "class": "row" }, [tag(x.t), h("span", { "class": "muted", text: SB[x.s] ? SB[x.s].n : "" })]));
+      card.appendChild(h("p", { "class": "target", style: "font-size:20px", text: x.q }));
+      var opts = h("div", { "class": "opts" });
+      shuffle(x.o.map(function (t, k) { return [t, k === 0]; })).forEach(function (o) {
+        opts.appendChild(h("button", { type: "button", "class": "opt", text: o[0], onclick: function () {
+          var good = o[1]; res.push([x, good]);
+          if (good) delete S.miss[x.id]; else S.miss[x.id] = 1; save();
+          opts.querySelectorAll("button").forEach(function (b) { b.disabled = true; if (b.textContent === x.o[0]) b.classList.add("ok"); });
+          if (!good) this.classList.add("bad");
+          card.appendChild(h("div", { "class": "fb " + (good ? "ok" : "bad") }, [h("b", { text: good ? "Correcte" : "Resposta correcta: " + x.o[0] }), x.e ? h("span", { text: x.e }) : null]));
+          var nx = btn(i + 1 < list.length ? "Següent" : "Veure resultat", function () { i++; show(); });
+          card.appendChild(h("div", { "class": "btns" }, [nx, h("button", { type: "button", "class": "btn ghost", text: "Llegir l'apartat", onclick: function () { S.ft = x.t; tab("exp", x.s); } })]));
+          nx.focus();
+        } }));
+      });
+      card.appendChild(opts); zone.appendChild(card);
+    }
+    function end() {
+      var ok = res.filter(function (r) { return r[1]; }).length;
+      var per = {}; res.forEach(function (r) { var t = r[0].t; per[t] = per[t] || [0, 0]; per[t][1]++; if (r[1]) per[t][0]++; });
+      Object.keys(per).forEach(function (t) { S.res[t] = per[t]; }); save();
+      var card = h("section", { "class": "card" }, [h("h3", { text: "Resultat" }), h("div", { "class": "score", text: ok + "/" + res.length })]);
+      var tbl = h("div", { "class": "res-t" });
+      Object.keys(per).sort().forEach(function (t) { var pc = Math.round(100 * per[t][0] / per[t][1]); tbl.appendChild(h("div", {}, [tag(t), " " + TB[t].t])); tbl.appendChild(h("div", { "class": "prog", style: "min-width:150px" }, [h("div", { "class": "bar" }, [h("i", { style: "width:" + pc + "%" })]), h("span", { text: per[t][0] + "/" + per[t][1] })])); });
+      card.appendChild(tbl);
+      var bad = res.filter(function (r) { return !r[1]; });
+      if (bad.length) { card.appendChild(h("h4", { text: "Les que has fallat" })); card.appendChild(h("ul", { "class": "miss" }, bad.map(function (r) { return h("li", { style: "display:block" }, [h("b", { text: r[0].q }), h("br"), h("span", { "class": "muted", text: "→ " + r[0].o[0] })]); }))); }
+      card.appendChild(h("div", { "class": "btns" }, [bad.length ? btn("Repetir les fallades", function () { run(bad.map(function (r) { return r[0]; })); }) : null, btn("Nou test", function () { tab("test"); }, !!bad.length)]));
+      zone.appendChild(card);
+    }
+    show();
+  }
+
+  /* ---------- GLOSSARI ---------- */
+  R.glos = function () {
+    var ft = S.gft || "all", qv = "";
+    var list = h("dl", { "class": "gl-l" }), count = h("span", { "class": "muted" });
+    function draw() {
+      list.textContent = ""; var n = 0, norm = function (s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }, qq = norm(qv);
+      GLOS.slice().sort(function (a, b) { return a[1].localeCompare(b[1], "ca"); }).forEach(function (g) {
+        if (ft !== "all" && g[0] !== ft) return; if (qq && norm(g[1] + " " + g[2]).indexOf(qq) < 0) return; n++;
+        list.appendChild(h("div", {}, [h("dt", { text: g[1] }), h("dd", { text: g[2] })]));
+      });
+      count.textContent = n + " termes";
+    }
+    var c = h("section", { "class": "card" }, [h("h3", { text: "Glossari" }), h("input", { "class": "search", type: "search", placeholder: "Cerca un concepte…", "aria-label": "Cerca", oninput: function () { qv = this.value; draw(); } }), h("div", { "class": "row" }, [temaSeg(ft, function (v) { S.gft = v; save(); tab("glos"); }), count]), list]);
+    body.appendChild(c); draw();
+  };
+
+  /* ---------- Arrencada ---------- */
+  body = $("sbody");
+  document.querySelectorAll("#sec button").forEach(function (b) { b.addEventListener("click", function () { setSec(b.getAttribute("data-s")); }); });
+  document.querySelectorAll("#stabs button").forEach(function (b) { b.addEventListener("click", function () { tab(b.getAttribute("data-t")); window.scrollTo(0, 0); }); });
+  if (!R[S.tab]) S.tab = "pla";
+  setSec(S.sec);
+  window.__temari = { S: S, tab: tab, setSec: setSec };
+})();
+
 </script>
 </body>
 </html>
