@@ -377,6 +377,14 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
     .escala .st2 { border-radius: 8px; height: auto !important; min-height: 70px; }
     .grad .rg span { font-size: 10.5px; }
   }
+  .pc { display: grid; grid-template-columns: minmax(90px, .8fr) minmax(0, 1fr) minmax(0, 1fr); gap: 4px; font-size: 13.5px; }
+  .pc > * { padding: 8px 10px; border-radius: 8px; }
+  .pc > b { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink2); }
+  .pc .pf { font-weight: 700; background: var(--bg); }
+  .pc span.pg { background: color-mix(in srgb, var(--ok) 14%, var(--surface)); }
+  .pc span.pb { background: color-mix(in srgb, var(--bad) 13%, var(--surface)); }
+  .pc b.pg { color: var(--ok); } .pc b.pb { color: var(--bad); }
+  @media (max-width: 600px) { .stack { font-size: 10.5px; } .pc { font-size: 12.5px; grid-template-columns: minmax(70px, .7fr) minmax(0, 1fr) minmax(0, 1fr); } .pc > * { padding: 6px 7px; } }
 </style>
 
 <style>#gate{position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px}#gate form{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;max-width:340px;width:100%;display:flex;flex-direction:column;gap:12px;font-family:var(--sans);color:var(--ink)}#gate h1{margin:0;font-size:22px}#gate p{margin:0;font-size:14px;color:var(--ink2)}#gate input{font:inherit;font-size:18px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);text-transform:uppercase;letter-spacing:.1em}#gate button{font:inherit;font-weight:600;padding:12px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);cursor:pointer}#gate .err{color:var(--bad);min-height:1.2em}body.locked>main{display:none}</style>
@@ -1721,57 +1729,28 @@ html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--
 /* ===== Dades del temari: Bloc 2, temes 1-3 (fins als recursos forestals) ===== */
 var TEMES = [
  { id: "t1", n: "Tema 1", t: "Relleu, clima i vegetació d'Espanya", c: "#1D5FA8" },
- { id: "t2", n: "Tema 2", t: "Relleu, clima i vegetació de Catalunya", c: "#B5452F" },
- { id: "t3", n: "Tema 3", t: "Els recursos naturals", c: "#2E7D4F" }
+ { id: "t3", n: "Tema 3", t: "Els recursos naturals", c: "#2E7D4F" },
+ { id: "t4", n: "Energia", t: "Els recursos energètics", c: "#C46A12" }
 ];
 
 /* Nivells: e = essencial, i = important, d = detall. Text propi (HTML estàtic). */
 var SECC = [
  /* ---------------- TEMA 1 ---------------- */
- { id: "s1", t: "t1", n: "1.1 Situació i trets del relleu", map: "relief", ps: [
-  ["e", "Espanya és a l'extrem <b>sud-occidental d'Europa</b>, entre l'oceà Atlàntic i la mar Mediterrània i a tocar d'Àfrica. El relleu peninsular té tres trets fonamentals: un <b>gran altiplà central</b> (la Meseta) envoltat de serralades, <b>dues grans depressions</b> als extrems (Ebre i Guadalquivir) i una <b>altitud mitjana elevada, d'uns 660 m</b>."],
-  ["i", "Aquesta altitud té conseqüències pràctiques: <b>només l'11% del territori queda per sota dels 200 m</b>. Les serralades que envolten la Meseta dificulten les comunicacions entre l'interior i la costa, l'agricultura es fa més difícil i el clima és més dur, perquè la temperatura baixa a mesura que pugem."],
-  ["i", "La litosfera està dividida en <b>plaques tectòniques</b>. El territori espanyol forma part de la <b>placa Euroasiàtica</b>, al límit amb la <b>placa Africana</b>. En aquesta zona de contacte les plaques es trenquen en d'altres de més petites, com la <b>microplaca Ibèrica</b> i la <b>microplaca d'Alborán</b>. Per això el sud i el sud-est són les zones amb més terratrèmols."],
-  ["d", "Coordenades extremes de la península: al nord, l'Estaca de Bares (43° 47' N); al sud, la Punta de Tarifa (36° 00' N); a l'est, el cap de Creus (3° 19' E); i a l'oest, el cap Touriñán (9° 17' O)."]
- ], rq: [["Quins són els tres trets fonamentals del relleu peninsular?", "Un gran altiplà central (Meseta) envoltat de serralades, dues grans depressions (Ebre i Guadalquivir) i una altitud mitjana elevada (660 m)."], ["Per què el sud i el sud-est tenen més terratrèmols?", "Perquè són a prop del contacte entre la placa Euroasiàtica i l'Africana (microplaques Ibèrica i d'Alborán)."]] },
-
- { id: "s2", t: "t1", n: "1.2 Com es va formar el relleu", ps: [
-  ["e", "<b>Era Primària o Paleozoica</b> (acaba fa uns 250 milions d'anys). Existia l'antiquíssim massís Galaic i la resta era aigua (mar de Tetis). L'<b>orogènia herciniana</b> va formar el <b>Massís Hespèric</b>, que ocupa la meitat occidental de la península i és de <b>roques silícies i metamòrfiques</b> (granit, pissarra). És el <b>sòcol</b> de la Meseta."],
-  ["i", "<b>Era Secundària o Mesozoica</b> (acaba fa uns 65 milions d'anys). Va ser una època de calma: l'erosió va desgastar els relleus hercinians i els materials transportats es van dipositar al mar formant <b>roques calcàries</b>."],
-  ["e", "<b>Era Terciària (Cenozoic)</b>: l'<b>orogènia alpina</b>. La pressió de les plaques va <b>plegar els materials tous</b> (els sediments) i <b>trencar els durs</b> (el sòcol hercinià, que és rígid). Així van néixer els <b>Pirineus</b>, les <b>Serralades Bètiques</b> i la part oriental de la <b>Serralada Cantàbrica</b>. A més, el sòcol de la Meseta es va fracturar en blocs: alguns es van aixecar (<b>Sistema Central</b>, <b>Monts de Toledo</b>) i les vores es van plegar (les <b>vores muntanyoses</b> de la Meseta)."],
-  ["i", "<b>Període Quaternari</b> (des de fa uns 1,8 milions d'anys fins avui). Domina l'<b>erosió</b> dels relleus alpins. Els sediments van reomplir la <b>depressió de l'Ebre</b> (entre els Pirineus i el Sistema Ibèric) i la del <b>Guadalquivir</b> (entre Sierra Morena i les Bètiques), i es van formar les <b>planes litorals</b>."],
+ { id: "s1", t: "t1", n: "1.1 El relleu en general", ps: [
+  ["e", "Espanya és al <b>sud-oest d'Europa</b>, entre l'oceà Atlàntic i la mar Mediterrània. El relleu té tres trets: un <b>gran altiplà central</b> (la Meseta) envoltat de serralades, <b>dues grans depressions</b> (Ebre i Guadalquivir) i una <b>altitud mitjana elevada (660 m)</b>, que dificulta les comunicacions i fa el clima més dur."],
+  ["i", "El territori és a la <b>placa Euroasiàtica</b>, al límit amb l'<b>Africana</b>. Per això el sud i el sud-est tenen més terratrèmols."],
+  ["e", "<b>Com es va formar, en quatre passos:</b><br>1. <b>Paleozoic</b>: l'<b>orogènia herciniana</b> forma el sòcol (el Massís Hespèric, a l'oest).<br>2. <b>Mesozoic</b>: l'erosió l'aplana i es formen roques calcàries.<br>3. <b>Terciari</b>: l'<b>orogènia alpina</b> aixeca els Pirineus i les Bètiques, i trenca el sòcol de la Meseta, d'on surten les serralades interiors i les vores.<br>4. <b>Quaternari</b>: l'erosió omple les depressions de l'Ebre i el Guadalquivir i fa les planes litorals."],
   ["n", "<b>Truc per recordar-ho:</b> herciniana = <i>fa</i> el sòcol; Mesozoic = el <i>desgasta</i>; alpina = el <i>trenca</i> i aixeca serralades; Quaternari = <i>omple</i> les depressions."]
- ], rq: [["Quina orogènia va formar el Massís Hespèric i de quines roques és?", "L'herciniana (Paleozoic). Roques silícies i metamòrfiques."], ["Per què l'orogènia alpina va plegar uns materials i en va trencar d'altres?", "Els materials tous (sediments) es pleguen; els durs i rígids (el sòcol) es fracturen en blocs."]] },
+ ], rq: [["Quins són els tres trets del relleu peninsular?", "Una Meseta central envoltada de serralades, dues depressions (Ebre i Guadalquivir) i una altitud mitjana elevada (660 m)."], ["Quina orogènia va formar el sòcol i quina els Pirineus?", "El sòcol, l'herciniana (Paleozoic). Els Pirineus, l'alpina (Terciari)."]] },
 
- { id: "s3", t: "t1", n: "1.3 Les unitats de relleu", map: "relief", ps: [
-  ["e", "El relleu d'Espanya s'organitza en cinc grups: <b>la Meseta</b>, <b>les serralades exteriors</b> a la Meseta, <b>les dues grans depressions</b>, <b>els relleus litorals</b> i <b>el relleu insular</b>."],
-  ["e", "<b>La Meseta</b> és la unitat principal (<b>45% de la superfície</b>). Es divideix en la <b>Submeseta Nord</b>, travessada pel Duero, i la <b>Submeseta Sud</b>, formada per dos altiplans (Tajo i Guadiana) separats pels Monts de Toledo."],
-  ["e", "<b>Serralades interiors de la Meseta.</b> El <b>Sistema Central</b> la divideix pràcticament en dues meitats i té serres d'altitud important: Somosierra, Guadarrama, Gredos i Gata. Els <b>Monts de Toledo</b> divideixen la Submeseta Sud i fan de divisòria d'aigües entre el Tajo i el Guadiana; són serres d'alçada modesta, com la de Guadalupe."],
-  ["e", "<b>Vores muntanyoses de la Meseta.</b> El <b>Massís Galaicoleonès</b> (Galícia, oest d'Astúries, Muntanyes de Lleó, serres de la Cabrera i Segundera) és un fragment del relleu més antic, paleozoic i molt erosionat. La <b>Serralada Cantàbrica</b> té una part occidental, el massís Asturià, elevada i trencada, i una part oriental, la Muntanya Cantàbrica, amb cims més baixos. El <b>Sistema Ibèric</b> té un sector nord (Moncayo, Pics d'Urbión), que separa la Meseta de la depressió de l'Ebre, i un sector sud de serres i depressions creuades per rius (Monts Universals, Conca, Albarracín, Javalambre, Gúdar i Maestrat). <b>Sierra Morena</b> és la vora meridional i separa la Meseta de la depressió del Guadalquivir."],
-  ["e", "<b>Serralades exteriors.</b> Els <b>Pirineus</b>, d'uns 440 km, del golf de Biscaia al cap de Creus. Els <b>Prepirineus</b>, amb unes serralades interiors i unes exteriors i la depressió mitjana pirinenca entremig. Les <b>Serralades Litorals Catalanes</b>, dues rengleres paral·leles a la costa separades per una depressió. Les <b>Serralades Bètiques</b>: la <b>Penibètica</b>, amb Sierra Nevada i el <b>Mulhacén (3.481 m)</b>, i la <b>Subbètica</b>, amb les serres de Cazorla, Segura, Sagra i Mágina."],
-  ["c", "<b>Compte:</b> el dossier dona 3.481 m al Mulhacén; altres fonts actuals (i el mapa de l'app) diuen 3.479 m. A l'examen, fes servir la xifra del professor."],
-  ["c", "<b>Compte:</b> a la diapositiva d'Espanya, el Cadí surt com a Prepirineu <i>exterior</i> (amb el Montsec) i Guara i Peña com a interiors; però a la de Catalunya el Cadí surt com a Prepirineu <i>interior</i> (amb el Pedraforca) i els exteriors són el Montsec i el Montroig. La segona és la classificació habitual per a Catalunya. Pregunta-ho al professor si cau a l'examen."],
-  ["e", "<b>Les dues depressions</b> es van formar amb els sediments de l'erosió dels relleus i dels rius. On els materials eren més durs van quedar <b>relleus tabulars</b>, i on eren més tous, <b>valls i terrasses</b>. La <b>depressió de l'Ebre</b> queda encaixada entre els Prepirineus, el Sistema Ibèric i les Serralades Litorals Catalanes. La <b>del Guadalquivir</b> s'estén entre Sierra Morena i les Serralades Bètiques."]
- ], rq: [["Quines serralades són interiors de la Meseta i quines en són les vores?", "Interiors: Sistema Central i Monts de Toledo. Vores: Massís Galaicoleonès, Cantàbrica, Sistema Ibèric i Sierra Morena."], ["Entre quines unitats hi ha la depressió del Guadalquivir?", "Entre Sierra Morena i les Serralades Bètiques."]] },
+ { id: "sm", t: "t1", n: "1.2 Al mapa: relleu, costes i rius", maps: [["relief", "Mapa del relleu"], ["hidro", "Mapa de costes i rius"]], ps: [
+  ["n", "Aquesta part <b>només s'ha de saber situar al mapa</b>. Practica-la a la secció Mapes: primer amb el mode Estudi, després amb Localitza (et diu el nom i tu el toques) i Anomena (et marca el lloc i tu dius el nom)."],
+  ["e", "<b>Relleu (12 unitats):</b> Meseta, Sistema Central, Monts de Toledo, Massís Galaicoleonès, Serralada Cantàbrica, Sistema Ibèric, Sierra Morena, Pirineus, Prepirineus, Serralades Bètiques, depressió de l'Ebre i depressió del Guadalquivir. A les illes: Serra de Tramuntana (Mallorca) i el Teide (Tenerife)."],
+  ["e", "<b>Costes:</b> Cantàbrica, Gallega, Atlàntica andalusa i Mediterrània."],
+  ["e", "<b>Rius per vessants:</b> Cantàbric (Bidasoa, Nervión), Atlàntic (Miño, Duero, Tajo, Guadiana, Guadalquivir) i Mediterrani (Ebre, Xúquer, Túria)."]
+ ] },
 
- { id: "s4", t: "t1", n: "1.4 Costes i relleu insular", map: "hidro", ps: [
-  ["e", "<b>Costes atlàntiques.</b> La <b>cantàbrica</b> és alta i rectilínia: les muntanyes arriben al mar i formen penya-segats; hi ha poques platges i les ries són curtes i estretes. La <b>gallega</b> va de l'Estaca de Bares i el cap Ortegal fins a Portugal, i el seu tret més característic són les <b>ries</b>. L'<b>atlàntica andalusa</b> (golf de Cadis, de Portugal a Gibraltar) és <b>baixa i sorrenca</b>: els al·luvions dels rius han format planes costaneres on el vent aixeca dunes."],
-  ["e", "<b>Costes mediterrànies.</b> La d'<b>Andalusia i Múrcia</b> (de l'estret de Gibraltar al cap de la Nau) és tallada, amb camps de dunes i albuferes com el <b>Mar Menor</b>. El <b>golf de València</b> (del cap de la Nau al delta de l'Ebre) és una gran plana litoral d'uns 400 km amb platges, aiguamolls, albuferes i tómbols (<b>penyal d'Ifac</b>, Calp). El <b>litoral català</b> no és uniforme: hi alternen deltes, petites planes i costes escarpades."],
-  ["d", "<b>Tómbol:</b> relleu format per una fletxa o cordó litoral que uneix una illa al continent."],
-  ["e", "<b>Arxipèlag balear.</b> Mallorca, Eivissa i Formentera són fragments emergits de la <b>Serralada Subbètica</b>, mentre que <b>Menorca</b> està relacionada amb la <b>Serralada Litoral Catalana</b>. Al nord de Mallorca hi ha la <b>Serra de Tramuntana</b> i a l'altra banda, la Serralada de Llevant. Eivissa i Formentera tenen relleu muntanyós i una gran plana; Menorca és plana."],
-  ["e", "<b>Arxipèlag canari.</b> Són illes <b>volcàniques</b> amb un relleu molt complex: cons, calderes, barrancs, colades de lava i penya-segats. El <b>Teide (3.718 m)</b> és un volcà actiu i el cim més alt d'Espanya. Les illes més properes a Àfrica (<b>grup oriental: Lanzarote i Fuerteventura</b>) són força planes; les del <b>grup occidental</b> (Tenerife, La Palma, La Gomera, El Hierro i Gran Canària) són muntanyoses."],
-  ["d", "Hi ha notícia històrica de gran activitat volcànica a Lanzarote al segle XVIII."]
- ], rq: [["Quina costa és baixa i sorrenca amb dunes?", "L'atlàntica andalusa (golf de Cadis)."], ["De quina serralada són fragments Mallorca, Eivissa i Formentera? I Menorca?", "De la Subbètica. Menorca, de la Serralada Litoral Catalana."]] },
-
- { id: "s5", t: "t1", n: "1.5 Els rius d'Espanya", map: "hidro", ps: [
-  ["e", "<b>Vessant cantàbric:</b> rius <b>curts i cabalosos</b>, perquè neixen a la Serralada Cantàbrica, molt a prop del mar, i hi plou molt. Exemples: Bidasoa, Nervión, Nalón, Narcea i Navia."],
-  ["e", "<b>Vessant atlàntic:</b> rius <b>llargs que pateixen estiatge a l'estiu</b>. Són llargs perquè la Meseta s'inclina cap a l'oest i recorren tota la península; a l'estiu baixen poc perquè plou poc. Exemples: Miño, Duero, Tajo, Guadiana, Guadalquivir, Odiel i Tinto."],
-  ["e", "<b>Vessant mediterrani:</b> excepte l'<b>Ebre</b>, són rius de <b>poc cabal i molt irregulars</b>, amb crescudes fortes a la tardor. Exemples: Ebre, Xúquer, Ter, Llobregat, Túria, Millars, Segura, Almanzora i Guadalhorce."],
-  ["i", "<b>Rius insulars.</b> A les <b>Balears</b> no hi ha cap curs d'aigua permanent, per les pluges escasses i perquè el terreny és permeable; només hi ha <b>torrents</b>, i a les desembocadures es formen albuferes o zones pantanoses (albufera d'Alcúdia). A les <b>Canàries</b> tampoc no hi ha xarxa fluvial; hi ha <b>barrancs</b>, talls al terreny fets per l'erosió que baixen de les muntanyes al mar i fan de llit de torrents. Hi ha pocs aqüífers, però s'ha pogut construir un embassament a Gran Canària (Soria)."],
-  ["d", "<b>Estiatge:</b> disminució del cabal d'un riu en una època determinada de l'any. <b>Cabal:</b> quantitat de fluid que travessa una secció del llit per unitat de temps."]
- ], rq: [["Com són els rius de cada vessant?", "Cantàbric: curts i cabalosos. Atlàntic: llargs amb estiatge d'estiu. Mediterrani: poc cabal i irregulars (excepte l'Ebre)."], ["Quina diferència hi ha entre un riu i un barranc?", "El riu porta aigua tot l'any; el barranc és un tall al terreny que només porta aigua quan plou."]] },
-
- { id: "s6", t: "t1", n: "1.6 El clima: conceptes i factors", ps: [
+ { id: "s6", t: "t1", n: "1.3 El clima: conceptes i factors", ps: [
   ["e", "El <b>temps</b> són les condicions de l'atmosfera (temperatura, pressió, vent, núvols, precipitacions) en un lloc i un moment determinats. El <b>clima</b> són les condicions mitjanes d'un lloc, és a dir, la repetició anual dels tipus de temps."],
   ["e", "<b>La temperatura.</b> Mesura l'energia de les molècules de l'aire, que ve de la radiació solar. Hi influeixen el <b>gradient vertical de temperatura</b> (de mitjana baixa <b>0,65 °C cada 100 m</b> que pugem), el <b>repartiment de terres i mars</b> (els oceans s'escalfen i es refreden més a poc a poc que els continents), els corrents marins, el dia i la nit, els vents i l'orientació (solana i obaga)."],
   ["e", "<b>La humitat.</b> L'aire conté vapor d'aigua, i com més calent és, més en pot contenir. La <b>humitat absoluta</b> (g/m³) és la quantitat de vapor en un lloc i moment. La <b>relativa</b> (%) és la relació entre el vapor que hi ha i el màxim que hi podria haver; al 100% l'aire està <b>saturat</b> i el vapor es condensa."],
@@ -1782,7 +1761,7 @@ var SECC = [
   ["i", "La <b>gota freda</b> és una pertorbació atmosfèrica extratropical no frontal que pot provocar pluges violentes i intenses durant hores o dies, amb llamps i calamarsa. El <b>corrent en jet</b> (<i>jet stream</i>) és un corrent d'aire molt ràpid (60-550 km/h) prop de la tropopausa que envolta la Terra i separa les altes pressions tropicals de les baixes pressions polars."]
  ], rq: [["Quina diferència hi ha entre temps i clima?", "Temps: condicions en un lloc i moment concrets. Clima: condicions mitjanes, la repetició anual dels tipus de temps."], ["Què vol dir que la humitat relativa és del 100%?", "Que l'aire està saturat: no pot contenir més vapor i es condensa."]] },
 
- { id: "s7", t: "t1", n: "1.7 Els climes i la vegetació d'Espanya", ps: [
+ { id: "s7", t: "t1", n: "1.4 Els climes i la vegetació d'Espanya", ps: [
   ["e", "<b>Clima oceànic o atlàntic</b> (Galícia i cornisa cantàbrica). Influït per les masses d'aire de l'Atlàntic: hiverns suaus, estius moderats, mitjana d'uns <b>14 °C</b>, <b>poca amplitud tèrmica</b>, molta humitat i <b>pluja abundant tot l'any</b>. <b>Vegetació:</b> bosc temperat <b>caducifoli</b>, sobretot <b>rouredes i fagedes</b>, i també castanyers, bedolls, aurons i til·lers. Quan el bosc es degrada apareix la <b>landa</b> (brucs i falgueres). L'acció humana l'ha substituït en molts llocs per <b>pins i eucaliptus</b>, i al fons de les valls hi ha prats humits per al bestiar."],
   ["c", "<b>Compte:</b> la diapositiva posa «100-2500 mm» de pluja al clima oceànic; segurament vol dir <b>1.000-2.500 mm</b>."],
   ["e", "<b>Clima mediterrani.</b> Temperat, amb mitjanes de <b>14-18 °C</b>: hiverns suaus (10-12 °C) i estius càlids (22-26 °C). Les pluges són <b>equinoccials</b> (primavera i tardor) i fan <b>400-700 mm</b>, més al nord i a la muntanya. Té variants: típic (Palma), de pluges més abundants (Girona) i sec del sud-est (Almeria). <b>Vegetació:</b> baixa, de fulla petita i <b>perenne</b>: <b>alzina</b>, roure garriguer, pi negre i <b>pi blanc</b>; a Catalunya i el sud d'Andalusia, <b>alzina surera</b>. On l'home ha destruït el bosc hi ha <b>garrigues</b> (garric, estepes, bruc). Al sud-est, àrid, hi ha espart, <b>margalló</b> i farigola. L'home hi ha creat olivars (Guadalquivir), ametllers, figueres, cítrics i palmeres."],
@@ -1791,32 +1770,6 @@ var SECC = [
   ["e", "<b>Clima de muntanya.</b> Varia segons l'alçada i l'<b>efecte Foehn</b>, i se suma al clima de cada zona. <b>Oceànica</b> (Cantàbrica i Pirineus): molta pluja (1.700 mm al Cantàbric, 1.200 als Pirineus), uns 5 °C i neu fins a 9 mesos. <b>Mediterrània</b> (relleus costaners): 600-800 mm, estius frescos i hiverns suaus. <b>Interior</b> (Sistema Ibèric, Central i Monts de Toledo): hiverns llargs i molt freds, estius curts i frescos, 400-1.000 mm."],
   ["e", "<b>L'efecte Foehn.</b> Quan una muntanya talla el pas del vent, l'aire ha de pujar. Pel vessant de <b>barlovent</b> es refreda (1 °C cada 100 m mentre és sec), el vapor es condensa i plou; a partir d'aquí es refreda més a poc a poc (0,6 °C cada 100 m). Quan baixa pel vessant de <b>sotavent</b>, ja sense humitat, s'escalfa 1 °C cada 100 m i arriba a baix <b>sec i més calent</b> que quan va començar. Prova-ho al simulador de la pestanya Activitats."]
  ], rq: [["Quina vegetació és pròpia del clima oceànic? I què apareix quan es degrada?", "Bosc caducifoli (rouredes i fagedes). La landa (brucs i falgueres)."], ["Diferència entre màquia i garriga?", "Màquia: sòls silicis (arboç, bruc, boix). Garriga: sòls calcaris (garric, llentiscle, ullastre)."]] },
-
- /* ---------------- TEMA 2 ---------------- */
- { id: "s8", t: "t2", n: "2.1 El relleu de Catalunya", map: "com", ps: [
-  ["e", "De manera simplificada, Catalunya té <b>quatre grans unitats</b>: (1) els <b>Pirineus</b> (Axial i Prepirineu), (2) les <b>Serralades Litorals catalanes</b>, (3) la <b>Depressió Central</b> i (4) la <b>costa amb les planes litorals</b>. Té un relleu trencat i muntanyós i dues grans planes: la de l'<b>Empordà</b>, que desguassa al mar, i la d'<b>Urgell</b>, que desguassa cap a l'Ebre."],
-  ["d", "Segons el dossier, Catalunya ocupa 31.896 km², i només 6.435 km² no passen dels 200 m d'altitud."],
-  ["e", "<b>Els Pirineus.</b> El <b>Pirineu axial</b> s'aixeca per sobre dels 3.000 m; hi ha el cim més alt de Catalunya, la <b>Pica d'Estats (3.143 m)</b>. El <b>Prepirineu</b> té unes serralades <b>interiors</b> (Cadí, Pedraforca, Bassagoda) i unes <b>exteriors</b> (Montsec i Montroig), separades per depressions mitjanes com la <b>Conca de Tremp</b>. La <b>Serralada Transversal</b>, al peu dels Pirineus, uneix el Prepirineu amb les serralades litorals; hi destaca el <b>Puigsacalm</b>."],
-  ["e", "<b>Serralades litorals.</b> La <b>Serralada Prelitoral</b> (interior) va dels Pirineus a l'Ebre i hi destaquen <b>Montserrat</b> i el <b>Montseny</b>. La <b>Serralada Litoral o de Marina</b> és davant la costa (Barcelona, Maresme), amb el <b>Montnegre (759 m)</b>."],
-  ["c", "<b>Compte:</b> el dossier dona 1.747 m al Montseny. El cim més alt del Montseny, el Turó de l'Home, fa uns 1.706 m. Revisa-ho amb el professor."],
-  ["e", "<b>Les depressions.</b> La <b>Depressió Central</b> (part de la de l'Ebre) s'estén entre el Prepirineu i la Serralada Prelitoral, amb unitats com la <b>Plana de Vic</b>, el pla de <b>Manresa</b>, la <b>Conca d'Òdena</b> o la de <b>Barberà</b>, que alternen amb altiplans (<b>la Segarra</b>). La <b>Depressió Prelitoral</b> és entre la Serralada Litoral i la Prelitoral, i la <b>Depressió Litoral</b>, entre la Serralada de Marina i la costa."],
-  ["a", "<b>Per ampliar:</b> les principals planes de la Depressió Prelitoral són el Vallès i el Penedès."],
-  ["e", "<b>Les costes.</b> Hi ha <b>costes altes</b>, on les serralades arriben al mar (<b>Costa Brava</b>), i <b>costes baixes</b>, amb platges llargues de sorra fina (Tarragonès)."]
- ], rq: [["Quines són les quatre grans unitats de relleu de Catalunya?", "Pirineus (Axial i Prepirineu), Serralades Litorals, Depressió Central i la costa amb les planes litorals."], ["Què uneix la Serralada Transversal?", "El Prepirineu amb les serralades litorals."]] },
-
- { id: "s9", t: "t2", n: "2.2 Les regions fisiogràfiques", ps: [
-  ["e", "Catalunya es divideix en dues grans zones segons la pluja. La <b>Catalunya seca</b> rep <b>menys de 700 mm</b> l'any, té estius secs i calorosos i hiverns secs i temperats, i una vegetació mediterrània perennifòlia adaptada a la sequera (alzinars). La <b>Catalunya humida</b> rep <b>més de 700 mm</b>, hi ha les principals reserves d'aigua del país i la vegetació és caducifòlia (rouredes, fagedes) i de coníferes (avets i pi negre)."],
-  ["e", "<b>Regions de la Catalunya seca:</b><br>• <b>Tramuntana</b> (Rosselló i Empordà, de les Alberes a les Gavarres): pi blanc i boscos mixtos de pi i alzina surera.<br>• <b>Litoral mediterrani</b> (serralades i depressions litorals, de les Gavarres a la Sénia): més calorós i sec cap al sud; pi blanc i boscos d'alzina i pi. És la <b>regió més poblada</b>.<br>• <b>Altiplà central</b> (Depressió Central entre la Prelitoral i el Prepirineu): més oscil·lació tèrmica i menys pluja que al litoral; pinedes de pi blanc i matollars; pobles a la vora dels rius.<br>• <b>Prepirineu</b>: hivern fred i estiu calorós; pi blanc, roures i alzines, i als vessants humits roure, faig i pi negre; pobles a les valls.<br>• <b>Continental</b> (terres més interiors i planes, fetes de sediments dels rius): clima extremat i pluja escassa (<b>300-450 mm</b>); vegetació <b>estepària</b> adaptada a sòls salins; pobles a les vores dels rius i a les terrasses fluvials."],
-  ["e", "<b>Regions de la Catalunya humida:</b><br>• <b>Regió oriental</b> (Serralada Transversal, entre el Pirineu i la Serralada Litoral): és la «<b>dorsal pluviomètrica de Catalunya</b>» (800-1.800 mm), sense cap mes sec. Rouredes, castanyedes, fagedes i alzinars; poblament força dispers.<br>• <b>Alt Pirineu</b> (muntanyes de més de 2.000 m): paisatge alpí i subalpí, clima fred i humit (1.000-2.000 mm). Caducifolis (rouredes, fagedes) amb perennifolis (pi negre, avetoses) i prats. És la <b>regió menys poblada</b>."],
-  ["i", "<b>El matollar</b> és la vegetació arbustiva que surt on s'ha perdut el bosc, en condicions seques. N'hi ha dos tipus: la <b>màquia</b> (oliveres silvestres, garric, llentiscle, estepa, bruc i ginesta) i la <b>garriga</b> (garric, marfull, farigola, romaní i espígol)."],
-  ["d", "<b>Terrassa fluvial:</b> esglaó pla al costat d'un riu, fet de sediments que el riu va deixar quan baixava més alt. <b>Vegetació estepària:</b> herbes i matolls baixos adaptats a la sequera i als sòls pobres o salins."]
- ], rq: [["Quin és el límit de pluja entre la Catalunya seca i la humida?", "700 mm l'any."], ["Quina regió és la dorsal pluviomètrica i quina és la menys poblada?", "La regió oriental (Serralada Transversal). L'Alt Pirineu."]] },
-
- { id: "s10", t: "t2", n: "2.3 La xarxa hidrogràfica i Köppen", map: "hidro", ps: [
-  ["e", "Els rius catalans s'agrupen en <b>quatre vessants</b>:<br>1. <b>Xarxa Pirineu-Ebre</b>: neixen al Pirineu axial i desemboquen a l'Ebre. Són molt cabalosos a la <b>primavera pel desgel</b>. El <b>Segre</b> i els seus afluents: Valira, Noguera Pallaresa, Noguera Ribagorçana, Cinca, Set, Corb, Boix, Aravó i Llobregós.<br>2. <b>Xarxa Pirineu-Mediterrani</b>: neixen als Pirineus o Prepirineus i van al Mediterrani; cabalosos però amb estiatge. Muga, Fluvià, <b>Ter</b> (amb el Freser i l'Onyar), <b>Llobregat</b> (amb el Cardener i l'Anoia) i Foix.<br>3. <b>Xarxa Mediterrània</b>: neixen a les serralades Prelitoral i Litoral. Tordera, Besòs, Gaià, Francolí, Sénia i Riudecanyes.<br>4. <b>Xarxa Atlàntica</b>: neix a la Vall d'Aran i va a l'Atlàntic: la <b>Garona</b>."],
-  ["i", "<b>La classificació de Köppen</b> combina les mitjanes de temperatura i de precipitació i l'estacionalitat de la pluja. Té <b>5 grups</b> (majúscules): <b>A</b> tropical, <b>B</b> sec (àrid i semiàrid), <b>C</b> temperat, <b>D</b> continental i <b>E</b> polar. Les minúscules indiquen el patró de la pluja i altres trets (per exemple, <i>s</i> = estiu sec, <i>w</i> = hivern sec, <i>f</i> = sense estació seca)."],
-  ["a", "<b>Per ampliar:</b> a Espanya predominen el <b>Csa</b> (mediterrani d'estiu calorós) i el <b>Csb</b> (d'estiu temperat), el <b>Cfb</b> (oceànic) al nord, i el <b>BSk/BSh</b> (semiàrid) al sud-est i a la vall de l'Ebre."]
- ], rq: [["Per què els rius de la xarxa Pirineu-Ebre són cabalosos a la primavera?", "Perquè porten l'aigua del desgel."], ["Quin riu català va a l'Atlàntic?", "La Garona, que neix a la Vall d'Aran."]] },
 
  /* ---------------- TEMA 3 ---------------- */
  { id: "s11", t: "t3", n: "3.1 Què és un recurs i com es classifica", ps: [
@@ -1853,7 +1806,39 @@ var SECC = [
   ["c", "<b>Compte:</b> la diapositiva diu que la llei de 2007 té «quatre figures», però en llista cinc (parcs, àrees marines, reserves, monuments i paisatges). Aprèn-te les cinc."],
   ["e", "<b>Legislació catalana</b>, que s'hi afegeix: el <b>PEIN</b> (Pla d'Espais d'Interès Natural), creat el <b>1985</b> per fer una xarxa d'espais protegits a tot el territori, amb <b>144 espais</b>; i els <b>PNIN</b> (Paratges Naturals d'Interès Nacional), com parcs nacionals però més petits i <b>només a Catalunya</b> (Pedraforca, Poblet)."],
   ["d", "Exemples de les imatges del dossier: Parc Natural de Montserrat, Parc Nacional d'Aigüestortes, Paratge Natural del Pedraforca i Reserva Natural dels Aiguamolls de l'Empordà."]
- ], rq: [["Quina és la llei vigent i quines figures té?", "Llei del Patrimoni Natural i de la Biodiversitat (2007): parcs (nacionals i naturals), àrees marines protegides, reserves naturals, monuments naturals i paisatges protegits."], ["Què és un PNIN?", "Un Paratge Natural d'Interès Nacional: com un parc nacional però més petit, només a Catalunya (Pedraforca, Poblet)."]] }
+ ], rq: [["Quina és la llei vigent i quines figures té?", "Llei del Patrimoni Natural i de la Biodiversitat (2007): parcs (nacionals i naturals), àrees marines protegides, reserves naturals, monuments naturals i paisatges protegits."], ["Què és un PNIN?", "Un Paratge Natural d'Interès Nacional: com un parc nacional però més petit, només a Catalunya (Pedraforca, Poblet)."]] },
+ /* ---------------- ENERGIA ---------------- */
+ { id: "e1", t: "t4", n: "E1 · Una distribució desigual", ps: [
+  ["e", "Els recursos energètics estan <b>repartits de manera molt desigual</b> per la Terra, perquè són el resultat de processos geològics molt llargs. Els <b>països industrialitzats</b> poden <b>importar</b> (comprar) l'energia que necessiten; els països pobres, no."],
+  ["e", "Tenir recursos no garanteix el desenvolupament. L'exemple del dossier és <b>Nigèria</b>: té molt de petroli però no és un país desenvolupat."],
+  ["i", "Recorda les classificacions de l'apartat 3.1: les fonts d'energia poden ser <b>renovables o no renovables</b>, <b>primàries o finals</b>, <b>netes o brutes</b> i <b>convencionals o alternatives</b>."]
+ ], rq: [["Per què els països rics no tenen problemes encara que no tinguin recursos energètics?", "Perquè poden importar (comprar) l'energia que necessiten."], ["Què ensenya l'exemple de Nigèria?", "Que tenir riqueses naturals no garanteix que un país es desenvolupi."]] },
+
+ { id: "e2", t: "t4", n: "E2 · Les fonts no renovables", ps: [
+  ["e", "<b>Petroli.</b> Després d'extreure'l del subsol s'ha de <b>refinar</b>: se'n separen ceres, quitrà, asfalt, plàstic, combustibles... <b>Espanya i Catalunya són deficitàries</b> en petroli i n'han d'importar."],
+  ["e", "<b>Gas natural.</b> És sobretot <b>metà (70%)</b>. Es fa servir principalment per <b>generar electricitat</b>, i també per fabricar plàstics, fibres sintètiques i insecticides."],
+  ["e", "<b>Carbó.</b> N'hi ha de diversos tipus (<b>antracita, hulla, lignit i torba</b>). És molt abundant al planeta, però la qualitat varia molt. El del nord d'Espanya és de <b>baixa qualitat</b> i només cobreix <b>un terç</b> de les necessitats."],
+  ["i", "A Espanya s'extreu hulla i lignit. La zona principal és l'<b>asturlleonesa</b> (Langreo, Mieres, Figaredo, La Camocha a Gijón); també n'hi ha a Puertollano (Ciudad Real), Còrdova, Badajoz, Sevilla, l'Alt Llobregat i Terol. La majoria de mines <b>han tancat</b> perquè no eren rendibles i contaminaven molt; algunes es van mantenir amb ajudes de la UE fins al 2012."],
+  ["e", "<b>Energia nuclear.</b> S'allibera en reaccions nuclears amb elements com l'<b>urani-235</b> (també tori, plutoni...). <b>Avantatge:</b> no emet CO₂. <b>Inconvenient:</b> els residus triguen <b>milers d'anys</b> a descompondre's. Segons el dossier, Espanya té <b>8 centrals</b> en funcionament, <b>3 a Catalunya</b>: <b>Ascó I, Ascó II i Vandellòs II</b>."],
+  ["c", "<b>Compte:</b> la xifra de 8 és antiga. Ara n'hi ha 7 en funcionament, perquè la de Garoña va tancar el 2017. Les 3 de Catalunya continuen sent les mateixes. A l'examen, fes servir la xifra del professor."],
+  ["i", "<b>Pregunta de selectivitat (juliol 2009):</b> «Escrigui el nom de tres combustibles fòssils utilitzats en la producció d'energia elèctrica. Expliqui per què l'energia obtinguda a partir dels combustibles fòssils es considera ambientalment no sostenible.» Resposta: <b>carbó, petroli i gas natural</b>. No és sostenible perquè són <b>no renovables</b> (s'esgoten) i, en cremar-los, emeten <b>CO₂</b> i altres gasos que contaminen i augmenten l'efecte hivernacle."]
+ ], rq: [["Quins són els quatre tipus de carbó?", "Antracita, hulla, lignit i torba."], ["Avantatge i inconvenient de l'energia nuclear?", "No emet CO₂; els residus duren milers d'anys."]] },
+
+ { id: "e3", t: "t4", n: "E3 · Les fonts renovables", ps: [
+  ["e", "<b>Solar (fotovoltaica).</b> A favor: és renovable i n'hi ha molta. En contra: la intensitat canvia segons el lloc i el moment."],
+  ["e", "<b>Eòlica.</b> A favor: renovable i abundant. En contra: no a tot arreu bufa prou vent, afecta el paisatge i fa soroll."],
+  ["e", "<b>Geotèrmica, mareomotriu i biomassa.</b> A favor: renovables i abundants. En contra: la geotèrmica i la mareomotriu no es troben a tot arreu, i la biomassa està provocant, per exemple, que es tali selva per plantar palma."],
+  ["e", "La <b>biomassa</b> és matèria orgànica que es fa servir com a combustible: residus agrícoles, ramaders, forestals, industrials i urbans. Se'n fa <b>biogàs</b> (gasos dels purins, els fems i els fangs de les depuradores), <b>bioetanol</b> (alcohol que s'obté del sucre dels cereals, com el blat o el blat de moro) i <b>biodièsel</b> (d'oli vegetal o greix animal)."],
+  ["d", "Andalusia, Galícia i Castella i Lleó sumen el 50% del consum de biomassa d'Espanya."]
+ ], rq: [["Un inconvenient de la solar i un de l'eòlica?", "Solar: la intensitat varia segons el lloc i l'hora. Eòlica: no sempre hi ha vent, impacte paisatgístic i soroll."], ["D'on surten el biogàs, el bioetanol i el biodièsel?", "Biogàs: purins, fems i fangs. Bioetanol: sucre dels cereals. Biodièsel: oli vegetal o greix animal."]] },
+
+ { id: "e4", t: "t4", n: "E4 · Qui té l'energia i com en depenem", ps: [
+  ["e", "<b>Qui té els recursos convencionals:</b><br>• <b>Petroli:</b> Orient Mitjà (Aràbia Saudita, Emirats Àrabs, Kuwait, Iraq, Iran), Veneçuela, EUA, Rússia, Mèxic, Indonèsia i Nigèria. A Europa, Noruega i el Regne Unit. Les reserves més grans (2013) són les de <b>Veneçuela</b> i l'<b>Aràbia Saudita</b>.<br>• <b>Carbó:</b> Xina, EUA i la Unió Europea.<br>• <b>Gas natural:</b> <b>Rússia</b>, Iran, Qatar i Algèria.<br>• <b>Urani:</b> Kazakhstan (el primer), Canadà, Austràlia i Níger.<br>• <b>Reactors nuclears:</b> EUA (104), França (59), Japó (53) i Rússia (33)."],
+  ["e", "<b>Espanya</b> ha d'<b>importar el 82%</b> de l'energia que consumeix. Consum: <b>petroli 49,4%</b>, gas natural 19,9%, carbó 14,6%, nuclear 10,2% i renovables 5,9% (biomassa, hidràulica i eòlica)."],
+  ["e", "<b>Catalunya</b> ha d'<b>importar el 76,6%</b> de l'energia i només en produeix el 23,3%. Consum: <b>petroli 48,1%</b>, gas natural 23,2%, nuclear 22,4% i renovables 2,4%. El sector que més energia consumeix és el <b>transport</b> (41% el 2009)."],
+  ["c", "<b>Compte:</b> el gràfic de Catalunya del 2009 dona xifres una mica diferents (petroli 47,2%, gas 24,6%, nuclear 20,1%, renovables 4,1%). Són d'anys diferents; si et pregunten, digues que el petroli és més o menys la meitat del consum. Totes les dades d'aquest apartat són de fa més de deu anys."],
+  ["i", "La <b>tona equivalent de petroli (tep)</b> és una unitat d'energia: l'energia que s'obté en cremar una tona de petroli. El seu múltiple és el <b>ktep</b> (mil tep). El 2009 Catalunya va consumir 24.297,2 ktep d'energia primària."]
+ ], rq: [["Quin percentatge de l'energia importa Espanya? I Catalunya?", "Espanya, el 82%. Catalunya, el 76,6%."], ["Quina és la font d'energia més consumida i quin sector en gasta més a Catalunya?", "El petroli (prop de la meitat). El transport."]] }
 ];
 
 /* ===== Climogrames: valors normals aproximats (AEMET, 1981-2010). Font externa. ===== */
@@ -1886,11 +1871,12 @@ var CLASS = [
  { id: "c3", t: "t1", n: "A quin vessant va cada riu?", bins: ["Cantàbric", "Atlàntic", "Mediterrani"], items: [["Bidasoa",0],["Nervión",0],["Nalón",0],["Narcea",0],["Navia",0],["Miño",1],["Duero",1],["Tajo",1],["Guadiana",1],["Guadalquivir",1],["Odiel",1],["Tinto",1],["Ebre",2],["Xúquer",2],["Túria",2],["Segura",2],["Millars",2],["Ter",2],["Llobregat",2]] },
  { id: "c4", t: "t1", n: "Quin clima té aquesta vegetació?", bins: ["Oceànic", "Mediterrani", "Interior", "Subtropical"], items: [["Fageda",0],["Roureda",0],["Castanyer i bedoll",0],["Landa (brucs i falgueres)",0],["Prats humits",0],["Alzina surera",1],["Pi blanc",1],["Margalló",1],["Garriga de garric",1],["Olivars i cítrics",1],["Devesa d'alzines",2],["Matolls esteparis",2],["Bosc de ribera (oms, salzes)",2],["Drago",3],["Laurisilva",3]] },
  { id: "c5", t: "t1", n: "Origen del relleu", bins: ["Paleozoic (herciniana)", "Terciari (alpina)", "Quaternari (sediments)"], items: [["Massís Galaicoleonès",0],["Massís Hespèric",0],["Sòcol de la Meseta",0],["Pirineus",1],["Serralades Bètiques",1],["Cantàbrica oriental",1],["Sistema Central (aixecat)",1],["Vores muntanyoses",1],["Depressió de l'Ebre (reompliment)",2],["Depressió del Guadalquivir",2],["Planes litorals",2]] },
- { id: "c6", t: "t2", n: "Catalunya seca o humida?", bins: ["Seca (< 700 mm)", "Humida (> 700 mm)"], items: [["Tramuntana (Empordà)",0],["Litoral mediterrani",0],["Altiplà central",0],["Prepirineu",0],["Continental (Ponent)",0],["Regió oriental (Transversal)",1],["Alt Pirineu",1]] },
- { id: "c7", t: "t2", n: "Xarxes hidrogràfiques de Catalunya", bins: ["Pirineu-Ebre", "Pirineu-Mediterrani", "Mediterrània", "Atlàntica"], items: [["Segre",0],["Noguera Pallaresa",0],["Noguera Ribagorçana",0],["Valira",0],["Muga",1],["Fluvià",1],["Ter",1],["Llobregat",1],["Tordera",2],["Besòs",2],["Gaià",2],["Francolí",2],["Sénia",2],["Garona",3]] },
  { id: "c8", t: "t3", n: "Règim fluvial", bins: ["Nival", "Nivopluvial", "Pluvionival", "Pluvial"], items: [["Segre",0],["Dílar",0],["Ter",1],["Gállego",1],["Nalón",1],["Henares",2],["Tormes",2],["Pisuerga",2],["Alagón",2],["Francolí",3],["Segura",3],["Besòs",3]] },
  { id: "c9", t: "t3", n: "Figura de protecció", bins: ["Parc nacional", "Parc natural", "Reserva natural", "PNIN (Catalunya)"], items: [["Aigüestortes i Estany de Sant Maurici",0],["Ordesa i Mont Perdut",0],["Picos de Europa",0],["Delta de l'Ebre",1],["Cap de Creus",1],["Montserrat",1],["Montseny",1],["Illes Medes",2],["Delta del Llobregat",2],["Aiguamolls de l'Empordà",2],["Pedraforca",3],["Poblet",3]] },
- { id: "c10", t: "t3", n: "Embassament: de quin riu?", bins: ["Ter", "Llobregat", "Ebre", "Tajo / Guadiana / Xúquer"], items: [["Sau",0],["Susqueda",0],["La Baells",1],["La Llosa del Cavall",1],["Sant Ponç",1],["Mequinensa",2],["Riba-roja",2],["Flix",2],["Alcántara (Tajo)",3],["La Serena (Guadiana)",3],["Tous (Xúquer)",3]] }
+ { id: "c10", t: "t3", n: "Embassament: de quin riu?", bins: ["Ter", "Llobregat", "Ebre", "Tajo / Guadiana / Xúquer"], items: [["Sau",0],["Susqueda",0],["La Baells",1],["La Llosa del Cavall",1],["Sant Ponç",1],["Mequinensa",2],["Riba-roja",2],["Flix",2],["Alcántara (Tajo)",3],["La Serena (Guadiana)",3],["Tous (Xúquer)",3]] },
+  { id: "c11", t: "t4", n: "Qui en té més?", bins: ["Petroli", "Gas natural", "Carbó", "Urani"], items: [["Aràbia Saudita",0],["Veneçuela",0],["Kuwait",0],["Noruega (a Europa)",0],["Qatar",1],["Algèria",1],["Rússia (reserves de gas)",1],["Xina",2],["Kazakhstan",3],["Níger",3],["Austràlia",3]] },
+ { id: "c12", t: "t4", n: "Biomassa: què se'n fa?", bins: ["Biogàs", "Bioetanol", "Biodièsel"], items: [["Purins",0],["Fems",0],["Fangs de depuradora",0],["Blat",1],["Blat de moro",1],["Sucre dels cereals",1],["Oli vegetal",2],["Greix animal",2]] },
+ { id: "c13", t: "t4", n: "Font neta o bruta?", bins: ["Neta (no emet CO₂)", "Bruta (emet CO₂)"], items: [["Solar",0],["Eòlica",0],["Hidràulica",0],["Geotèrmica",0],["Mareomotriu",0],["Nuclear (però deixa residus)",0],["Petroli",1],["Carbó",1],["Gas natural",1]] }
 ];
 
 /* ===== Activitats d'ordenar ===== */
@@ -1898,23 +1884,15 @@ var ORD = [
  { id: "o1", t: "t1", n: "Ordena la formació del relleu (del més antic al més recent)", items: ["Orogènia herciniana: es forma el Massís Hespèric", "Mesozoic: l'erosió aplana el relleu i es formen calcàries", "Orogènia alpina: Pirineus, Bètiques i vores de la Meseta", "Quaternari: s'omplen les depressions i es fan les planes litorals"] },
  { id: "o2", t: "t1", n: "Ordena l'efecte Foehn", items: ["El vent topa amb la muntanya i l'aire ha de pujar", "L'aire es refreda en pujar pel vessant de barlovent", "El vapor es condensa: núvols i pluja a barlovent", "L'aire, ja sec, baixa pel vessant de sotavent", "S'escalfa en baixar i arriba sec i més calent"] },
  { id: "o3", t: "t3", n: "Ordena les lleis de protecció (de la més antiga a la vigent)", items: ["1916 · Llei de Parcs Nacionals (estètica i lleure)", "1957 · Llei de Montes (aprofitament econòmic)", "1989 · Llei de Conservació dels Espais Naturals", "2007 · Llei del Patrimoni Natural i de la Biodiversitat"] },
- { id: "o4", t: "t2", n: "Ordena el relleu de Catalunya de nord a sud (cap al mar)", items: ["Pirineu axial", "Prepirineu", "Depressió Central", "Serralada Prelitoral", "Depressió Prelitoral", "Serralada Litoral o de Marina", "Costa"] },
  { id: "o5", t: "t3", n: "Ordena els règims fluvials (de més a menys neu)", items: ["Nival", "Nivopluvial", "Pluvionival", "Pluvial"] },
- { id: "o6", t: "t1", n: "Ordena les costes mediterrànies de sud a nord", items: ["Andalusia i Múrcia (Gibraltar - cap de la Nau)", "Golf de València (cap de la Nau - delta de l'Ebre)", "Litoral català"] },
- { id: "o7", t: "t3", n: "Ordena els usos de l'aigua (de més a menys)", items: ["Agricultura (75%)", "Habitatges (12%)", "Indústria (10%)", "Serveis (3%)"] }
+ { id: "o7", t: "t3", n: "Ordena els usos de l'aigua (de més a menys)", items: ["Agricultura (75%)", "Habitatges (12%)", "Indústria (10%)", "Serveis (3%)"] },
+  { id: "o8", t: "t4", n: "Ordena el consum d'energia d'Espanya (de més a menys)", items: ["Petroli (49,4%)", "Gas natural (19,9%)", "Carbó (14,6%)", "Nuclear (10,2%)", "Renovables (5,9%)"] },
+ { id: "o9", t: "t4", n: "Ordena els països amb més reactors nuclears", items: ["EUA (104)", "França (59)", "Japó (53)", "Rússia (33)"] }
 ];
 
 /* ===== Vertader o fals (llampec) ===== */
 var VF = [
- ["t1","La Meseta ocupa el 45% de la superfície d'Espanya.",1,""],
- ["t1","El Sistema Central separa les conques del Tajo i el Guadiana.",0,"Això ho fan els Monts de Toledo. El Sistema Central separa el Duero i el Tajo."],
- ["t1","El Massís Galaicoleonès és el relleu més antic de la península.",1,""],
  ["t1","Els Pirineus es van formar durant l'orogènia herciniana.",0,"Es van formar a l'orogènia alpina (Terciari)."],
- ["t1","El Teide és el cim més alt d'Espanya.",1,"3.718 m. El Mulhacén és el més alt de la península."],
- ["t1","Menorca és un fragment de la Serralada Subbètica.",0,"Menorca està relacionada amb la Serralada Litoral Catalana; Mallorca, Eivissa i Formentera, amb la Subbètica."],
- ["t1","Els rius del vessant cantàbric són curts i cabalosos.",1,""],
- ["t1","Els rius del vessant mediterrani són tots molt cabalosos.",0,"Excepte l'Ebre, tenen poc cabal i són irregulars."],
- ["t1","A les Balears hi ha rius permanents.",0,"Només hi ha torrents, per les poques pluges i la permeabilitat del terreny."],
  ["t1","La temperatura baixa uns 0,65 °C cada 100 m que pugem.",1,"És el gradient vertical de temperatura."],
  ["t1","Les isobares uneixen punts d'igual precipitació.",0,"Les isobares uneixen punts d'igual pressió; les isohietes, d'igual precipitació."],
  ["t1","La península té un règim pluviomètric temperat.",1,""],
@@ -1924,13 +1902,6 @@ var VF = [
  ["t1","La màquia creix sobre sòls calcaris.",0,"La màquia, sobre sòls silicis; la garriga, sobre calcaris."],
  ["t1","El drago i la laurisilva són vegetació de Canàries.",1,""],
  ["t1","Amb l'efecte Foehn, l'aire arriba a sotavent humit i fred.",0,"Hi arriba sec i més calent."],
- ["t2","La Pica d'Estats és el cim més alt de Catalunya.",1,"3.143 m."],
- ["t2","La plana de l'Empordà desguassa cap a l'Ebre.",0,"L'Empordà desguassa al mar; la d'Urgell, cap a l'Ebre."],
- ["t2","La Catalunya humida rep més de 700 mm de pluja l'any.",1,""],
- ["t2","L'Alt Pirineu és la regió més poblada de Catalunya.",0,"És la menys poblada; la més poblada és el litoral mediterrani."],
- ["t2","La Garona va a l'oceà Atlàntic.",1,"Neix a la Vall d'Aran."],
- ["t2","Montserrat forma part de la Serralada Litoral o de Marina.",0,"És de la Serralada Prelitoral."],
- ["t2","El Segre pertany a la xarxa Pirineu-Ebre.",1,""],
  ["t3","El vent és un recurs renovable.",1,""],
  ["t3","L'urani és un recurs renovable.",0,"És no renovable."],
  ["t3","Els sòls són un recurs edafològic.",1,""],
@@ -1944,7 +1915,17 @@ var VF = [
  ["t3","El Delta de l'Ebre és un parc nacional.",0,"És un parc natural."],
  ["t3","Els PNIN només existeixen a Catalunya.",1,"Pedraforca, Poblet..."],
  ["t3","El PEIN es va crear el 1985.",1,"Amb 144 espais."],
- ["t3","Catalunya és molt rica en recursos miners.",0,"És força pobra; destaca la sal potàssica del Bages."]
+ ["t3","Catalunya és molt rica en recursos miners.",0,"És força pobra; destaca la sal potàssica del Bages."],
+ ["t4","Espanya ha d'importar la major part de l'energia que consumeix.",1,"El 82%."],
+ ["t4","El carbó espanyol és de molt bona qualitat.",0,"És de baixa qualitat i només cobreix un terç de les necessitats."],
+ ["t4","L'energia nuclear no emet CO₂.",1,"El problema són els residus, que duren milers d'anys."],
+ ["t4","A Catalunya hi ha tres reactors nuclears.",1,"Ascó I, Ascó II i Vandellòs II."],
+ ["t4","El gas natural és sobretot metà.",1,"Un 70%."],
+ ["t4","La font d'energia més consumida a Espanya és el gas natural.",0,"És el petroli (49,4%)."],
+ ["t4","El sector que més energia consumeix a Catalunya és la indústria.",0,"És el transport (41%)."],
+ ["t4","El bioetanol s'obté d'oli vegetal.",0,"S'obté del sucre dels cereals. D'oli vegetal es fa el biodièsel."],
+ ["t4","Tenir molt de petroli garanteix que un país es desenvolupi.",0,"No: l'exemple és Nigèria."],
+ ["t4","Kazakhstan és el primer productor d'urani.",1,""]
 ];
 
 /* ===== Glossari (també serveix de targetes) ===== */
@@ -1959,11 +1940,8 @@ var GLOS = [
  ["t1","Orogènesi (orogènia)","Conjunt de processos que formen les serralades per plegament o fractura de l'escorça."],
  ["t1","Golf","Gran entrada del mar a la costa (golf de Cadis, golf de València)."],
  ["t1","Cap","Part de terra que s'endinsa al mar (cap de Creus, cap de la Nau)."],
- ["t1","Ria","Vall fluvial envaïda pel mar, típica de la costa gallega."],
- ["t1","Tómbol","Fletxa o cordó litoral que uneix una illa al continent (penyal d'Ifac)."],
  ["t1","Albufera","Badia marina d'aigua salada tancada per una barra de sorra (Alcúdia, València)."],
  ["t1","Aiguamoll","Terreny inundat d'aigua (aiguamolls de l'Empordà)."],
- ["t1","Barranc","Tall al terreny fet per l'erosió que només porta aigua quan plou (Canàries)."],
  ["t1","Cabal","Quantitat d'aigua que passa per una secció del riu per unitat de temps."],
  ["t1","Estiatge","Disminució del cabal d'un riu en una època de l'any (a l'estiu)."],
  ["t1","Temps","Condicions de l'atmosfera en un lloc i un moment determinats."],
@@ -1991,12 +1969,6 @@ var GLOS = [
  ["t1","Màquia","Matollar sobre sòls silicis: arboç, bruc, boix, ginesta."],
  ["t1","Garriga","Matollar sobre sòls calcaris: garric, llentiscle, ullastre, plantes aromàtiques."],
  ["t1","Laurisilva","Bosc humit de fulla perenne, tipus llorer, propi de Canàries."],
- ["t2","Regió fisiogràfica","Zona amb un relleu, un clima i una vegetació semblants."],
- ["t2","Dorsal pluviomètrica","Nom de la regió oriental (Serralada Transversal), la més plujosa de Catalunya (800-1.800 mm)."],
- ["t2","Vegetació estepària","Herbes i matolls baixos adaptats a la sequera i als sòls pobres o salins."],
- ["t2","Terrassa fluvial","Esglaó pla al costat d'un riu, fet amb els sediments que hi va deixar."],
- ["t2","Matollar","Vegetació arbustiva que surt on s'ha perdut el bosc (màquia i garriga)."],
- ["t2","Classificació de Köppen","Classificació dels climes per temperatura, pluja i estacionalitat: grups A, B, C, D i E."],
  ["t3","Recurs natural","Bé de la natura que pot tenir interès per a l'ésser humà."],
  ["t3","Recurs renovable","El que es regenera a un ritme igual o superior al que l'explotem (sol, vent, aigua)."],
  ["t3","Recurs no renovable","El que s'exhaureix perquè es regenera més a poc a poc del que el consumim (petroli, carbó)."],
@@ -2029,42 +2001,51 @@ var GLOS = [
  ["t3","Monument natural","Espai que destaca per la singularitat, la raresa o la bellesa."],
  ["t3","Paisatge protegit","Espai on es protegeix el valor estètic o cultural."],
  ["t3","PEIN","Pla d'Espais d'Interès Natural (Catalunya, 1985): 144 espais."],
- ["t3","PNIN","Paratge Natural d'Interès Nacional: com un parc nacional però més petit; només a Catalunya."]
+ ["t3","PNIN","Paratge Natural d'Interès Nacional: com un parc nacional però més petit; només a Catalunya."],
+ ["t4","Refinatge","Procés que separa el petroli cru en productes: combustibles, ceres, quitrà, asfalt, plàstic."],
+ ["t4","Antracita, hulla, lignit i torba","Els tipus de carbó, de més a menys qualitat."],
+ ["t4","Energia nuclear","Energia que s'allibera en reaccions nuclears (urani-235). No emet CO₂ però deixa residus durant milers d'anys."],
+ ["t4","Energia geotèrmica","La que aprofita la calor de l'interior de la Terra."],
+ ["t4","Energia mareomotriu","La que aprofita el moviment de les marees."],
+ ["t4","Biomassa","Matèria orgànica (residus agrícoles, ramaders, forestals, urbans) que es fa servir com a combustible."],
+ ["t4","Biogàs","Gas que s'obté dels purins, els fems i els fangs de depuradora."],
+ ["t4","Bioetanol","Alcohol obtingut del sucre dels cereals (blat, blat de moro) per fer de combustible."],
+ ["t4","Biodièsel","Combustible fet a partir d'oli vegetal o greix animal."],
+ ["t4","Tep (tona equivalent de petroli)","Unitat d'energia: la que s'obté cremant una tona de petroli. Ktep = mil tep."],
+ ["t4","Dependència energètica","Part de l'energia que un país ha d'importar (Espanya, 82%)."],
+ ["t4","Font d'energia neta / bruta","Neta: no contamina en produir-se (solar, eòlica). Bruta: contamina (petroli, carbó)."]
 ];
 
 /* ===== Targetes extra (fets clau, a part del glossari) ===== */
 var FACTS = [
  ["t1","Altitud mitjana de la península","660 m. Només l'11% del territori és per sota dels 200 m."],
- ["t1","Les 5 unitats de relleu d'Espanya","Meseta, serralades exteriors, dues depressions, relleus litorals i relleu insular."],
- ["t1","Serres del Sistema Central","Somosierra, Guadarrama, Gredos i Gata."],
- ["t1","Vores muntanyoses de la Meseta","Massís Galaicoleonès, Serralada Cantàbrica, Sistema Ibèric i Sierra Morena."],
- ["t1","Serres de la Subbètica","Cazorla, Segura, Sagra i Mágina."],
- ["t1","Cim de la Penibètica","Mulhacén (Sierra Nevada), 3.481 m segons el dossier."],
- ["t1","Grups de Canàries","Oriental, pla (Lanzarote, Fuerteventura); occidental, muntanyós (Tenerife, La Palma, La Gomera, El Hierro, Gran Canària)."],
  ["t1","Clima oceànic: dades","Mitjana ~14 °C, poca amplitud, pluja abundant tot l'any. Galícia i cornisa cantàbrica."],
  ["t1","Clima mediterrani: dades","14-18 °C; hiverns 10-12 °C, estius 22-26 °C; 400-700 mm equinoccials."],
  ["t1","Clima continental: dades","Hiverns molt freds, estius calorosos i secs, 325-550 mm, amplitud molt alta."],
  ["t1","Clima subtropical: dades","Corrent fred de Canàries; 150-300 mm a l'hivern; mar de núvols."],
  ["t1","Tres règims pluviomètrics","Equatorial (pluges diàries), tropical (estació seca i humida) i temperat (el nostre)."],
  ["t1","Masses d'aire que afecten Espanya","Tropicals: anticicló de les Açores i aire càlid i sec d'Àfrica. Polars: continental siberiana i àrtica."],
- ["t2","Prepirineu català","Interiors: Cadí, Pedraforca, Bassagoda. Exteriors: Montsec, Montroig. Entremig: Conca de Tremp."],
- ["t2","Regions de la Catalunya seca","Tramuntana, litoral mediterrani, altiplà central, Prepirineu i continental."],
- ["t2","Regions de la Catalunya humida","Regió oriental (dorsal pluviomètrica) i Alt Pirineu."],
- ["t2","Afluents del Segre","Valira, Noguera Pallaresa, Noguera Ribagorçana, Cinca, Set, Corb..."],
  ["t3","5 maneres de classificar els recursos","Regeneració (renovables/no), energètics o no, impacte (nets/bruts), aprofitament (primaris/finals), temps d'ús (convencionals/alternatius)."],
  ["t3","Recursos miners de Catalunya","Sal potàssica (Bages), carbó (Berguedà, Alta Ribagorça, Pallars Jussà) i petroli (Tarragona)."],
  ["t3","Usos de l'aigua","75% agricultura, 12% habitatges, 10% indústria, 3% serveis."],
  ["t3","Embassaments importants d'Espanya","Alcántara (Tajo), La Serena (Guadiana), El Tranco (Guadalquivir), Tous (Xúquer)."],
  ["t3","Vessants de gestió de l'aigua a Catalunya","Occidental (intercomunitàries: Ebre, Garona, Xúquer; 49%) i oriental (conques internes, ACA)."],
  ["t3","Boscos i CO₂ a Espanya","18,6 milions d'ha de bosc fixen el 20% de les emissions de CO₂."],
- ["t3","Parcs nacionals del dossier","Picos de Europa, Ordesa i Mont Perdut, Aigüestortes i Estany de Sant Maurici."]
+ ["t3","Parcs nacionals del dossier","Picos de Europa, Ordesa i Mont Perdut, Aigüestortes i Estany de Sant Maurici."],
+ ["t4","Centrals nuclears de Catalunya","Ascó I, Ascó II i Vandellòs II (dossier: 8 a Espanya)."],
+ ["t4","Mix energètic d'Espanya","Petroli 49,4% · gas 19,9% · carbó 14,6% · nuclear 10,2% · renovables 5,9%. Importa el 82%."],
+ ["t4","Mix energètic de Catalunya","Petroli 48,1% · gas 23,2% · nuclear 22,4% · renovables 2,4%. Importa el 76,6%."],
+ ["t4","Qui té petroli","Orient Mitjà (Aràbia Saudita, Kuwait, Iraq, Iran, Emirats), Veneçuela, EUA, Rússia, Mèxic, Nigèria. Europa: Noruega i Regne Unit."],
+ ["t4","Qui té gas natural","Rússia, Iran, Qatar i Algèria."],
+ ["t4","Qui té urani","Kazakhstan, Canadà, Austràlia i Níger."],
+ ["t4","Zona carbonífera principal d'Espanya","L'asturlleonesa (Langreo, Mieres, Figaredo, La Camocha)."],
+ ["t4","Pros i contres de la solar i l'eòlica","Renovables i abundants. Solar: intensitat variable. Eòlica: no sempre hi ha vent, paisatge i soroll."]
 ];
 
 /* ===== Preguntes de la llibreta (activitats del dossier) amb resposta breu ===== */
 var LLIB = [
  ["t1","Defineix: altiplà, depressió, sòcol, orogènesi i albufera.","Altiplà: terreny pla i elevat. Depressió: zona més baixa que l'entorn. Sòcol: plataforma de roques antigues aplanada. Orogènesi: formació de serralades. Albufera: badia salada tancada per una barra de sorra."],
  ["t1","Quines orogènies han modificat el relleu peninsular i quines serralades en van sorgir?","Herciniana (Paleozoic): Massís Hespèric i Galaicoleonès. Alpina (Terciari): Pirineus, Bètiques, Cantàbrica oriental, vores de la Meseta i aixecament del Sistema Central i els Monts de Toledo."],
- ["t1","Què vol dir que els rius pateixen estiatge? I que un riu és cabalós?","Estiatge: a l'estiu baixen amb molt poca aigua. Cabalós: porta molta aigua."],
  ["t1","Quina diferència hi ha entre un aqüífer i un embassament?","L'aqüífer és aigua natural dins les roques; l'embassament és aigua retinguda artificialment per una presa."],
  ["t1","La temperatura és un factor clau del clima: de quines maneres la modifica?","Varia amb l'altitud (gradient), la distància al mar, els corrents marins, l'orientació (solana/obaga), el dia i la nit i els vents."],
  ["t1","Quants règims pluviomètrics hi ha? A quin pertany la península?","Tres: equatorial, tropical i temperat. La península, al temperat."],
@@ -2072,9 +2053,6 @@ var LLIB = [
  ["t1","Quines masses d'aire en superfície afecten el clima d'Espanya i d'on vénen?","Tropicals marítimes (anticicló de les Açores), tropicals continentals (nord d'Àfrica), polars continentals (Sibèria) i àrtiques."],
  ["t1","Quina relació hi ha entre el clima i la vegetació?","La vegetació s'adapta a la temperatura i la pluja: on plou molt hi ha bosc caducifoli; on hi ha sequera estival, vegetació perennifòlia i de fulla petita; on és àrid, matolls i estepa."],
  ["t1","Explica l'efecte Foehn: per què l'aire que surt a 25 °C arriba a 27 °C a l'altre vessant?","Puja sec fins a 1.000 m (-10 °C → 15 °C), condensa i puja humit fins al cim de 1.500 m (-3 °C → 12 °C). Baixa sec 1.500 m (+15 °C) → 27 °C. Ha perdut la humitat i arriba més calent."],
- ["t2","Quines grans regions fisiogràfiques hi ha a Catalunya?","Catalunya seca (Tramuntana, litoral, altiplà central, Prepirineu, continental) i Catalunya humida (regió oriental i Alt Pirineu)."],
- ["t2","Què és el matollar? En quines condicions es troba? Quins tipus hi ha?","Vegetació arbustiva on s'ha perdut el bosc, en climes secs. Tipus: màquia i garriga."],
- ["t2","Què és la vegetació estepària? I una terrassa fluvial?","Estepària: herbes i matolls baixos adaptats a la sequera i a sòls salins. Terrassa fluvial: esglaó pla de sediments al costat d'un riu."],
  ["t3","Classifica: petroli cru, estany, blat de moro, carbó, energia eòlica, ferro i urani.","Petroli: energètic, no renovable, primari, brut, convencional. Estany i ferro: minerals metàl·lics, no renovables. Blat de moro: biològic, renovable. Carbó: energètic, no renovable, brut. Eòlica: energètica, renovable, neta, alternativa. Urani: energètic, no renovable."],
  ["t3","Relaciona amb el tipus de roca: granit, pissarra, sal gemma, carbó i marbre.","Granit: roca ígnia. Pissarra: metamòrfica. Sal gemma: sedimentària (evaporita). Carbó: sedimentària orgànica. Marbre: metamòrfica."],
  ["t3","Quin percentatge de l'aigua és potable?","Molt poc: només el 2% és aigua continental, i la major part és gel; l'aigua de fàcil accés és menys de l'1%."],
@@ -2085,53 +2063,19 @@ var LLIB = [
  ["t3","Cita 4 embassaments de 4 comarques catalanes diferents.","Sau (Osona), Susqueda (la Selva), la Baells (Berguedà), Riba-roja (Ribera d'Ebre). (Comarques: dada afegida.)"],
  ["t3","Explica el cicle de fixació d'O₂ i CO₂ en les plantes.","Amb la fotosíntesi, les plantes absorbeixen CO₂ i alliberen O₂; en respirar fan el contrari, però en fixen molt més del que n'emeten."],
  ["t3","Com s'anomena la llei que defineix ara la conservació dels espais naturals i com els divideix?","Llei del Patrimoni Natural i de la Biodiversitat (2007): parcs, àrees marines protegides, reserves naturals, monuments naturals i paisatges protegits."],
- ["t3","Quines altres regulacions afegeix Catalunya?","El PEIN (1985, 144 espais) i els PNIN (Pedraforca, Poblet)."]
+ ["t3","Quines altres regulacions afegeix Catalunya?","El PEIN (1985, 144 espais) i els PNIN (Pedraforca, Poblet)."],
+ ["t4","(Selectivitat 2009) Tres combustibles fòssils per fer electricitat i per què no són sostenibles.","Carbó, petroli i gas natural. No són sostenibles perquè s'esgoten (no renovables) i en cremar-los emeten CO₂, que contamina i augmenta l'efecte hivernacle."],
+ ["t4","Defineix recurs natural, renovable, no renovable, abiòtic, edafològic i combustible fòssil.","Recurs natural: bé de la natura útil per a l'ésser humà. Renovable: es regenera tan de pressa com el gastem. No renovable: s'esgota. Abiòtic: aigua i aire. Edafològic: el sòl. Combustible fòssil: format per matèria orgànica fossilitzada."],
+ ["t4","Energia nuclear: com s'obté, avantatges, inconvenients i principals productors.","S'obté de reaccions nuclears amb urani. Avantatge: no emet CO₂ i produeix molta energia. Inconvenient: residus perillosos durant milers d'anys i risc d'accidents. Més reactors: EUA, França, Japó i Rússia; més urani: Kazakhstan."]
 ];
 
 /* ===== Banc de preguntes: [tema, secció, pregunta, [correcta, errònia, errònia, errònia], explicació] ===== */
 var QS = [
  ["t1","s1","Quina és l'altitud mitjana de la península segons el dossier?",["Uns 660 m","Uns 220 m","Uns 1.100 m","Uns 400 m"],"És una de les més altes d'Europa per la Meseta i les serralades que l'envolten."],
  ["t1","s1","Quin percentatge del territori queda per sota dels 200 m?",["L'11%","El 45%","El 30%","El 60%"],"Per això les comunicacions i l'agricultura són més difícils."],
- ["t1","s1","A quina placa tectònica pertany el territori espanyol?",["Euroasiàtica, al límit amb l'Africana","Africana","Nord-americana","Aràbiga"],"Al contacte hi ha les microplaques Ibèrica i d'Alborán."],
- ["t1","s1","Quines microplaques hi ha a la zona de contacte entre plaques?",["Ibèrica i d'Alborán","Balear i Canària","Cantàbrica i Bètica","Adriàtica i Egea"],""],
- ["t1","s2","Quina orogènia va formar el Massís Hespèric?",["L'herciniana","L'alpina","La caledoniana","La quaternària"],"Va passar al Paleozoic i va crear el sòcol de la meitat occidental."],
- ["t1","s2","De quin tipus de roques és el Massís Hespèric?",["Silícies i metamòrfiques","Calcàries","Volcàniques","Argiles i margues"],"Granits i pissarres."],
- ["t1","s2","Què va passar durant el Mesozoic?",["L'erosió va aplanar els relleus hercinians i es van formar calcàries","Es van aixecar els Pirineus","Es van omplir les depressions de l'Ebre i el Guadalquivir","Va néixer el massís Galaic"],""],
- ["t1","s2","Durant quin període es va produir l'orogènia alpina?",["Terciari (Cenozoic)","Paleozoic","Mesozoic","Quaternari"],""],
- ["t1","s2","En l'orogènia alpina, què va passar amb els materials durs del sòcol?",["Es van trencar en blocs","Es van plegar","Es van fondre","Es van erosionar del tot"],"Els tous es pleguen; els durs i rígids es fracturen."],
- ["t1","s2","Quines serralades es van formar a l'orogènia alpina?",["Pirineus, Bètiques i Cantàbrica oriental","Massís Galaicoleonès i Massís Hespèric","Només els Monts de Toledo","Cap: totes són hercinianes"],""],
- ["t1","s2","Quan es van formar la depressió de l'Ebre i les planes litorals?",["Al Quaternari, per l'erosió dels relleus alpins","Al Paleozoic","Al Mesozoic","A l'orogènia herciniana"],""],
- ["t1","s3","Quina unitat ocupa el 45% de la superfície d'Espanya?",["La Meseta","La depressió de l'Ebre","Les Serralades Bètiques","Els Pirineus"],""],
- ["t1","s3","Quin riu travessa la Submeseta Nord?",["El Duero","El Tajo","El Guadiana","L'Ebre"],""],
- ["t1","s3","Quina serralada divideix la Meseta en dues submesetes?",["El Sistema Central","Els Monts de Toledo","El Sistema Ibèric","Sierra Morena"],""],
- ["t1","s3","Quina és la divisòria d'aigües entre el Tajo i el Guadiana?",["Els Monts de Toledo","El Sistema Central","Sierra Morena","El Sistema Ibèric"],""],
- ["t1","s3","Quines serres formen el Sistema Central?",["Somosierra, Guadarrama, Gredos i Gata","Cazorla, Segura, Sagra i Mágina","Moncayo i Urbión","Cadí i Montsec"],""],
- ["t1","s3","Quin és el relleu més antic de la península?",["El Massís Galaicoleonès","Els Pirineus","Les Serralades Bètiques","El Sistema Ibèric"],"És paleozoic i està molt erosionat."],
- ["t1","s3","Què separa Sierra Morena?",["La Meseta de la depressió del Guadalquivir","La Meseta de la depressió de l'Ebre","Les dues submesetes","Les Bètiques del Mediterrani"],""],
- ["t1","s3","Quines serres pertanyen al sector nord del Sistema Ibèric?",["Moncayo i Pics d'Urbión","Gúdar i Maestrat","Gredos i Gata","Cazorla i Segura"],""],
- ["t1","s3","Quin és el cim més alt de la península (dossier)?",["Mulhacén, 3.481 m","Aneto, 3.404 m","Teide, 3.718 m","Pica d'Estats, 3.143 m"],"El Teide és més alt, però és a Canàries, no a la península."],
- ["t1","s3","Quines serres formen la Subbètica?",["Cazorla, Segura, Sagra i Mágina","Sierra Nevada","Somosierra i Guadarrama","Guara i Peña"],""],
- ["t1","s3","Quina llargada tenen els Pirineus?",["Uns 440 km","Uns 140 km","Uns 900 km","Uns 1.200 km"],"Del golf de Biscaia al cap de Creus."],
- ["t1","s3","Entre quines unitats queda encaixada la depressió de l'Ebre?",["Prepirineus, Sistema Ibèric i Serralades Litorals Catalanes","Sierra Morena i Bètiques","Sistema Central i Monts de Toledo","Cantàbrica i Massís Galaicoleonès"],""],
- ["t1","s3","Com es van formar les dues grans depressions?",["Amb sediments de l'erosió dels relleus i dels rius","Per volcans","Per plegament de calcàries","Per l'enfonsament del mar de Tetis"],"On els materials eren durs, relleus tabulars; on eren tous, valls i terrasses."],
- ["t1","s3","Quina d'aquestes NO és una vora muntanyosa de la Meseta?",["Els Pirineus","La Serralada Cantàbrica","El Sistema Ibèric","Sierra Morena"],"Els Pirineus són una serralada exterior a la Meseta."],
- ["t1","s4","Quin és el tret més característic de la costa gallega?",["Les ries","Els deltes","Les albuferes","Les dunes"],""],
- ["t1","s4","Com és la costa cantàbrica?",["Alta i rectilínia, amb penya-segats","Baixa i sorrenca","Plena de deltes","Amb grans albuferes"],""],
- ["t1","s4","Quina costa és baixa i sorrenca, amb dunes?",["L'atlàntica andalusa (golf de Cadis)","La cantàbrica","La gallega","La Costa Brava"],""],
- ["t1","s4","Què és un tómbol?",["Un cordó litoral que uneix una illa al continent","Una badia tancada per sorra","Una vall envaïda pel mar","Un con volcànic"],""],
- ["t1","s4","Quin d'aquests és un exemple de tómbol?",["El penyal d'Ifac (Calp)","El Mar Menor","El delta de l'Ebre","El cap de Creus"],""],
- ["t1","s4","Quina gran plana litoral fa uns 400 km?",["La del golf de València","La del golf de Cadis","La de l'Empordà","La cantàbrica"],"Del cap de la Nau al delta de l'Ebre."],
- ["t1","s4","Menorca està relacionada amb...",["La Serralada Litoral Catalana","La Subbètica","Els Pirineus","El Sistema Ibèric"],""],
- ["t1","s4","Mallorca, Eivissa i Formentera són fragments de...",["La Serralada Subbètica","La Serralada Litoral Catalana","El Sistema Central","El Massís Hespèric"],""],
- ["t1","s4","Quines illes canàries són força planes?",["Lanzarote i Fuerteventura","Tenerife i La Palma","La Gomera i El Hierro","Gran Canària i Tenerife"],"Són el grup oriental, el més proper a Àfrica."],
- ["t1","s4","Quin és el cim més alt d'Espanya?",["El Teide, 3.718 m","El Mulhacén","L'Aneto","El Veleta"],"És un volcà actiu, a Tenerife."],
- ["t1","s5","Com són els rius del vessant cantàbric?",["Curts i cabalosos","Llargs amb estiatge","De poc cabal i irregulars","Sense aigua permanent"],"Neixen molt a prop del mar en muntanyes molt plujoses."],
- ["t1","s5","Com són els rius del vessant atlàntic?",["Llargs i amb estiatge a l'estiu","Curts i cabalosos","Torrents sense aigua","Molt regulars tot l'any"],""],
- ["t1","s5","Quin riu mediterrani és l'excepció pel seu gran cabal?",["L'Ebre","El Túria","El Segura","El Llobregat"],""],
- ["t1","s5","Què és l'estiatge?",["La disminució del cabal en una època de l'any","El màxim cabal d'un riu","La quantitat d'aigua per unitat de temps","Els materials que arrossega el riu"],""],
- ["t1","s5","Per què no hi ha rius permanents a les Balears?",["Per les pluges escasses i el terreny permeable","Perquè fa massa fred","Perquè les illes són volcàniques","Perquè tota l'aigua va a embassaments"],""],
- ["t1","s5","Quin d'aquests rius NO és del vessant cantàbric?",["Guadiana","Bidasoa","Nalón","Navia"],"El Guadiana és atlàntic."],
- ["t1","s5","Què és un barranc a les Canàries?",["Un tall al terreny que fa de llit de torrents","Un riu permanent","Un llac volcànic","Un aqüífer"],""],
+ ["t1","s1","Durant quin període es va produir l'orogènia alpina?",["Terciari (Cenozoic)","Paleozoic","Mesozoic","Quaternari"],""],
+ ["t1","s1","Quines serralades es van formar a l'orogènia alpina?",["Pirineus, Bètiques i Cantàbrica oriental","Massís Galaicoleonès i Massís Hespèric","Només els Monts de Toledo","Cap: totes són hercinianes"],""],
+ ["t1","s1","Quan es van formar la depressió de l'Ebre i les planes litorals?",["Al Quaternari, per l'erosió dels relleus alpins","Al Paleozoic","Al Mesozoic","A l'orogènia herciniana"],""],
  ["t1","s6","Quina diferència hi ha entre temps i clima?",["El temps és un moment concret; el clima, la mitjana de molts anys","Són sinònims","El clima canvia cada dia","El temps només mesura la pluja"],""],
  ["t1","s6","Quant baixa de mitjana la temperatura cada 100 m d'ascens?",["Uns 0,65 °C","Uns 6,5 °C","Uns 2 °C","No baixa, puja"],"És el gradient vertical de temperatura."],
  ["t1","s6","Què passa quan la humitat relativa és del 100%?",["L'aire està saturat i el vapor es condensa","L'aire està completament sec","Plou sempre neu","La pressió és zero"],""],
@@ -2159,29 +2103,6 @@ var QS = [
  ["t1","s7","Aire a 25 °C, condensa a 1.000 m i el cim és a 1.500 m. A quina temperatura arriba a baix a l'altre costat?",["27 °C","25 °C","22 °C","32 °C"],"Puja: 25 − 10 = 15 °C; de 1.000 a 1.500 m: 15 − 3 = 12 °C; baixa 1.500 m: 12 + 15 = 27 °C."],
  ["t1","s7","Quin clima de muntanya té neu fins a 9 mesos?",["El de muntanya oceànica (Cantàbrica i Pirineus)","El de muntanya mediterrània","El subtropical","El continental de la Meseta"],""],
  ["t1","s7","Quin clima té pluges de 150-300 mm concentrades a l'hivern?",["El subtropical canari","L'oceànic","El de muntanya oceànica","El mediterrani de Girona"],""],
- ["t2","s8","Quin és el cim més alt de Catalunya?",["La Pica d'Estats, 3.143 m","L'Aneto","El Puigmal","El Turó de l'Home"],""],
- ["t2","s8","Quina plana catalana desguassa al mar?",["L'Empordà","L'Urgell","La Segarra","La Plana de Vic"],"L'Urgell desguassa cap a l'Ebre."],
- ["t2","s8","Quines són les serralades exteriors del Prepirineu català?",["Montsec i Montroig","Cadí i Pedraforca","Montserrat i Montseny","Montnegre i Collserola"],""],
- ["t2","s8","Quina depressió separa el Prepirineu interior de l'exterior?",["La Conca de Tremp","La Plana de Vic","La Conca d'Òdena","El Vallès"],""],
- ["t2","s8","Què uneix la Serralada Transversal?",["El Prepirineu amb les serralades litorals","El Pirineu amb l'Ebre","Les dues depressions litorals","L'Empordà amb el Rosselló"],"Hi destaca el Puigsacalm."],
- ["t2","s8","A quina serralada pertanyen Montserrat i el Montseny?",["Prelitoral","Litoral o de Marina","Transversal","Prepirineu"],""],
- ["t2","s8","A quina serralada pertany el Montnegre?",["Litoral o de Marina","Prelitoral","Transversal","Prepirineu exterior"],""],
- ["t2","s8","On són la Plana de Vic i la Conca d'Òdena?",["A la Depressió Central","A la Depressió Prelitoral","A la Depressió Litoral","Al Pirineu axial"],""],
- ["t2","s8","Quin exemple de costa alta dona el dossier?",["La Costa Brava","El Tarragonès","El delta de l'Ebre","El Maresme"],""],
- ["t2","s9","Quina pluja rep la Catalunya seca?",["Menys de 700 mm","Més de 1.000 mm","Menys de 100 mm","Entre 1.000 i 2.000 mm"],""],
- ["t2","s9","Quina regió s'anomena dorsal pluviomètrica?",["La regió oriental (Serralada Transversal)","L'Alt Pirineu","El litoral mediterrani","La regió continental"],""],
- ["t2","s9","Quina és la regió més poblada de Catalunya?",["El litoral mediterrani","L'Alt Pirineu","La regió continental","El Prepirineu"],""],
- ["t2","s9","Quina és la regió menys poblada?",["L'Alt Pirineu","El litoral mediterrani","L'altiplà central","La Tramuntana"],""],
- ["t2","s9","Quina vegetació té la regió continental (Ponent)?",["Estepària, adaptada a sòls salins","Fagedes i avetoses","Laurisilva","Rouredes i castanyedes"],""],
- ["t2","s9","Quina d'aquestes regions NO és de la Catalunya seca?",["L'Alt Pirineu","La Tramuntana","L'altiplà central","El Prepirineu"],""],
- ["t2","s9","Quins matollars hi ha a Catalunya?",["Màquia i garriga","Landa i prat","Devesa i estepa","Laurisilva i fageda"],""],
- ["t2","s10","A quina xarxa pertany el Segre?",["Pirineu-Ebre","Pirineu-Mediterrani","Mediterrània","Atlàntica"],""],
- ["t2","s10","Per què els rius de la xarxa Pirineu-Ebre baixen plens a la primavera?",["Pel desgel","Per les pluges d'estiu","Pels embassaments","Per la gota freda"],""],
- ["t2","s10","Quin riu català va a l'Atlàntic?",["La Garona","El Segre","El Ter","La Noguera Pallaresa"],""],
- ["t2","s10","A quina xarxa pertanyen el Ter i el Llobregat?",["Pirineu-Mediterrani","Pirineu-Ebre","Mediterrània","Atlàntica"],""],
- ["t2","s10","On neixen els rius de la xarxa Mediterrània (Tordera, Besòs, Francolí)?",["A les serralades Prelitoral i Litoral","Al Pirineu axial","A la Vall d'Aran","Al Sistema Ibèric"],""],
- ["t2","s10","Quants grups principals té la classificació de Köppen?",["5 (A, B, C, D, E)","3","4","7"],""],
- ["t2","s10","Què vol dir la lletra C a Köppen?",["Clima temperat","Clima continental","Clima polar","Clima sec"],""],
  ["t3","s11","Què és un recurs natural?",["Un bé de la natura que pot tenir interès per a l'ésser humà","Qualsevol producte industrial","Només l'energia","Un espai protegit"],""],
  ["t3","s11","Quan diem que un recurs és renovable?",["Quan es regenera a un ritme igual o superior al que l'explotem","Quan no s'acaba mai, l'usem com l'usem","Quan és barat","Quan no contamina gens"],""],
  ["t3","s11","Quin d'aquests recursos NO és renovable?",["El gas natural","El vent","El sol","L'aigua dels rius"],""],
@@ -2225,7 +2146,35 @@ var QS = [
  ["t3","s14","Què és un PNIN?",["Un paratge natural d'interès nacional, només a Catalunya","Un parc nacional espanyol","Un pla d'aigües","Una reserva marina"],"Exemples: Pedraforca i Poblet."],
  ["t3","s14","Quan es va crear el PEIN i quants espais té?",["1985, 144 espais","2007, 14 espais","1916, 4 espais","1999, 350 espais"],""],
  ["t3","s14","Quina d'aquestes NO és una figura de la llei estatal de 2007?",["PNIN","Parc natural","Monument natural","Paisatge protegit"],"El PNIN és una figura catalana."],
- ["t3","s14","Quins espais destaquen per la singularitat, la raresa o la bellesa?",["Els monuments naturals","Els parcs naturals","Les reserves naturals","Les àrees marines"],""]
+ ["t3","s14","Quins espais destaquen per la singularitat, la raresa o la bellesa?",["Els monuments naturals","Els parcs naturals","Les reserves naturals","Les àrees marines"],""],
+ ["t4","e1","Per què els recursos energètics estan repartits de manera desigual?",["Perquè són fruit de llargs processos geològics","Perquè els països rics els han traslladat","Perquè només n'hi ha a l'hemisferi sud","Perquè depenen del clima de cada any"],""],
+ ["t4","e1","Què demostra l'exemple de Nigèria?",["Que tenir recursos no garanteix el desenvolupament","Que el petroli s'esgota de pressa","Que l'Àfrica no té recursos","Que les renovables són més rendibles"],""],
+ ["t4","e2","Què s'ha de fer amb el petroli després d'extreure'l?",["Refinar-lo","Congelar-lo","Barrejar-lo amb carbó","Res, es fa servir directament"],"Se'n separen combustibles, ceres, quitrà, asfalt, plàstic..."],
+ ["t4","e2","De què està fet sobretot el gas natural?",["De metà (70%)","De butà","D'hidrogen","De diòxid de carboni"],""],
+ ["t4","e2","Quins són els tipus de carbó?",["Antracita, hulla, lignit i torba","Bauxita, pirita i hulla","Urani, tori i plutoni","Quars, feldspat i mica"],""],
+ ["t4","e2","Com és el carbó que s'extreu a Espanya?",["De baixa qualitat i només en cobreix un terç de les necessitats","D'alta qualitat i se n'exporta","Suficient per a tot el país","Només antracita"],""],
+ ["t4","e2","Quina és la principal zona carbonífera d'Espanya?",["L'asturlleonesa","La catalana","L'andalusa","La valenciana"],""],
+ ["t4","e2","Per què han tancat la majoria de mines de carbó d'Espanya?",["Per manca de rendibilitat i perquè contaminen molt","Perquè s'ha acabat tot el carbó","Per una llei de la UE de 1957","Per terratrèmols"],""],
+ ["t4","e2","Quin és el gran avantatge de l'energia nuclear?",["No emet CO₂","No deixa residus","És renovable","Es troba a tot arreu"],""],
+ ["t4","e2","Quin és el gran inconvenient de l'energia nuclear?",["Els residus triguen milers d'anys a descompondre's","Emet molt de CO₂","Depèn del vent","És molt poc potent"],""],
+ ["t4","e2","Quines centrals nuclears hi ha a Catalunya?",["Ascó I, Ascó II i Vandellòs II","Garoña i Almaraz","Trillo i Cofrents","Ascó I i Zorita"],""],
+ ["t4","e2","Per què l'energia dels combustibles fòssils no és sostenible?",["S'esgoten i emeten CO₂ que contamina","Perquè és massa barata","Perquè només es fa a l'estiu","Perquè ocupa molt d'espai"],"Pregunta de selectivitat de 2009."],
+ ["t4","e3","Quin inconvenient té l'energia solar segons el dossier?",["La intensitat canvia segons el lloc i el moment","Emet CO₂","Deixa residus radioactius","S'esgota"],""],
+ ["t4","e3","Quin d'aquests NO és un inconvenient de l'energia eòlica?",["Deixa residus durant milers d'anys","No a tot arreu fa prou vent","Afecta el paisatge","Fa soroll"],""],
+ ["t4","e3","Quin problema està causant la biomassa?",["Que es tali selva per plantar palma","Que s'acabin els purins","Que no es pugui reciclar","Que pugi el nivell del mar"],""],
+ ["t4","e3","D'on s'obté el bioetanol?",["Del sucre dels cereals (blat, blat de moro)","De greix animal","Dels purins","Del petroli"],""],
+ ["t4","e3","D'on s'obté el biogàs?",["Dels purins, els fems i els fangs de depuradora","De l'oli vegetal","Del gas natural","De la fusta cremada"],""],
+ ["t4","e3","De què es fa el biodièsel?",["D'oli vegetal o greix animal","De sucre de remolatxa","De carbó","D'urani"],""],
+ ["t4","e4","Quin país té més reserves de gas natural?",["Rússia","Espanya","Japó","Brasil"],"Després vénen Iran i Qatar."],
+ ["t4","e4","Quin país té més reactors nuclears?",["Els EUA","França","Japó","Rússia"],"104 reactors (2015)."],
+ ["t4","e4","Quin és el primer productor d'urani?",["Kazakhstan","Canadà","Austràlia","Níger"],""],
+ ["t4","e4","Quins països europeus destaquen en petroli?",["Noruega i el Regne Unit","França i Itàlia","Espanya i Portugal","Alemanya i Polònia"],""],
+ ["t4","e4","Quin percentatge de l'energia importa Espanya?",["El 82%","El 23%","El 50%","El 5,9%"],""],
+ ["t4","e4","Quin percentatge de l'energia importa Catalunya?",["El 76,6%","El 23,3%","El 100%","El 48,1%"],""],
+ ["t4","e4","Quina és la font d'energia més consumida a Espanya?",["El petroli (49,4%)","El gas natural","Les renovables","La nuclear"],""],
+ ["t4","e4","Quin sector consumeix més energia a Catalunya?",["El transport","La indústria","El domèstic","L'agricultura"],"El 41% el 2009."],
+ ["t4","e4","Què és la tep?",["L'energia que s'obté cremant una tona de petroli","Una tona de carbó","La potència d'una central nuclear","El preu del petroli"],""],
+ ["t4","e4","Quina font té més pes al consum de Catalunya que al d'Espanya?",["La nuclear (22,4% davant 10,2%)","El carbó","Les renovables","El petroli"],""]
 ];
 
 /* ===== App del temari ===== */
@@ -2255,6 +2204,9 @@ var QS = [
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
   function hash(s) { var x = 5381; for (var i = 0; i < s.length; i++) x = ((x << 5) + x + s.charCodeAt(i)) >>> 0; return x.toString(36); }
   var TB = {}; TEMES.forEach(function (t) { TB[t.id] = t; });
+  ["ft", "cft", "gft"].forEach(function (k) { if (S[k] && S[k] !== "all" && !TB[S[k]]) S[k] = "all"; });
+  if (S.tcfg && S.tcfg.ft !== "all" && !TB[S.tcfg.ft]) S.tcfg.ft = "all";
+  Object.keys(S.res).forEach(function (k) { if (!TB[k]) delete S.res[k]; });
   var SB = {}; SECC.forEach(function (s) { SB[s.id] = s; });
   function tag(t) { var x = TB[t]; return h("span", { "class": "tg", style: "background:" + x.c, text: x.n }); }
   function btn(txt, fn, ghost) { return h("button", { type: "button", "class": "btn" + (ghost ? " ghost" : ""), text: txt, onclick: fn }); }
@@ -2294,14 +2246,14 @@ var QS = [
   var R = {};
   /* ---------- PLA ---------- */
   var SESS = [
-    ["Relleu d'Espanya", "Apartats 1.1, 1.2 i 1.3. Després localitza les unitats al mapa sense noms.", [["Llegir 1.1-1.3", "x", "s1"], ["Mapa del relleu", "m", "relief"], ["Ordena la formació", "a", "ord:o1"], ["Origen del relleu", "a", "cls:c5"]]],
-    ["Costes, illes i rius", "Apartats 1.4 i 1.5. Practica els rius per vessants al mapa.", [["Llegir 1.4-1.5", "x", "s4"], ["Mapa de costes i rius", "m", "hidro"], ["Classifica els rius", "a", "cls:c3"]]],
-    ["El clima: conceptes", "Apartat 1.6. Fes les targetes del Tema 1 fins que les sàpigues.", [["Llegir 1.6", "x", "s6"], ["Targetes del Tema 1", "c", "t1"]]],
-    ["Climes i vegetació", "Apartat 1.7. Aprèn a llegir climogrames i l'efecte Foehn.", [["Llegir 1.7", "x", "s7"], ["Climogrames", "a", "clim"], ["Simulador Foehn", "a", "foehn"], ["Vegetació i clima", "a", "cls:c4"]]],
-    ["Catalunya", "Tema 2 sencer: relleu, regions fisiogràfiques i rius.", [["Llegir el Tema 2", "x", "s8"], ["Seca o humida", "a", "cls:c6"], ["Xarxes catalanes", "a", "cls:c7"], ["Relleu de nord a sud", "a", "ord:o4"], ["Mapa de comarques", "m", "com"]]],
+    ["El relleu en general", "Apartat 1.1: només la idea general i com es va formar.", [["Llegir 1.1", "x", "s1"], ["Ordena la formació", "a", "ord:o1"], ["Origen del relleu", "a", "cls:c5"]]],
+    ["Mapa: relleu, costes i rius", "Només cal situar-ho. Fes Localitza i Anomena fins que no fallis cap.", [["Què cal saber (1.2)", "x", "sm"], ["Mapa del relleu", "m", "relief"], ["Mapa de costes i rius", "m", "hidro"], ["Rius per vessants", "a", "cls:c3"]]],
+    ["El clima: conceptes", "Apartat 1.3. Fes les targetes del Tema 1.", [["Llegir 1.3", "x", "s6"], ["Targetes del Tema 1", "c", "t1"]]],
+    ["Climes i vegetació", "Apartat 1.4. Aprèn a llegir climogrames i l'efecte Foehn.", [["Llegir 1.4", "x", "s7"], ["Climogrames", "a", "clim"], ["Simulador Foehn", "a", "foehn"], ["Vegetació i clima", "a", "cls:c4"]]],
     ["Recursos i mineria", "Apartats 3.1 i 3.2.", [["Llegir 3.1-3.2", "x", "s11"], ["Renovable o no", "a", "cls:c1"], ["Tipus de miners", "a", "cls:c2"]]],
     ["Recursos hídrics i forestals", "Apartats 3.3 i 3.4.", [["Llegir 3.3-3.4", "x", "s13"], ["Règims fluvials", "a", "cls:c8"], ["Figures de protecció", "a", "cls:c9"], ["Lleis en ordre", "a", "ord:o3"]]],
-    ["Repàs barrejat", "Barreja els tres temes: el test de tot, les targetes pendents i el llampec.", [["Test de 40", "t", "40"], ["Targetes d'avui", "c", "due"], ["Llampec V/F", "a", "vf"]]]
+    ["Recursos energètics", "Tema d'energia: fonts, qui les té i com en depenem.", [["Llegir E1-E4", "x", "e1"], ["Neta o bruta", "a", "cls:c13"], ["Qui en té més", "a", "cls:c11"], ["Biomassa", "a", "cls:c12"], ["Consum d'Espanya", "a", "ord:o8"], ["Targetes d'energia", "c", "t4"]]],
+    ["Repàs barrejat", "Barreja tots els temes: el test de tot, les targetes pendents i el llampec.", [["Test de 40", "t", "40"], ["Targetes d'avui", "c", "due"], ["Llampec V/F", "a", "vf"]]]
   ];
   function doLink(kind, arg) {
     if (kind === "x") { S.ft = SB[arg].t; tab("exp", arg); }
@@ -2335,7 +2287,7 @@ var QS = [
         ["4", "<b>Paraula + imatge.</b> Fes servir els esquemes, els climogrames i els mapes mentre estudies el text: recordes millor si ho tens de dues maneres."]
       ].map(function (x) { return h("li", {}, [h("span", { "class": "ic", text: x[0] }), h("span", { html: x[1] })]); }))
     ]);
-    var c4 = h("section", { "class": "card" }, [h("h3", { text: "Pla d'estudi en 8 sessions" }), h("p", { "class": "muted", text: "Marca cada sessió quan l'acabis. Deixa un dia entre sessió i sessió si pots, i comença cada dia amb les targetes pendents." })]);
+    var c4 = h("section", { "class": "card" }, [h("h3", { text: "Pla d'estudi en " + SESS.length + " sessions" }), h("p", { "class": "muted", text: "Marca cada sessió quan l'acabis. Deixa un dia entre sessió i sessió si pots, i comença cada dia amb les targetes pendents." })]);
     SESS.forEach(function (s, i) {
       var id = "ses" + i, on = !!S.done[id];
       var ck = h("button", { type: "button", "class": "chk", "aria-pressed": on ? "true" : "false", "aria-label": "Sessió feta", text: on ? "✓" : "", onclick: function () { if (S.done[id]) delete S.done[id]; else S.done[id] = 1; save(); tab("pla"); } });
@@ -2345,7 +2297,7 @@ var QS = [
     body.appendChild(c1); body.appendChild(c4); body.appendChild(c2); body.appendChild(c3); body.appendChild(foot());
   };
   function foot() {
-    return h("p", { "class": "foot", html: "<b>Fonts:</b> dossier del professor «Bloc 2: Medi ambient i paisatges», temes 1 (Relleu, clima i vegetació a Espanya), 2 (Relleu, clima i vegetació a Catalunya) i 3 (Els recursos naturals, fins als recursos forestals). <b>Completat amb fonts externes:</b> les dades mensuals dels climogrames (valors normals aproximats de l'AEMET), els tipus de Köppen d'Espanya, les comarques dels embassaments, l'alçada del Montseny i les notes «Compte». Tot el que és afegit porta l'etiqueta «Per ampliar» o «Compte»." });
+    return h("p", { "class": "foot", html: "<b>Temari d'examen:</b> Tema 1 (relleu, clima i vegetació d'Espanya; el relleu, les costes i els rius només per situar al mapa), Tema 3 (recursos naturals, hídrics i forestals) i els recursos energètics. El Tema 2 (Catalunya) no entra. <b>Fonts:</b> dossier del professor «Bloc 2: Medi ambient i paisatges». <b>Completat amb fonts externes:</b> les dades mensuals dels climogrames (valors normals aproximats de l'AEMET) i les notes «Compte»." });
   }
 
   /* ---------- EXPLICAT ---------- */
@@ -2364,7 +2316,7 @@ var QS = [
       var c = h("section", { "class": "card", id: s.id, style: "scroll-margin-top:12px" });
       var rb = h("button", { type: "button", "class": "chip", "aria-pressed": S.read[s.id] ? "true" : "false" }, [h("span", { "class": "tick", text: S.read[s.id] ? "✓" : "" }), "Llegit"]);
       rb.addEventListener("click", function () { if (S.read[s.id]) delete S.read[s.id]; else S.read[s.id] = 1; save(); var on = !!S.read[s.id]; rb.setAttribute("aria-pressed", on ? "true" : "false"); rb.firstChild.textContent = on ? "✓" : ""; });
-      var hdr = h("div", { "class": "sec-h" }, [h("div", { "class": "row" }, [tag(s.t), h("h3", { text: s.n })]), h("div", { "class": "row" }, [s.map ? h("button", { type: "button", "class": "chip", text: "Veure al mapa", onclick: function () { goMap(s.map); } }) : null, rb])]);
+      var hdr = h("div", { "class": "sec-h" }, [h("div", { "class": "row" }, [tag(s.t), h("h3", { text: s.n })]), h("div", { "class": "row" }, (s.maps || (s.map ? [[s.map, "Veure al mapa"]] : [])).map(function (m) { return h("button", { type: "button", "class": "chip", text: m[1], onclick: function () { goMap(m[0]); } }); }).concat([rb]))]);
       c.appendChild(hdr);
       s.ps.forEach(function (p) { if (lv[p[0]]) c.appendChild(h("div", { "class": "pp " + p[0] }, [h("span", { "class": "dot" }), h("div", { html: p[1] })])); });
       if (s.rq) {
@@ -2417,25 +2369,12 @@ var QS = [
       ["Quaternari", "des de fa ~1,8 Ma", "#4FA261", "<b>Erosió.</b> Els sediments omplen les depressions de l'Ebre i el Guadalquivir i fan les planes litorals."]
     ].map(function (x) { return h("div", { "class": "nd", style: "--c:" + x[2] }, [h("div", { "class": "era", text: x[0] }), h("div", { "class": "when", text: x[1] }), h("div", { "class": "box", html: x[3] })]); }));
     body.appendChild(card("Com es va formar el relleu", "Línia del temps: llegeix-la d'esquerra a dreta.", [tl], "t1"));
-    /* 2. Clau unitats */
-    function kid(t, d, c) { return h("div", { "class": "kid", style: c ? "--c:" + c : null, html: "<b>" + t + "</b>" + (d ? "<br>" + d : "") }); }
-    var meseta = h("div", { "class": "clau sub" }, [h("div", { "class": "root", text: "Meseta (45%)" }), h("div", { "class": "br" }), h("div", { "class": "kids" }, [kid("Submesetes", "Nord (Duero) · Sud (Tajo i Guadiana)", "#D9B34E"), kid("Serralades interiors", "Sistema Central · Monts de Toledo", "#D2512F"), kid("Vores muntanyoses", "Galaicoleonès · Cantàbrica · Ibèric · Sierra Morena", "#1F8A78")])]);
-    var clau = h("div", { "class": "clau" }, [h("div", { "class": "root", text: "Relleu d'Espanya" }), h("div", { "class": "br" }), h("div", { "class": "kids" }, [
-      h("div", { "class": "kid nest", style: "--c:#D9B34E" }, [meseta]),
-      kid("Serralades exteriors", "Pirineus i Prepirineus · Serralades Litorals Catalanes · Serralades Bètiques (Penibètica i Subbètica)", "#3A5CAA"),
-      kid("Dues depressions", "Ebre · Guadalquivir", "#4FA261"),
-      kid("Relleus litorals", "Costes atlàntiques (cantàbrica, gallega, andalusa) · mediterrànies (Andalusia-Múrcia, golf de València, Catalunya)", "#3D8BC9"),
-      kid("Relleu insular", "Balears (Subbètica + Litoral Catalana) · Canàries (volcàniques, Teide 3.718 m)", "#A0425F")
-    ])]);
-    body.appendChild(card("Les unitats de relleu", "Clau: de la idea general als detalls.", [clau, h("div", { "class": "row" }, [h("button", { type: "button", "class": "lk", text: "Practica-ho al mapa →", onclick: function () { goMap("relief"); } })])], "t1"));
-    /* 3. Rastell rius */
-    var ras = h("div", { "class": "rastell" }, [h("div", { "class": "bar", text: "Rius d'Espanya per vessants" }), h("div", { "class": "teeth" }, [
-      ["Cantàbric", "#1F8A78", "Curts i cabalosos", "Neixen a prop del mar, en muntanyes plujoses.", "Bidasoa · Nervión · Nalón · Narcea · Navia"],
-      ["Atlàntic", "#1D5FA8", "Llargs, amb estiatge d'estiu", "La Meseta s'inclina cap a l'oest.", "Miño · Duero · Tajo · Guadiana · Guadalquivir · Odiel · Tinto"],
-      ["Mediterrani", "#C2453A", "Poc cabal i irregulars", "Excepte l'Ebre, el més cabalós.", "Ebre · Xúquer · Túria · Segura · Ter · Llobregat · Millars"],
-      ["Illes", "#7C5CAD", "Sense rius permanents", "Balears: torrents. Canàries: barrancs.", "Albufera d'Alcúdia · embassament de Soria (Gran Canària)"]
-    ].map(function (x) { return h("div", { "class": "tooth", style: "--c:" + x[1] }, [h("h4", { text: x[0] }), h("b", { text: x[2] }), h("span", { "class": "muted", text: x[3] }), h("span", { style: "font-size:12.5px", text: x[4] })]); }))]);
-    body.appendChild(card("Els rius", "Rastell: un tret per a cada vessant.", [ras], "t1"));
+    /* 2. Per situar al mapa */
+    var chk = h("div", { "class": "two" }, [
+      ["Relleu (12)", "#D9B34E", "relief", "Meseta · Sistema Central · Monts de Toledo · Massís Galaicoleonès · Cantàbrica · Sistema Ibèric · Sierra Morena · Pirineus · Prepirineus · Bètiques · depressió de l'Ebre · depressió del Guadalquivir"],
+      ["Costes, rius i illes", "#3D8BC9", "hidro", "Costes: Cantàbrica, Gallega, Atlàntica andalusa, Mediterrània. Rius: Bidasoa, Nervión · Miño, Duero, Tajo, Guadiana, Guadalquivir · Ebre, Xúquer, Túria. Illes: Tramuntana i Teide."]
+    ].map(function (x) { return h("div", { "class": "col", style: "background:color-mix(in srgb," + x[1] + " 14%,var(--surface))" }, [h("h4", { text: x[0] }), h("p", { style: "font-size:13.5px", text: x[3] }), h("button", { type: "button", "class": "lk", style: "align-self:flex-start", text: "Practica-ho al mapa →", onclick: function () { goMap(x[2]); } })]); }));
+    body.appendChild(card("Només per situar al mapa", "No cal aprendre'n les característiques: només saber on són.", [chk], "t1"));
     /* 4. Quadrant climes */
     var qd = h("div", { "class": "quad" });
     [["oce", "stg", "#1F8A78", "~14 °C · poca amplitud · pluja tot l'any", ["Rouredes", "Fagedes", "Castanyers", "Landa", "Prats"]],
@@ -2448,21 +2387,6 @@ var QS = [
       qd.appendChild(h("div", { "class": "qc", style: "--c:" + x[2] }, [h("h4", { text: CK[x[0]] }), h("span", { "class": "muted", style: "font-size:12.5px", text: "Exemple: " + c.city }), h("div", { "class": "csvg", html: climoSVG(c, true) }), h("b", { style: "font-size:13px", text: x[3] }), h("div", { "class": "pills" }, x[4].map(function (p) { return h("span", { "class": "pill", text: p }); }))]));
     });
     body.appendChild(card("Climes i vegetació d'Espanya", "Quadrant: cada clima amb el seu climograma (barres = pluja, línia = temperatura) i la vegetació. Dades dels climogrames: valors normals aproximats (AEMET), font externa.", [qd, h("div", { "class": "row" }, [h("button", { type: "button", "class": "lk", text: "Joc de climogrames →", onclick: function () { tab("act", "clim"); } })])], "t1"));
-    /* 5. Catalunya: barra de gradació */
-    function pos(mm) { return (Math.min(2000, Math.max(200, mm)) - 200) / 1800 * 100; }
-    var grad = h("div", { "class": "grad" });
-    [500, 1000, 1500].forEach(function (m) { grad.appendChild(h("span", { "class": "mk", style: "left:" + pos(m) + "%", text: m + " mm" })); });
-    grad.appendChild(h("div", { "class": "th", style: "left:" + pos(700) + "%" }, [h("span", { text: "700 mm" })]));
-    var tracks = h("div", { style: "display:flex;flex-direction:column;gap:8px" });
-    [["Continental (Ponent)", 300, 450, "#C99A2E"], ["Regió oriental", 800, 1800, "#3E9A8C"], ["Alt Pirineu", 1000, 2000, "#2B6EA8"]].forEach(function (r) {
-      tracks.appendChild(h("div", {}, [h("div", { style: "font-size:12.5px;font-weight:600", text: r[0] + " · " + r[1] + "-" + r[2] + " mm" }), h("div", { style: "position:relative;height:10px;border-radius:5px;background:var(--line)" }, [h("div", { style: "position:absolute;top:0;bottom:0;border-radius:5px;background:" + r[3] + ";left:" + pos(r[1]) + "%;width:" + (pos(r[2]) - pos(r[1])) + "%" }), h("div", { style: "position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);left:" + pos(700) + "%" })])]));
-    });
-    function rg(t, d) { return h("div", { "class": "rgn", html: "<b>" + t + "</b>" + d }); }
-    var two = h("div", { "class": "two" }, [
-      h("div", { "class": "col", style: "background:color-mix(in srgb,#E8C27A 22%,var(--surface))" }, [h("h4", { text: "Catalunya seca (< 700 mm) · perennifòlia" }), rg("Tramuntana", "Rosselló i Empordà. Pi blanc, alzina surera."), rg("Litoral mediterrani", "Gavarres - Sénia. Pi blanc i alzina. La més poblada."), rg("Altiplà central", "Més oscil·lació. Pinedes de pi blanc i matollars."), rg("Prepirineu", "Hivern fred. Pi blanc, roures, alzines; faig i pi negre als vessants humits."), rg("Continental", "300-450 mm, extremat. Vegetació estepària, sòls salins.")]),
-      h("div", { "class": "col", style: "background:color-mix(in srgb,#2B6EA8 14%,var(--surface))" }, [h("h4", { text: "Catalunya humida (> 700 mm) · caducifòlia" }), rg("Regió oriental", "Serralada Transversal: la «dorsal pluviomètrica» (800-1.800 mm). Rouredes, castanyedes, fagedes. Poblament dispers."), rg("Alt Pirineu", "Més de 2.000 m, 1.000-2.000 mm. Alpí i subalpí: fagedes, pi negre, avetoses, prats. La menys poblada.")])
-    ]);
-    body.appendChild(card("Regions fisiogràfiques de Catalunya", "Barra de gradació de la pluja: a l'esquerra del 700 la Catalunya seca, a la dreta la humida.", [grad, tracks, two], "t2"));
     /* 6. Flor dels recursos */
     var petals = [["Regeneració", "Renovables / No renovables"], ["Energia", "Energètics / No energètics"], ["Impacte", "Nets / Bruts"], ["Aprofitament", "Primaris / Finals"], ["Temps d'ús", "Convencionals / Alternatius"], ["No energètics", "Abiòtics · edafològics · biològics · paisatgístics"], ["Miners", "Metàl·lics · no metàl·lics · roques industrials · energètics"], ["Catalunya", "Sal potàssica (Bages) · carbó (Pirineus) · petroli (Tarragona)"]];
     var flor = h("div", { "class": "flor" });
@@ -2485,6 +2409,22 @@ var QS = [
       h("div", { html: "<b>Parc nacional</b>Aigüestortes, Ordesa, Picos de Europa" }), h("div", { html: "<b>Parc natural</b>Delta de l'Ebre, Cap de Creus, Montserrat, Montseny" }), h("div", { html: "<b>Reserva natural</b>Illes Medes, Delta del Llobregat" }), h("div", { html: "<b>Monument natural</b>Singular, rar o bell" }), h("div", { html: "<b>Paisatge protegit</b>Valor estètic o cultural" }), h("div", { html: "<b>Àrea marina protegida</b>Ecosistemes marins" }), h("div", { style: "border-color:#B5452F", html: "<b>PEIN (Cat., 1985)</b>144 espais" }), h("div", { style: "border-color:#B5452F", html: "<b>PNIN (només Cat.)</b>Pedraforca, Poblet" })
     ])]);
     body.appendChild(card("Els recursos forestals i la protecció", "Línia del temps de les lleis i organigrama de les figures.", [h("p", { html: "Els boscos donen fusta i llenya, guarden la biodiversitat i <b>fixen el 20% de les emissions de CO₂</b> d'Espanya." }), tl2, org2], "t3"));
+    /* 9. Energia: pros i contres */
+    var pc = h("div", { "class": "pc" }, [h("b", { text: "Font" }), h("b", { "class": "pg", text: "A favor" }), h("b", { "class": "pb", text: "En contra" })]);
+    [["Petroli, gas i carbó", "Molt utilitzats per fer electricitat", "No renovables (s'esgoten) i emeten CO₂"], ["Nuclear", "No emet CO₂", "Residus durant milers d'anys"], ["Solar", "Renovable i abundant", "La intensitat varia segons el lloc i l'hora"], ["Eòlica", "Renovable i abundant", "No sempre hi ha vent; paisatge i soroll"], ["Geotèrmica i mareomotriu", "Renovables", "No es troben a tot arreu"], ["Biomassa", "Renovable; aprofita residus", "Fa talar selva per plantar palma"]].forEach(function (r) { pc.appendChild(h("span", { "class": "pf", text: r[0] })); pc.appendChild(h("span", { "class": "pg", text: r[1] })); pc.appendChild(h("span", { "class": "pb", text: r[2] })); });
+    body.appendChild(card("Fonts d'energia: a favor i en contra", "Taula de dues cares, verd a favor i vermell en contra. La fila dels fòssils resumeix la pregunta de selectivitat.", [pc], "t4"));
+    /* 10. Mix energètic */
+    function mix(data) { return h("div", { "class": "stack" }, data.map(function (d) { return h("div", { style: "flex:" + d[1] + ";background:" + d[2] + ";min-width:" + (d[1] < 8 ? 30 : 0) + "px", title: d[0] + " " + d[1] + "%", text: (d[1] >= 8 ? String(d[1]).replace(".", ",") : String(Math.round(d[1]))) + "%" }); })); }
+    var leg = h("div", { "class": "row", style: "font-size:12.5px" }, [["Petroli", "#5B4636"], ["Gas", "#C99A2E"], ["Carbó", "#2F2F2F"], ["Nuclear", "#7C5CAD"], ["Renovables", "#4FA261"], ["Altres", "#A9B4BC"]].map(function (x) { return h("span", { "class": "pill" }, [h("i", { style: "display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;background:" + x[1] }), x[0]]); }));
+    body.appendChild(card("D'on ve l'energia que consumim", "Barres de proporció. Espanya importa el 82% de l'energia; Catalunya, el 76,6%.", [h("h4", { text: "Espanya" }), mix([["Petroli", 49.4, "#5B4636"], ["Gas", 19.9, "#C99A2E"], ["Carbó", 14.6, "#2F2F2F"], ["Nuclear", 10.2, "#7C5CAD"], ["Renov.", 5.9, "#4FA261"]]), h("h4", { text: "Catalunya" }), mix([["Petroli", 48.1, "#5B4636"], ["Gas", 23.2, "#C99A2E"], ["Nuclear", 22.4, "#7C5CAD"], ["Renov.", 2.4, "#4FA261"], ["Altres", 3.9, "#A9B4BC"]]), leg, h("p", { "class": "note", text: "A Catalunya la nuclear pesa el doble que a Espanya (Ascó I, Ascó II i Vandellòs II) i el sector que més energia gasta és el transport (41%)." })], "t4"));
+    /* 11. Qui té què */
+    var qq = h("div", { "class": "quad" }, [
+      ["Petroli", "#5B4636", "Orient Mitjà (Aràbia Saudita, Kuwait, Iraq, Iran, Emirats) · Veneçuela · EUA · Rússia · Mèxic · Nigèria", "Europa: Noruega i Regne Unit"],
+      ["Gas natural", "#C99A2E", "Rússia · Iran · Qatar · Algèria", "Rússia té les reserves més grans"],
+      ["Carbó", "#2F2F2F", "Xina · EUA · Unió Europea", "A Espanya: zona asturlleonesa"],
+      ["Urani i reactors", "#7C5CAD", "Urani: Kazakhstan · Canadà · Austràlia · Níger", "Reactors: EUA 104 · França 59 · Japó 53 · Rússia 33"]
+    ].map(function (x) { return h("div", { "class": "qc", style: "--c:" + x[1] }, [h("h4", { text: x[0] }), h("span", { style: "font-size:13.5px", text: x[2] }), h("span", { "class": "muted", style: "font-size:12.5px", text: x[3] })]); }));
+    body.appendChild(card("Qui té l'energia", "Quadrant: un recurs a cada casella.", [qq], "t4"));
     body.appendChild(foot());
   };
 
@@ -2578,6 +2518,7 @@ var QS = [
   };
   /* Classifica */
   A.cls = function (box, id) {
+    if (id && !CLASS.some(function (k) { return k.id === id; })) id = null;
     if (!id) {
       var c = h("section", { "class": "card" }, [h("h3", { text: "Classifica: tria un joc" })]);
       c.appendChild(h("div", { "class": "acts" }, CLASS.map(function (k) { return h("button", { type: "button", "class": "act", style: "min-height:90px", onclick: function () { tab("act", "cls:" + k.id); } }, [tag(k.t), h("b", { text: k.n }), h("span", { text: k.items.length + " elements · " + k.bins.length + " caixes" })]); })));
@@ -2620,6 +2561,7 @@ var QS = [
   };
   /* Ordena */
   A.ord = function (box, id) {
+    if (id && !ORD.some(function (k) { return k.id === id; })) id = null;
     if (!id) {
       var c = h("section", { "class": "card" }, [h("h3", { text: "Ordena: tria una seqüència" })]);
       c.appendChild(h("div", { "class": "acts" }, ORD.map(function (k) { return h("button", { type: "button", "class": "act", style: "min-height:90px", onclick: function () { tab("act", "ord:" + k.id); } }, [tag(k.t), h("b", { text: k.n }), h("span", { text: k.items.length + " passos" })]); })));
